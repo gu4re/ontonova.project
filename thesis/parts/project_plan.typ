@@ -10,7 +10,7 @@ Esta sección incluye detalles acerca de la planificación del proyecto. Se desc
 El proceso de desarrollo de la propuesta se lleva a cabo siguiendo, principalmente, una metodología en cascada, representada en la @fig:waterfall. Este modelo permite una estructuración clara y lógica del trabajo, siguiendo los siguientes pasos:
 + *Análisis de requisitos.* Se realizan reuniones y consultas con el experto para identificar y definir los requisitos necesarios para el correcto desarrollo del sistema. Clave para establecer unos objetivos de negocio y de aprendizaje.
 + *Diseño de la arquitectura.* Reunidos los requisitos y los objetivos, se desencadena una lluvia de ideas y múltiples bocetos con el objetivo de cumplir los principios de desarrollo de software @gangoffour @eda, detallados en el @sec:design.
-+ *Proceso de aprendizaje.* Se investiga y selecciona la herramienta adecuada de orquestación de agentes, @sec:agents, en conjunto con la arquitectura idónea para el proyecto en la @sec:eventdrivenarch. Este proceso implica un tiempo considerable dedicado a familiarizarse con el _software_ elegido y comprender su funcionamiento @waterfall[Cap. 6], enlazando con el objetivo O3 descrito en la @sec:objetivos.
++ *Proceso de aprendizaje.* Se investiga y selecciona la herramienta adecuada de orquestación de agentes, @sec:agents, en conjunto con la arquitectura idónea para el proyecto en la @sec:eventdrivenarch. Este proceso implica un tiempo considerable dedicado a familiarizarse con el _software_ elegido y comprender su funcionamiento @waterfall[Cap. 6], enlazando con el objetivo O1 descrito en la @sec:objetivos.
 
 + *Implementación y pruebas.* Se adopta un enfoque de prototipado, desarrollando los componentes de manera aislada y realizando iteraciones sobre ellos. Este planteamiento permite validar cada componente de forma independiente, así como realizar pruebas en un entorno controlado, tanto a nivel de componente como en el flujo completo de negocio. Este movimiento garantiza que se aborden los problemas de manera continua y se optimice el desarrollo según los resultados de las pruebas empíricas realizadas. 
 
@@ -27,6 +27,7 @@ El proyecto fija una duración total de 11 meses, aproximadamente 32 horas por m
 #figure(
   table(
     columns: 3,
+    align: (left + top, right + top, right + top),
     table.header(
       text(size: 10pt)[*Fase*],
       text(size: 10pt)[*Horas estimadas*],
@@ -37,8 +38,8 @@ El proyecto fija una duración total de 11 meses, aproximadamente 32 horas por m
     [Diseño de la Arquitectura], [35], [9,94],
     [Proceso de Aprendizaje], [67], [19,04],
     [Implementación y Pruebas], [96], [27,27],
-    [Reporte], [88], [25],
-    [*Total*], [*352*], [*100*]
+    [Reporte], [88], [25,00],
+    [*Total*], [*352*], [*100,00*]
   ),
   caption: [Desglose estimado de horas por fase del proyecto],
 ) <tab:timestamp>
@@ -70,14 +71,14 @@ Se introduce el presupuesto, basado en la estimación de tiempo y metodología d
     text(size: 10pt)[*Inicio*], [03/10/2025],
     text(size: 10pt)[*Fin*], [03/09/2026],
     text(size: 10pt)[*Duración*], [11 meses],
-    text(size: 10pt)[*Presupuesto*], [12.500,00#sym.euro],
+    text(size: 10pt)[*Presupuesto*], [13.000,00#sym.euro],
     
     table.hline() // 2. LÍNEA INFERIOR (Equivale a la que cerraba la tabla abajo)
   ),
   caption: [Información del proyecto],
 ) <tab:project>
 
-El balance disponible para el proyecto, se ha repartido en las distintas áreas siguiendo *la regla del 70/25*, destinando un 70% de los gastos a recursos humanos y un 25% a elementos materiales. Se ha reservado un 5% del total destinado a gastos improvistos, concretamente 625,00#sym.euro @waterfall[Cap. 12].
+El balance disponible para el proyecto, se ha repartido en las distintas áreas siguiendo *la regla del 70/25*, destinando un 70% de los gastos a recursos humanos y un 25% a elementos materiales. Se ha reservado un 5% del total destinado a gastos improvistos, concretamente 650,00#sym.euro @waterfall[Cap. 12].
 
 === Costes Directos
 Aquellos directamente relacionados con el desarrollo del proyecto @waterfall[Cap. 12]. Pueden distinguirse en dos grupos:
@@ -92,6 +93,7 @@ Es importante señalar que el rol de gerente de proyecto fue asumido por la figu
 #figure(
   table(
     columns: 4,
+    align: (left + top, right + top, right + top, right + top),
     table.header(
       text(size: 10pt)[*Rol*],
       text(size: 10pt)[*Horas*],
@@ -100,10 +102,10 @@ Es importante señalar que el rol de gerente de proyecto fue asumido por la figu
     ),
     table.hline(),
     [Gerente de Proyecto], [80], [41,20#sym.euro/h], [3.296,00#sym.euro],
-    [QA], [72], [23,57#sym.euro/h], [1.697,04#sym.euro],
-    [Desarrollador], [150], [21,20#sym.euro/h], [3.180,00#sym.euro],
+    [QA], [72], [25,21#sym.euro/h], [1.815,12#sym.euro],
+    [Desarrollador], [150], [23,57#sym.euro/h], [3535,50#sym.euro],
     [Analista], [50], [35,20#sym.euro/h], [1.760,00#sym.euro],
-    [*Total*], [*352*], [], [*9.933,04#sym.euro*]
+    [*Total*], [*352*], [], [*10.406,62#sym.euro*]
   ),
   caption: [Costes personales],
 ) <tab:personalcost>
@@ -113,6 +115,7 @@ Es importante señalar que el rol de gerente de proyecto fue asumido por la figu
 #figure(
   table(
     columns: (1.3fr, 1.2fr, 0.8fr, 0.9fr, 0.8fr),
+    align: (left + top, left + top, right + top, right + top, right + top),
     table.header(
       text(size: 10pt)[*Elemento*],
       text(size: 10pt)[*Uso*],
@@ -146,6 +149,7 @@ A continuación, se muestra el balance, en la @tab:indirectcost, de internet, lu
 #figure(
   table(
     columns: 4,
+    align: (left + top, right + top, right + top, right + top),
     table.header(
       text(size: 10pt)[*Recurso*],
       text(size: 10pt)[*Coste unitario*],
@@ -167,26 +171,29 @@ La @tab:totalcost incluye un sumario exhaustivo de todos los costes asociados a 
 #figure(
   table(
     columns: 2,
+    align: (left + top, right + top),
     table.header(
       text(size: 10pt)[*Descripción*],
       text(size: 10pt)[*Total*]
     ),
     table.hline(),
-    [Costes directos], [12.028,01#sym.euro],
+    [Costes directos], [12.501,59#sym.euro],
     [Costes indirectos], [440,00#sym.euro],
-    [*Costes totales*], [*12.468,01#sym.euro*],
-    [Presupuesto inicial], [12.500,00#sym.euro],
-    [*Superávit*], [*#sym.plus 31,99#sym.euro*]
+    [*Costes totales*], [*12.941,59#sym.euro*],
+    [Presupuesto inicial], [13.000,00#sym.euro],
+    table.hline(),
+    [*Superávit*], [*#sym.plus 268,41#sym.euro*#footnote[Incluye el remanente de la reserva de gastos imprevistos.]]
   ),
   caption: [Balance total],
 ) <tab:totalcost>
 
 === Propuesta de Venta <sec:vending>
-La @tab:vending ofrece una propuesta de venta del proyecto a una empresa de terceros, por un total de 24.686,65#sym.euro. Se han contemplado impuestos, beneficios y riesgos esperados, el costo total del trabajo (véase @tab:totalcost) y regalías. De manera adicional, se otorga la posibilidad de contratar personal mantenedor de la aplicación.
+La @tab:vending ofrece una propuesta de venta del proyecto a una empresa de terceros, por un total de 25.624,33#sym.euro. Se han contemplado impuestos, beneficios y riesgos esperados, el costo total del trabajo (véase @tab:totalcost) y regalías. De manera adicional, se otorga la posibilidad de contratar personal mantenedor de la aplicación.
 
 #figure(
   table(
     columns: 4,
+    align: (left + top, right + top, right + top, right + top),
     table.header(
       text(size: 10pt)[*Concepto*],
       text(size: 10pt)[*Afectación*],
@@ -194,12 +201,12 @@ La @tab:vending ofrece una propuesta de venta del proyecto a una empresa de terc
       text(size: 10pt)[*Coste agregado*],
     ),
     table.hline(),
-    [Coste del proyecto], [], [12.468,01#sym.euro], [12.468,01#sym.euro],
-    [Riesgo], [19%], [2.368,92#sym.euro], [14.836,93#sym.euro],
-    [Beneficio esperado], [8%], [997,44#sym.euro], [15.834,37#sym.euro],
-    [Impuestos], [21%], [2.618,28#sym.euro], [18.452,65#sym.euro],
-    [Regalías], [5%/año #footnote[Las regalías se dividen en 3% tutor y 2% estudiante.]], [623,40#sym.euro], [18.452,65#sym.euro #sym.plus 623,40#sym.euro #sym.times #sym.lambda#footnote[#sym.lambda #sym.eq número de años.]],
-    [*Total a 10 años*], [], [], [*24.686,65#sym.euro*]
+    [Coste del proyecto], [], [12.941,59#sym.euro], [12.941,59#sym.euro],
+    [Riesgo], [19%], [2.458,90#sym.euro], [15.400,49#sym.euro],
+    [Beneficio esperado], [8%], [1.035,32#sym.euro], [16.435,81#sym.euro],
+    [Impuestos], [21%], [2.717,73#sym.euro], [19.153,54#sym.euro],
+    [Regalías], [5%/año #footnote[Las regalías se dividen en 3% tutor y 2% estudiante.]], [647,07#sym.euro], [19.153,54#sym.euro #sym.plus 647,07#sym.euro #sym.times #sym.lambda#footnote[#sym.lambda #sym.eq número de años.]],
+    [*Total a 10 años*], [], [], [*25.624,33#sym.euro*]
   ),
   caption: [Propuesta de venta],
 ) <tab:vending>
@@ -210,36 +217,36 @@ A continuación, se discute la legislación que afecta al desarrollo, implementa
 === Legislación Aplicable <sec:applylaw>
 Durante el @sec:implementation de implementación, el _software_ y su desarrollo ha sido lanzado en múltiples ocasiones en un entorno @glossfoss controlado @opensourcellms. Posteriormente, en el transcurso del estudio de alternativas de orquestadores de agentes, @sec:agents, y la elección de arquitectura en la @sec:eventdrivenarch, tampoco ha recibido ni el sistema ni el modelo una comunicación con el exterior. 
 
-Cabe destacar que, si la propuesta de venta sale adelante, @sec:vending, y la aplicación acaba siendo expuesta al público, será necesario incluir una declaración de política de privacidad, así como solicitar permiso al usuario del tratamiento de sus datos en el proceso de registro y del tratamiendo de sus _cookies_ durante su navegación. Regulación presente en el @glossgdpr:long @gdpr y @glosslopdgdd:long @lopdgddlaw. Asimismo, el programa se alinea con el @glossaiact:long @aiactlaw garantizando la transparencia, la mitigación de sesgos, la supervisión humana y el despliegue de modelos de lenguaje bajo un enfoque basado en el riesgo.
+Cabe destacar que, si la propuesta de venta sale adelante, @sec:vending, y la aplicación acaba siendo expuesta al público, será necesario incluir una declaración de política de privacidad, así como solicitar permiso al usuario del tratamiento de sus datos en el proceso de registro y del tratamiendo de sus _cookies_ durante su navegación, en concordancia con el objetivo O4. Regulación presente en el @glossgdpr:long @gdpr y @glosslopdgdd:long @lopdgddlaw. Asimismo, el programa se alinea con el @glossaiact:long @aiactlaw garantizando la transparencia, la mitigación de sesgos, la supervisión humana y el despliegue de modelos de lenguaje bajo un enfoque basado en el riesgo.
 
 === Estándares y Marcos Técnicos <sec:standards>
 El _software_ desarrollado persigue los siguientes estándares y marcos regulatorios:
 - *Definición de Código Abierto, 2007.* Marco técnico y filosófico establecido por la Iniciativa para el Código Abierto, que determina los criterios para que un _software_ sea considerado de código abierto. El proyecto se rige por estos principios para garantizar la libre distribución, el acceso al código fuente y la interoperabilidad, apoyándose en licencias permisivas estandarizadas, presentes en la @sec:license, que fomentan la soberanía tecnológica frente a soluciones propietarias @osiosd.
-- *ISO/IEC 21778, 2017.* Formato de datos @glossjson, utilizado en la transmisión de información @isojson.
+- *ISO/IEC 21778, 2017.* Formato @glossjson, utilizado en la transmisión de información @isojson.
+- *ISO/IEC 21838, 2021.* Establece los requisitos para las ontologías de nivel superior @isoontology[Parte 1] y define la @glossbfo con dichos criterios @isoontology[Parte 2].
 - *ISO/IEC 27001, 2022.* Establece directrices sobre cómo implementar y gestionar controles de seguridad para proteger los datos relativos a la @sec:applylaw @isosecurity.
 - *ISO/IEC 42001, 2023.* Norma internacional pionera que especifica los requisitos para establecer, implementar, mantener y mejorar continuamente un sistema de gestión de inteligencia artificial @isoaimanagement.
 - *ISO/IEC 25002, 2024.* Define las características que debe cumplir un sistema para garantizar la calidad. Evalúa factores como usabilidad, eficiencia, seguridad, mantenibilidad y portabilidad, contemplados durante todo el desarrollo del _software_ @isoquality.
 - *OWASP Top 10 GenIA/LLM, 2025.* Extiende las directrices de seguridad tradicionales para abordar de manera específica las vulnerabilidades emergentes del uso de @glossai generativa. Se contempla en el @sec:design de diseño para mitigar riesgos críticos como inyecciones de _prompts_ @owasp[LLM01], divulgación de información sensible @owasp[LLM02] y la desinformación o alucinaciones del modelo @owasp[LLM09]. Especialmente relevante es la mitigación del manejo inadecuado de salidas @owasp[LLM05], abordado mediante el uso de salidas estructuradas, disponible su definición en la @sec:determinism, que validan y sanean la información antes de su integración en el sistema.
 
 === Licencias <sec:license>
-El desarrollo y distribución del presente sistema se fundamenta en los estándares mencionados en la @sec:standards, garantizando la transferencia de conocimiento, la transparencia y la soberanía tecnológica del usuario. Para la liberación del código fuente, se adopta la *licencia MIT*, que permite el uso, copia, modificación o distribución del código fuente sin restricciones o limitaciones. El código completo se encuentra disponible en un repositorio de GitHub#footnote[Disponible en https://github.com/gu4re/ontonova.project.]. Adicionalmente, se adopta un marco de trabajo @glossfoss en lo que a librerías se refiere, visible en la @tab:libraries, decisión que garantiza que la plataforma no dependa de intermediarios propietarios, alineada con el objetivo principal mencionado en la @sec:objetivos. 
+El desarrollo y distribución del presente sistema se fundamenta en los estándares mencionados en la @sec:standards, garantizando la transferencia de conocimiento, la transparencia y la soberanía tecnológica del usuario. Para la liberación del código fuente, se adopta la *licencia MIT*, que permite el uso, copia, modificación o distribución del código fuente sin restricciones o limitaciones. El código completo se encuentra disponible en un repositorio de GitHub @githubrepo. Adicionalmente, se adopta un marco de trabajo @glossfoss en lo que a librerías se refiere, visible en la @tab:libraries, decisión que garantiza que la plataforma no dependa de intermediarios propietarios, alineada con el objetivo principal mencionado en la @sec:objetivos. 
 
 En consonancia, se emplea la *licencia CC BY 4.0*#footnote[Creative Commons Attribution 4.0 International.] para la documentación, que permite compartir, copiar y redistribuir el material en cualquier medio o formato, así como adaptarlo para cualquier propósito, incluso comercial, siempre que se otorgue el crédito correspondiente al autor original.
 
 #figure(
   table(
     columns: 2,
+    align: (left + top, left + top),
     table.header(
-      text(size: 10pt)[*Complemento*],
-      text(size: 10pt)[*Licencia*]
+      text(size: 10pt)[*Licencia*],
+      text(size: 10pt)[*Complemento*]
     ),
     table.hline(),
-    [FastAPI], [MIT], 
-    [LangGraph], [MIT],
-    [Pydantic], [MIT],
-    [Uvicorn], [BSD 3-Clause],
-    [vLLM], [Apache License 2.0],
-    [React], [MIT]
+    [MIT], [FastAPI #sym.bullet LangGraph #sym.bullet Pydantic #sym.bullet React #sym.bullet Vite #sym.bullet Zustand], 
+    [BSD 3-Clause], [Uvicorn],
+    [Apache License 2.0], [vLLM]
+
   ),
   caption: [Licencias de complementos],
 ) <tab:libraries>
@@ -249,7 +256,7 @@ Se concibe un firme compromiso con la Agenda 2030 de las Naciones Unidas @ods. P
 
 Persiguiendo la necesidad actual de construir *infraestructuras* tecnológicas resilientes, promover la *industrialización* inclusiva y fomentar la *innovación* @ods[ODS 9], se apuesta por un ecosistema fundamentado íntegramente en software de código abierto, @glossfoss. Queda optimizada la ejecución de @glossllm en _hardware_ local, exponiendo una innovación disruptiva en el procesamiento de datos no estructurados. Esta aproximación reduce drásticamente la dependencia de infraestructuras propietarias en la nube y de servicios prestados por terceros, dotando a las organizaciones e instituciones de una infraestructura de datos soberana, independiente y altamente interoperable bajo los estándares de la Web Semántica del @glossw3c, disponibles en la @sec:semanticweb.
 
-La brecha digital contemporánea no solo se manifiesta en la falta de acceso a la red, sino en la incapacidad de participar activamente en la creación de las tecnologías subyacentes. El propósito central es romper las barreras técnicas e idiomáticas que segregan a los beneficiarios de la Web 3.0, generando una *reducción de las desigualdades* @ods[ODS 10]. Al ofrecer un entorno accesible y multilingüe, se garantiza que las limitaciones de idioma o la falta de destrezas en programación no impidan a los expertos del dominio diseñar y controlar los modelos de conocimiento, contribuyendo activamente a una distribución más equitativa del control sobre la información en el ecosistema digital.
+La brecha digital contemporánea no solo se manifiesta en la falta de acceso a la red, sino en la incapacidad de participar activamente en la creación de las tecnologías subyacentes. El propósito central es romper las barreras técnicas e idiomáticas que segregan a los beneficiarios de la Web 3.0, alineado con el objetivo O2, generando una *reducción de las desigualdades* @ods[ODS 10]. Al ofrecer un entorno accesible y multilingüe, marcado en el objetivo O3, se garantiza que las limitaciones de idioma o la falta de destrezas en programación no impidan a los expertos del dominio diseñar y controlar los modelos de conocimiento, contribuyendo activamente a una distribución más equitativa del control sobre la información en el ecosistema digital.
 
 == Entorno Socioeconómico <sec:socialcontext>
 El *proyecto OntoNova* surge en un contexto socioeconómico caracterizado por la adopción de la @glossai generativa como herramienta productiva, tanto en España como en el resto de países miembros de la Unión Europea. Tras una fase inicial de revelación masiva, impulsada por la sobreabundancia de información no estructurada y la experimentación a través de @glossllm de uso comercial, en el estudiantado y el ámbito empresarial se genera una nueva necesidad. Estructurar, verificar y dotar de sentido lógico a grandes volúmenes de texto, combatiendo la desinformación y el ruido digital bajo el estricto marco regulatorio europeo @edpb2025ai (e.g., @glossgdpr @gdpr y @glossaiact @aiactlaw).

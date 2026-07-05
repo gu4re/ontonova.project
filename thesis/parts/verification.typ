@@ -1,3 +1,3 @@
-= Verificación
+= Verificación <sec:verification>
 
 #lorem(30)

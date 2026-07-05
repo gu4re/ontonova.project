@@ -137,5 +137,53 @@
     short: "UML",
     long: "Lenguaje unificado de modelado",
     description: "Lenguaje gráfico de modelado para visualizar, especificar, construir y documentar un sistema."
+  ),
+  (
+    key: "glossbfo",
+    short: "BFO",
+    long: "Ontología Formal Básica",
+    description: "Ontología de nivel superior que sirve como un marco de referencia estandarizado para apoyar la integración, recuperación y análisis de datos científicos e información entre diferentes disciplinas."
+  ),
+  (
+    key: "glossincose",
+    short: "INCOSE",
+    long: "Organización Internacional de Ingeniería en Sistemas",
+    description: "Organización profesional dedicada a promover el desarrollo y aplicación de metodologías y prácticas en ingeniería de sistemas."
+  ),
+  (
+    key: "glosssus",
+    short: "SUS",
+    long: "Escala de Usabilidad del Sistema",
+    description: "Instrumento para medir la usabilidad de un sistema desde la perspectiva del usuario."
+  ),
+  (
+    key: "glossspa",
+    short: "SPA",
+    long: "Aplicación de Página Única",
+    description: "Arquitectura de aplicación web donde toda la lógica y el contenido se cargan en una sola página, mejorando la experiencia del usuario."
+  ),
+  (
+    key: "glossapi",
+    short: "API",
+    long: "Interfaz de Programación de Aplicaciones",
+    description: "Conjunto de reglas y protocolos que permiten a diferentes aplicaciones comunicarse entre sí."
+  ),
+  (
+    key: "glossgpu",
+    short: "GPU",
+    long: "Unidad de Procesamiento Gráfico",
+    description: "Componente hardware especializado en la renderización de imágenes y gráficos."
+  ),
+  (
+    key: "glossgbnf",
+    short: "GBNF",
+    long: "Gramática Backus-Naur para GGML",
+    description: "Formato de gramática utilizada para definir la estructura que debe seguir la respuesta de un modelo de lenguaje en la generación de texto."
+  ),
+  (
+    key: "glosscuda",
+    short: "CUDA",
+    long: "Arquitectura Unificada de Dispositivos de Cómputo",
+    description: "Modelo de programación y conjunto de instrucciones desarrollado por NVIDIA para el procesamiento paralelo en GPUs."
   )
 )

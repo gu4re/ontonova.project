@@ -1,0 +1,318 @@
+{
+  "categories": {
+    "classes": {
+      "matched": 7,
+      "generated": 7,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "hierarchy": {
+      "matched": 2,
+      "generated": 2,
+      "gold": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "object_properties": {
+      "matched": 8,
+      "generated": 8,
+      "gold": 8,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "data_properties": {
+      "matched": 3,
+      "generated": 3,
+      "gold": 3,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "individuals": {
+      "matched": 6,
+      "generated": 6,
+      "gold": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "op_assertions": {
+      "matched": 7,
+      "generated": 7,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "dp_assertions": {
+      "matched": 3,
+      "generated": 3,
+      "gold": 3,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "misses": {
+    "classes": [],
+    "hierarchy": [],
+    "object_properties": [],
+    "data_properties": [],
+    "individuals": [],
+    "op_assertions": [],
+    "dp_assertions": []
+  },
+  "spurious": {
+    "classes": [],
+    "object_properties": [],
+    "data_properties": [],
+    "individuals": []
+  },
+  "macro_f1": 1.0,
+  "retries": 1,
+  "payload": {
+    "classes": [
+      {
+        "metadata": {},
+        "id": "University",
+        "name": "University",
+        "subClassOf": null
+      },
+      {
+        "metadata": {},
+        "id": "Department",
+        "name": "Department",
+        "subClassOf": "University"
+      },
+      {
+        "metadata": {},
+        "id": "Person",
+        "name": "Person",
+        "subClassOf": null
+      },
+      {
+        "metadata": {},
+        "id": "Professor",
+        "name": "Professor",
+        "subClassOf": "Person"
+      },
+      {
+        "metadata": {},
+        "id": "Student",
+        "name": "Student",
+        "subClassOf": "Person"
+      },
+      {
+        "metadata": {},
+        "id": "Course",
+        "name": "Course",
+        "subClassOf": null
+      },
+      {
+        "metadata": {},
+        "id": "Facility",
+        "name": "Facility",
+        "subClassOf": null
+      }
+    ],
+    "object_properties": [
+      {
+        "metadata": {},
+        "id": "affiliatedWith",
+        "name": "Affiliated With",
+        "domain": "Person",
+        "range": "University",
+        "characteristics": []
+      },
+      {
+        "metadata": {},
+        "id": "worksFor",
+        "name": "Works For",
+        "domain": "Professor",
+        "range": "Department",
+        "characteristics": []
+      },
+      {
+        "metadata": {},
+        "id": "teaches",
+        "name": "Teaches",
+        "domain": "Professor",
+        "range": "Course",
+        "characteristics": []
+      },
+      {
+        "metadata": {},
+        "id": "enrolledIn",
+        "name": "Enrolled In",
+        "domain": "Student",
+        "range": "Course",
+        "characteristics": []
+      },
+      {
+        "metadata": {},
+        "id": "supervises",
+        "name": "Supervises",
+        "domain": "Professor",
+        "range": "Student",
+        "characteristics": []
+      },
+      {
+        "metadata": {},
+        "id": "offers",
+        "name": "Offers",
+        "domain": "Department",
+        "range": "Course",
+        "characteristics": []
+      },
+      {
+        "metadata": {},
+        "id": "partOf",
+        "name": "Part Of",
+        "domain": "Department",
+        "range": "University",
+        "characteristics": []
+      },
+      {
+        "metadata": {},
+        "id": "takesPlaceIn",
+        "name": "Takes Place In",
+        "domain": "Course",
+        "range": "Facility",
+        "characteristics": []
+      }
+    ],
+    "data_properties": [
+      {
+        "metadata": {},
+        "id": "foundedYear",
+        "name": "Founded Year",
+        "domain": "University",
+        "range": "xsd:integer"
+      },
+      {
+        "metadata": {},
+        "id": "creditsWorth",
+        "name": "Credits Worth",
+        "domain": "Course",
+        "range": "xsd:integer"
+      },
+      {
+        "metadata": {},
+        "id": "age",
+        "name": "Age",
+        "domain": "Person",
+        "range": "xsd:integer"
+      },
+      {
+        "metadata": {},
+        "id": "fullName",
+        "name": "Full Name",
+        "domain": "Person",
+        "range": "xsd:string"
+      },
+      {
+        "metadata": {},
+        "id": "courseName",
+        "name": "Course Name",
+        "domain": "Course",
+        "range": "xsd:string"
+      }
+    ],
+    "individuals": [
+      {
+        "metadata": {},
+        "id": "cambridgeUniversity",
+        "name": "Cambridge University",
+        "typeClass": "University",
+        "objectPropertyAssertions": {},
+        "dataPropertyAssertions": {
+          "foundedYear": 1209
+        }
+      },
+      {
+        "metadata": {},
+        "id": "computerScienceDept",
+        "name": "Department of Computer Science",
+        "typeClass": "Department",
+        "objectPropertyAssertions": {
+          "partOf": [
+            "cambridgeUniversity"
+          ],
+          "offers": [
+            "computabilityTheory"
+          ]
+        },
+        "dataPropertyAssertions": {}
+      },
+      {
+        "metadata": {},
+        "id": "alanTuring",
+        "name": "Alan Turing",
+        "typeClass": "Professor",
+        "objectPropertyAssertions": {
+          "affiliatedWith": [
+            "cambridgeUniversity"
+          ],
+          "worksFor": [
+            "computerScienceDept"
+          ],
+          "teaches": [
+            "computabilityTheory"
+          ],
+          "supervises": [
+            "adaLovelace"
+          ]
+        },
+        "dataPropertyAssertions": {
+          "age": 41,
+          "fullName": "Alan Turing"
+        }
+      },
+      {
+        "metadata": {},
+        "id": "adaLovelace",
+        "name": "Ada Lovelace",
+        "typeClass": "Student",
+        "objectPropertyAssertions": {
+          "affiliatedWith": [
+            "cambridgeUniversity"
+          ],
+          "enrolledIn": [
+            "computabilityTheory"
+          ]
+        },
+        "dataPropertyAssertions": {
+          "fullName": "Ada Lovelace",
+          "age": 25
+        }
+      },
+      {
+        "metadata": {},
+        "id": "computabilityTheory",
+        "name": "Computability Theory",
+        "typeClass": "Course",
+        "objectPropertyAssertions": {
+          "takesPlaceIn": [
+            "turingLaboratory"
+          ]
+        },
+        "dataPropertyAssertions": {
+          "creditsWorth": 6,
+          "courseName": "Computability Theory"
+        }
+      },
+      {
+        "metadata": {},
+        "id": "turingLaboratory",
+        "name": "Turing Laboratory",
+        "typeClass": "Facility",
+        "objectPropertyAssertions": {},
+        "dataPropertyAssertions": {}
+      }
+    ]
+  }
+}

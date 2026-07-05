@@ -1,0 +1,15 @@
+Nexolabs es un centro de investigación tecnológica fundado en 2015 en Zaragoza, España, dedicado al desarrollo de sistemas de energía renovable y robótica aplicada. La organización está estructurada en tres departamentos principales: el Departamento de Energía, el Departamento de Robótica y el Departamento de Software, cada uno dirigido por un director científico que reporta directamente a la Dirección General.
+
+El Departamento de Energía se subdivide en dos equipos: el Equipo de Almacenamiento, especializado en baterías de estado sólido, y el Equipo de Generación, centrado en paneles solares de perovskita. Ambos equipos comparten un laboratorio equipado con un espectrómetro de masas y una cámara de vacío, adquiridos en 2019 gracias a una subvención del Ministerio de Ciencia.
+
+El Departamento de Robótica desarrolla actualmente dos proyectos: ARIA, un brazo robótico colaborativo destinado a líneas de montaje industrial, y TERRA, un robot autónomo para inspección de cultivos agrícolas. TERRA utiliza sensores LiDAR fabricados por la empresa proveedora Sensortec y depende del software de navegación desarrollado por el Departamento de Software.
+
+El Departamento de Software mantiene una plataforma llamada NexOS, un sistema operativo ligero para dispositivos embebidos que da servicio tanto a ARIA como a TERRA. NexOS fue creado originalmente por la ingeniera Marta Duarte, quien más tarde pasó a dirigir el Departamento de Robótica tras la jubilación del anterior director, Pablo Iriarte.
+
+Nexolabs colabora con la Universidad de Zaragoza mediante un convenio firmado en 2018, que permite a estudiantes de doctorado realizar prácticas remuneradas en cualquiera de los tres departamentos. Como resultado de esta colaboración, el investigador Carlos Peña publicó en 2022 un artículo sobre baterías de estado sólido en la revista Journal of Applied Physics, citando datos obtenidos en el laboratorio compartido del Departamento de Energía.
+
+La empresa se financia mediante tres vías: contratos con clientes industriales, subvenciones públicas y una ronda de inversión privada cerrada en 2021 por valor de 4 millones de euros, liderada por el fondo Atlas Ventures. Este capital se destinó principalmente a ampliar el Equipo de Generación y a construir una segunda planta piloto en Huesca.
+
+Cada proyecto de Nexolabs pasa por cuatro fases obligatorias: investigación, prototipado, validación y producción. ARIA se encuentra actualmente en fase de validación, mientras que TERRA ya ha entrado en producción y se vende a cooperativas agrícolas de Aragón y Navarra. El Equipo de Almacenamiento, por su parte, sigue en fase de investigación, ya que sus baterías aún no superan las pruebas de seguridad exigidas por la normativa europea.
+
+La estructura jerárquica de Nexolabs es la siguiente: la Dirección General supervisa a los tres directores de departamento; cada director de departamento supervisa a los responsables de equipo o de proyecto; y estos, a su vez, supervisan a los ingenieros e investigadores junior. Actualmente la empresa cuenta con 62 empleados, de los cuales 40 son ingenieros, 15 investigadores y 7 forman parte del equipo directivo.

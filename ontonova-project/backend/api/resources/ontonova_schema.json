@@ -11,6 +11,7 @@
                 },
                 "id": {
                     "description": "Identificador único del atributo de datos (attr_camelCase).",
+                    "pattern": "^[A-Za-z0-9_]+$",
                     "title": "Id",
                     "type": "string"
                 },
@@ -21,11 +22,19 @@
                 },
                 "domain": {
                     "description": "ID de la Clase a la que pertenece el atributo.",
+                    "pattern": "^[A-Za-z0-9_]+$",
                     "title": "Domain",
                     "type": "string"
                 },
                 "range": {
-                    "description": "Tipo de dato primitivo XML Schema (ej. xsd:string, xsd:integer, xsd:boolean).",
+                    "description": "Tipo de dato primitivo XML Schema (xsd:string, xsd:integer, xsd:float, xsd:boolean o xsd:dateTime).",
+                    "enum": [
+                        "xsd:string",
+                        "xsd:integer",
+                        "xsd:float",
+                        "xsd:boolean",
+                        "xsd:dateTime"
+                    ],
                     "title": "Range",
                     "type": "string"
                 }
@@ -50,6 +59,7 @@
                 },
                 "id": {
                     "description": "Identificador único de la instancia (inst_camelCase o slug).",
+                    "pattern": "^[A-Za-z0-9_]+$",
                     "title": "Id",
                     "type": "string"
                 },
@@ -60,6 +70,7 @@
                 },
                 "typeClass": {
                     "description": "ID de la Clase a la que pertenece este individuo.",
+                    "pattern": "^[A-Za-z0-9_]+$",
                     "title": "Typeclass",
                     "type": "string"
                 },
@@ -100,6 +111,7 @@
                 },
                 "id": {
                     "description": "Identificador único de la propiedad de objeto (prop_camelCase).",
+                    "pattern": "^[A-Za-z0-9_]+$",
                     "title": "Id",
                     "type": "string"
                 },
@@ -110,17 +122,28 @@
                 },
                 "domain": {
                     "description": "ID de la Clase origen (Domain).",
+                    "pattern": "^[A-Za-z0-9_]+$",
                     "title": "Domain",
                     "type": "string"
                 },
                 "range": {
                     "description": "ID de la Clase destino (Range).",
+                    "pattern": "^[A-Za-z0-9_]+$",
                     "title": "Range",
                     "type": "string"
                 },
                 "characteristics": {
                     "description": "Características OWL opcionales (ej. Transitive, Symmetric, Functional).",
                     "items": {
+                        "enum": [
+                            "Functional",
+                            "InverseFunctional",
+                            "Transitive",
+                            "Symmetric",
+                            "Asymmetric",
+                            "Reflexive",
+                            "Irreflexive"
+                        ],
                         "type": "string"
                     },
                     "title": "Characteristics",
@@ -147,6 +170,7 @@
                 },
                 "id": {
                     "description": "Identificador único de la clase (ID_CamelCase).",
+                    "pattern": "^[A-Za-z0-9_]+$",
                     "title": "Id",
                     "type": "string"
                 },
@@ -158,6 +182,7 @@
                 "subClassOf": {
                     "anyOf": [
                         {
+                            "pattern": "^[A-Za-z0-9_]+$",
                             "type": "string"
                         },
                         {

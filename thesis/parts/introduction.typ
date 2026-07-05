@@ -16,13 +16,13 @@ El propósito principal consiste en diseñar y desarrollar un sistema del conoci
 #par(first-line-indent: 0pt)[
 A continuación, se listan los objetivos secundarios que complementan el objetivo principal:
 ]
-- *O1:* Obtener nuevos conocimientos en @glossai, profundizando en @glossllm, arquitectura, capacidades, limitaciones y mejoras, con el fin de adquirir, al menos, el nivel tres en la taxonomía de Bloom @bloomstaxonomy.
-- *O2:* Disminuir la barrera de entrada a la elaboración de ontologías, ofreciendo una alternativa más accesible y cercana al usuario.
-- *O3:* Proporcionar un sistema multilingüe que soporte, como mínimo, español e inglés.
-- *O4:* Cumplir con el marco regulatorio europeo vigente @edpb2025ai (e.g., @glossgdpr @gdpr y @glossaiact @aiactlaw), haciendo uso de validadores como _EU AI Act Compliance Checker_ @euaiactchecker.
-- *O5:* Diseñar una arquitectura siguiendo los estándares de seguridad, escalabilidad y patrones de diseño de software @gangoffour.
-- *O6:* Alinear el proyecto con los Objetivos de Desarrollo Sostenible @ods, representados en la @fig:ods[Figura].
+- *O1:*<O1> Obtener nuevos conocimientos en @glossai, indagando en @glossllm, arquitectura, capacidades y limitaciones, hasta adquirir, al menos, el nivel tres en la taxonomía de Bloom @bloomstaxonomy.
+- *O2:*<O2> Disminuir la barrera de entrada a la elaboración de ontologías, ofreciendo una alternativa más accesible y cercana al usuario.
+- *O3:*<O3> Proporcionar un sistema multilingüe que soporte, como mínimo, español e inglés.
+- *O4:*<O4> Cumplir con el marco regulatorio europeo vigente @edpb2025ai (e.g., @glossgdpr @gdpr y @glossaiact @aiactlaw), haciendo uso de validadores como _EU AI Act Compliance Checker_ @euaiactchecker.
+- *O5:*<O5> Diseñar una arquitectura siguiendo los estándares de seguridad, escalabilidad y patrones de diseño de software @gangoffour.
+- *O6:*<O6> Alinear el proyecto con los Objetivos de Desarrollo Sostenible @ods, representados en la @fig:ods[Figura].
   #figure(
-    image("../img/ods.png", width: 65%),
+    image("../img/ods.png", width: 80%),
     caption: [Objetivos de desarrollo sostenible.],
   ) <fig:ods>
