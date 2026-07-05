@@ -1,5 +1,22 @@
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Literal, Optional
 from pydantic import BaseModel, Field, ConfigDict
+
+# Enforced per prompts/GUIDANCE.md naming convention and OWASP LLM05 (Improper
+# Output Handling): identifiers flow verbatim into RDF URI local names in
+# services/rdf_compiler.py, so they must be constrained at the schema boundary
+# rather than trusted as free text from the LLM.
+_ID_PATTERN = r"^[A-Za-z0-9_]+$"
+
+XsdDatatype = Literal["xsd:string", "xsd:integer", "xsd:float", "xsd:boolean", "xsd:dateTime"]
+ObjectPropertyCharacteristic = Literal[
+    "Functional",
+    "InverseFunctional",
+    "Transitive",
+    "Symmetric",
+    "Asymmetric",
+    "Reflexive",
+    "Irreflexive",
+]
 
 # =====================================================================
 # CONFIGURACIÓN BASE PARA ESCALABILIDAD
@@ -18,39 +35,40 @@ class OntoBaseModel(BaseModel):
 # =====================================================================
 
 class OntoClass(OntoBaseModel):
-    id: str = Field(..., description="Identificador único de la clase (ID_CamelCase).")
+    id: str = Field(..., pattern=_ID_PATTERN, description="Identificador único de la clase (ID_CamelCase).")
     name: str = Field(..., description="Nombre legible por humanos en inglés o español.")
     subClassOf: Optional[str] = Field(
-        None, 
+        None,
+        pattern=_ID_PATTERN,
         description="ID de la clase padre si existe una jerarquía taxonómica."
     )
 
 
 class ObjectProperty(OntoBaseModel):
-    id: str = Field(..., description="Identificador único de la propiedad de objeto (prop_camelCase).")
+    id: str = Field(..., pattern=_ID_PATTERN, description="Identificador único de la propiedad de objeto (prop_camelCase).")
     name: str = Field(..., description="Nombre de la relación.")
-    domain: str = Field(..., description="ID de la Clase origen (Domain).")
-    range: str = Field(..., description="ID de la Clase destino (Range).")
-    characteristics: List[str] = Field(
+    domain: str = Field(..., pattern=_ID_PATTERN, description="ID de la Clase origen (Domain).")
+    range: str = Field(..., pattern=_ID_PATTERN, description="ID de la Clase destino (Range).")
+    characteristics: List[ObjectPropertyCharacteristic] = Field(
         default_factory=list,
         description="Características OWL opcionales (ej. Transitive, Symmetric, Functional)."
     )
 
 
 class DataProperty(OntoBaseModel):
-    id: str = Field(..., description="Identificador único del atributo de datos (attr_camelCase).")
+    id: str = Field(..., pattern=_ID_PATTERN, description="Identificador único del atributo de datos (attr_camelCase).")
     name: str = Field(..., description="Nombre del atributo.")
-    domain: str = Field(..., description="ID de la Clase a la que pertenece el atributo.")
-    range: str = Field(
-        ..., 
-        description="Tipo de dato primitivo XML Schema (ej. xsd:string, xsd:integer, xsd:boolean)."
+    domain: str = Field(..., pattern=_ID_PATTERN, description="ID de la Clase a la que pertenece el atributo.")
+    range: XsdDatatype = Field(
+        ...,
+        description="Tipo de dato primitivo XML Schema (xsd:string, xsd:integer, xsd:float, xsd:boolean o xsd:dateTime)."
     )
 
 
 class Individual(OntoBaseModel):
-    id: str = Field(..., description="Identificador único de la instancia (inst_camelCase o slug).")
+    id: str = Field(..., pattern=_ID_PATTERN, description="Identificador único de la instancia (inst_camelCase o slug).")
     name: str = Field(..., description="Nombre real de la entidad concreta.")
-    typeClass: str = Field(..., description="ID de la Clase a la que pertenece este individuo.")
+    typeClass: str = Field(..., pattern=_ID_PATTERN, description="ID de la Clase a la que pertenece este individuo.")
     
     # Asignaciones de relaciones con otros individuos: {"id_propiedad": ["id_individuo_destino"]}
     objectPropertyAssertions: Dict[str, List[str]] = Field(

@@ -1,0 +1,9 @@
+api/bin
+api/lib
+api/lib64
+api/include
+api/pyvenv.cfg
+**/__pycache__
+**/.pytest_cache
+.pytest_cache
+llm-server

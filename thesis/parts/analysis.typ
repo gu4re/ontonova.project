@@ -20,10 +20,10 @@ La gestión y calidad de requisitos toma como referencia las características de
 - *Modificable.* La estructura y estilo del documento de especificación deben permitir que los cambios se realicen de manera fácil, completa y consistente @isoieee[Cap. 4.3.7].
 - *Trazable.* Cada requisito funcional debe tener un origen bien definido @isoieee[Cap. 4.3.8].
 
-Posteriormente, la norma ISO/IEC/IEEE 29148:2018 @isoieee29148[Cap. 5.2] sustituye a @glossieee n.º 830-1998 @isoieee, manteniendo los principios fundamentales destacados y ampliándolos con nuevas características y atributos para los requisitos individuales y los conjuntos de requisitos, ofreciendo una clasificación más detallada y completa de los mismos.
+Posteriormente, la norma ISO/IEC/IEEE 29148:2018 @isoieee29148[Cap. 5.2] sustituye a @glossieee n.º 830-1998 @isoieee, que en combinación con ISO/IEC/IEEE 15288:2023 @isoieee15288, mantiene los principios fundamentales destacados, incorporando criterios de aceptación cuantificables conforme a las características y reglas de la guía de la @glossincose @incoseguide.
 
 == Exposición de Requisitos <sec:requirementexposition>
-La @tab:requisitetemplate enmarca el contenido de un requisito de usuario o de _software_, funcional y no funcional, del desarrollo de la aplicación. La nomenclatura utilizada es `REQ-XX-YY-ZZ`, siendo `XX` el identificador del requisito, `YY` el ámbito o grupo al que pertenece, `US` para usuario y `SW` para _software_, y `ZZ` el tipo de requisito, con los valores `FC` o `NF` indicando, funcional o no funcional, respectivamente.
+La @tab:requisitetemplate enmarca el contenido de un requisito de usuario o de _software_ del desarrollo de la aplicación. La nomenclatura utilizada es `REQ-XX-YY-ZZ`, siendo `XX` el identificador del requisito, `YY` el ámbito al que pertenece, `US` para usuario y `SW` para _software_, y `ZZ` el tipo de requisito, con los valores `FC` o `NF` indicando, funcional o no funcional, respectivamente.
 
 #figure(
   table(
@@ -35,7 +35,7 @@ La @tab:requisitetemplate enmarca el contenido de un requisito de usuario o de _
     ),
     table.hline(),
     text(size: 10pt)[*ID*], [REQ-XX-YY-ZZ.],
-    text(size: 10pt)[*Descripción*], [Descripción detallada del requisito.],
+    text(size: 10pt)[*Descripción*], [Descripción detallada del requisito con una *métrica cuantificable*.],
     text(size: 10pt)[*Carácter*], [Necesidad del usuario o del diseño #text(size: 10pt)[(Obligatorio, Conveniente u Opcional)].],
     text(size: 10pt)[*Prioridad*], [Importancia del requisito #text(size: 10pt)[(Alta, Media o Baja)].],
     text(size: 10pt)[*Estado*], [Situación durante el desarrollo #text(size: 10pt)[(Incluido, Viable o Requiere nuevo diseño)].#footnote[La clave entre viabilidad y complejidad reside en el grado de refactorización de la aplicación.]],
@@ -60,7 +60,7 @@ La @tab:funcuserrequisites representa los requisitos de usuario funcionales. Los
         text(size: 10pt)[*Descripción*]
       ),
       table.hline(),
-      
+
       [REQ-US-FC-01],
       [
         Carácter: Obligatorio. \
@@ -69,7 +69,7 @@ La @tab:funcuserrequisites representa los requisitos de usuario funcionales. Los
         Verificabilidad: Alta. \
         Origen: Usuario.
       ],
-      [El sistema permite al usuario introducir texto en lenguaje multilingüe a través de la interfaz web para iniciar el proceso de elaboración de una ontología.],
+      [El sistema permite al usuario introducir texto de hasta 15.000 caracteres, en al menos español e inglés, a través de la interfaz web para iniciar el proceso de elaboración de una ontología.],
 
       [REQ-US-FC-02],
       [
@@ -79,7 +79,7 @@ La @tab:funcuserrequisites representa los requisitos de usuario funcionales. Los
         Verificabilidad: Alta. \
         Origen: Gerente de Proyecto.
       ],
-      [La interfaz web debe ser capaz de mostrar el progreso del proceso de elaboración de una ontología en tiempo real.],
+      [La interfaz web muestra el progreso del proceso de elaboración de una ontología empleando eventos, con una latencia máxima de 1 segundo.],
       
       [REQ-US-FC-03],
       [
@@ -89,7 +89,7 @@ La @tab:funcuserrequisites representa los requisitos de usuario funcionales. Los
         Verificabilidad: Alta. \
         Origen: Gerente de Proyecto.
       ],
-      [El _backend_ debe construir una ontología bien formada, disponiendo de un motor de degradación elegante y una gestión de errores críticos garantizando la resiliencia del proceso.],
+      [El _backend_ debe construir una ontología que supere la validación sintáctica, disponiendo de un motor de degradación elegante que active un ciclo de corrección ante cada fallo, sin interrumpir el proceso.],
 
       [REQ-US-FC-04],
       [
@@ -99,7 +99,7 @@ La @tab:funcuserrequisites representa los requisitos de usuario funcionales. Los
         Verificabilidad: Alta. \
         Origen: Usuario.
       ],
-      [La interfaz web proporciona un lienzo interactivo que permite al usuario visualizar, modificar, añadir o eliminar las clases o nodos y aristas o relaciones del grafo generado.],
+      [La interfaz web proporciona un lienzo interactivo que permite al usuario visualizar, modificar, añadir o eliminar las clases o nodos y aristas o relaciones del grafo, ejecutando cada operación en un máximo de 3 interacciones.],
 
       [REQ-US-FC-05],
       [
@@ -109,7 +109,7 @@ La @tab:funcuserrequisites representa los requisitos de usuario funcionales. Los
         Verificabilidad: Alta. \
         Origen: REQ-US-FC-04.
       ],
-      [El usuario puede exportar la ontología final validada desde la interfaz web a un formato estándar @glossw3c para su uso en otras aplicaciones.],
+      [El usuario puede exportar la ontología final validada desde la interfaz web a un formato estándar @glossw3c, generando un archivo que supera un validador sintáctico sin errores.],
 
       [REQ-US-FC-06],
       [
@@ -119,12 +119,8 @@ La @tab:funcuserrequisites representa los requisitos de usuario funcionales. Los
         Verificabilidad: Media. \
         Origen: REQ-US-FC-04.
       ],
-      [El sistema permite el modelado y edición simultánea del grafo de conocimiento por parte de múltiples usuarios concurrentes.],
+      [El sistema permite el modelado y edición simultánea del grafo de conocimiento por al menos 2 usuarios concurrentes, con convergencia del estado compartido en menos de 2 segundos.],
 
-      table.cell(colspan: 3)[#colbreak()],
-      table.cell(colspan: 3)[#colbreak()],
-      table.cell(colspan: 3)[#colbreak()],
-      table.cell(colspan: 3)[#colbreak()],
       [REQ-US-FC-07],
       [
         Carácter: Conveniente. \
@@ -133,7 +129,7 @@ La @tab:funcuserrequisites representa los requisitos de usuario funcionales. Los
         Verificabilidad: Alta. \
         Origen: REQ-US-FC-04.
       ],
-      [El sistema incluye un histórico de versiones que registra el historial completo de modificaciones del grafo, permitiendo al usuario revertir y auditar cambios si es necesario.],
+      [El sistema incluye un histórico de versiones que registra el historial completo de modificaciones del grafo, permitiendo al usuario revertir y auditar cambios.],
 
       [REQ-US-FC-08],
       [
@@ -143,7 +139,7 @@ La @tab:funcuserrequisites representa los requisitos de usuario funcionales. Los
         Verificabilidad: Alta. \
         Origen: REQ-US-FC-05.
       ],
-      [El sistema permite la importación de ontologías existentes en formatos estándar @glossw3c a través de un recorrido web.],
+      [El sistema permite la importación de ontologías existentes en formatos estándar @glossw3c de hasta 5 MB a través de un recorrido web, sin pérdida de tripletas.],
 
       [REQ-US-FC-09],
       [
@@ -153,17 +149,17 @@ La @tab:funcuserrequisites representa los requisitos de usuario funcionales. Los
         Verificabilidad: Alta. \
         Origen: REQ-US-FC-07.
       ],
-      [Los usuarios deben poder registrarse en la plataforma proporcionando información válida.],
+      [Los usuarios deben poder registrarse en la plataforma proporcionando un correo con formato válido y una contraseña de al menos 8 caracteres.],
 
       [REQ-US-FC-10],
       [
         Carácter: Conveniente. \
-        Prioridad: Baja. \
-        Estado: Requiere nuevo diseño. \
+        Prioridad: Alta. \
+        Estado: Incluido. \
         Verificabilidad: Alta. \
-        Origen: REQ-US-FC-07/09.
+        Origen: Gerente de Proyecto.
       ],
-      [El sistema permite al usuario visualizar el lienzo interactivo de las ontologías pasadas en conjunto con el historial de modificaciones.],
+      [El sistema permite utilizar como entrada, desde la interfaz web, archivos planos o PDF de hasta 5 MB, en español e inglés, rechazando los que incumplan el requisito REQ-US-FC-01.]
     ),
     caption: [Requisitos funcionales de usuario],
   ) <tab:funcuserrequisites>
@@ -190,17 +186,17 @@ La @tab:funcuserrequisites representa los requisitos de usuario funcionales. Los
         Verificabilidad: Alta. \
         Origen: Usuario.
       ],
-      [La interfaz de usuario debe ser intuitiva y fácil de usar, permitiendo a los usuarios encontrar rápidamente la información que necesitan.],
+      [La interfaz de usuario debe ser intuitiva y fácil de usar, alcanzando una puntuación mínima de 70 en el cuestionario de @glosssus con, al menos, 5 usuarios de prueba.],
 
       [REQ-US-NF-02],
       [
         Carácter: Conveniente. \
         Prioridad: Media. \
         Estado: Incluido. \
-        Verificabilidad: Baja. \
+        Verificabilidad: Alta. \
         Origen: Usuario.
       ],
-      [La aplicación debe cargar en un tiempo considerablemente rápido como para no ralentizar las acciones del usuario.],
+      [La aplicación debe cargar en un tiempo máximo de 3 segundos y responder a las interacciones del usuario en menos de 200 milisegundos.],
       
       [REQ-US-NF-03],
       [
@@ -210,7 +206,7 @@ La @tab:funcuserrequisites representa los requisitos de usuario funcionales. Los
         Verificabilidad: Alta. \
         Origen: Usuario.
       ],
-      [Debe existir un sistema de soporte para ayudar a los usuarios con problemas técnicos y un plan de mantenimiento regular.],
+      [Debe existir un sistema de soporte para ayudar a los usuarios con problemas técnicos en un máximo de 24 horas, junto con un plan documentado de mantenimiento mensual.]
     ),
     caption: [Requisitos no funcionales de usuario],
   ) <tab:nofuncuserrequisites>
@@ -240,7 +236,7 @@ Contemplando el contenido de requisitos de la @tab:requisitetemplate, a continua
         Verificabilidad: Media. \
         Origen: REQ-US-NF-01/03.
       ],
-      [Incluir trazabilidad y métricas de usuario que sirvan para contribuir a la mejora continua.],
+      [Incluir trazabilidad y métricas de usuario, de forma que cada acción principal genere un evento registrado que contribuya a la mejora continua.],
 
       [REQ-SW-FC-02],
       [
@@ -250,7 +246,7 @@ Contemplando el contenido de requisitos de la @tab:requisitetemplate, a continua
         Verificabilidad: Alta. \
         Origen: Gerente de Proyecto.
       ],
-      [El sistema debe comunicarse con el motor de inferencia local utilizando un protocolo estándar, garantizando la independencia y modularidad del modelo subyacente.]
+      [El sistema debe comunicarse con el motor de inferencia local utilizando un protocolo estándar, de forma que la sustitución del modelo subyacente requiera solo cambios de configuración.],  
     ),
     caption: [Requisitos funcionales del sistema],
   ) <tab:funcsystemrequisites>
@@ -277,7 +273,7 @@ Contemplando el contenido de requisitos de la @tab:requisitetemplate, a continua
         Verificabilidad: Alta. \
         Origen: REQ-US-NF-01/03.
       ],
-      [Asegurar que la aplicación sea accesible para personas con discapacidad, cumpliendo con las @glosswcag @wcag2.],
+      [Asegurar que la aplicación sea accesible para personas con discapacidad, cumpliendo el nivel AA de las @glosswcag @wcag2 sin errores críticos.],
 
       [REQ-SW-NF-02],
       [
@@ -287,7 +283,7 @@ Contemplando el contenido de requisitos de la @tab:requisitetemplate, a continua
         Verificabilidad: Media. \
         Origen: Gerente de Proyecto.
       ],
-      [El _software_ debe ser desarrollado siguiendo los estándares de seguridad, escalabilidad y patrones de diseño de software @cleanarchitecture[Cap. 6], en concordancia con el objetivo O5 de la @sec:objetivos.],
+      [El _software_ debe ser desarrollado sin vulnerabilidades de severidad alta en las dependencias, comprobadas con herramientas de auditoría, siguiendo los patrones de diseño de software @cleanarchitecture[Cap. 6], en concordancia con el objetivo O5 de la @sec:objetivos.],
       
       [REQ-SW-NF-03],
       [
@@ -297,12 +293,8 @@ Contemplando el contenido de requisitos de la @tab:requisitetemplate, a continua
         Verificabilidad: Alta. \
         Origen: REQ-US-FC-01/03.
       ],
-      [La aplicación debe ser resiliente, lo que implica que debe poder manejar errores y recuperarse de fallos sin afectar la experiencia del usuario.],
+      [La aplicación debe ser resiliente, devolviendo ante cada error capturado una respuesta controlada al usuario, sin pérdida del estado del lienzo.],
 
-      table.cell(colspan: 3)[#colbreak()],
-      table.cell(colspan: 3)[#colbreak()],
-      table.cell(colspan: 3)[#colbreak()],
-      table.cell(colspan: 3)[#colbreak()],
       [REQ-SW-NF-04],
       [
         Carácter: Conveniente. \
@@ -311,7 +303,7 @@ Contemplando el contenido de requisitos de la @tab:requisitetemplate, a continua
         Verificabilidad: Alta. \
         Origen: Gerente de Proyecto.
       ],
-      [Incluir un marco de pruebas automatizadas para garantizar que el _software_ funcione correctamente.],
+      [Incluir un marco de pruebas automatizadas con una cobertura mínima del 80% sobre la lógica de negocio del sistema.],
 
       [REQ-SW-NF-05],
       [
@@ -321,17 +313,17 @@ Contemplando el contenido de requisitos de la @tab:requisitetemplate, a continua
         Verificabilidad: Alta. \
         Origen: Gerente de Proyecto.
       ],
-      [La aplicación debe estar acompañada de una documentación técnica, que incluya guías de instalación, uso y mantenimiento del _software_.],
+      [La aplicación debe estar acompañada de una documentación técnica ---instalación, uso y mantenimiento--- que permita a un tercero completar un despliegue local limpio por sí mismo.],
 
       [REQ-SW-NF-06],
       [
         Carácter: Conveniente. \
         Prioridad: Media. \
         Estado: Incluido. \
-        Verificabilidad: Alta. \
+        Verificabilidad: Media. \
         Origen: Gerente de Proyecto.
       ],
-      [La arquitectura del sistema debe permitir la adición de nuevas funcionalidades y la gestión de un aumento en el número de usuarios sin necesidad de rediseño completo @cleanarchitecture[Cap. 10].],
+      [La arquitectura del sistema debe permitir la adición de nuevas funcionalidades, manteniendo el principio de abierto-cerrado @cleanarchitecture[Cap. 8] y la gestión de un aumento en el número de usuarios sin necesidad de rediseño completo @cleanarchitecture[Cap. 10].],
       [REQ-SW-NF-07],
       [
         Carácter: Obligatorio. \
@@ -340,7 +332,7 @@ Contemplando el contenido de requisitos de la @tab:requisitetemplate, a continua
         Verificabilidad: Alta. \
         Origen: REQ-US-FC-09.
       ],
-      [Implementar medidas de seguridad robustas, como la autenticación y autorización, para proteger los datos de los usuarios y prevenir accesos no autorizados.],
+      [Implementar controles de acceso con autenticación y autorización, almacenando las credenciales de los usuarios con _hash_ y _salt_ para prevenir accesos no autorizados.],
       [REQ-SW-NF-08],
       [
         Carácter: Conveniente. \
@@ -349,7 +341,7 @@ Contemplando el contenido de requisitos de la @tab:requisitetemplate, a continua
         Verificabilidad: Alta. \
         Origen: Gerente de Proyecto.
       ],
-      [El sistema debe estar contenerizado para asegurar un despliegue ágil, predecible y agnóstico respecto a la infraestructura de _hardware_ local.]
+      [El sistema debe estar contenerizado para asegurar un despliegue ágil en menos de 5 minutos, predecible y agnóstico respecto a la infraestructura de _hardware_ local.]
     ),
     caption: [Requisitos no funcionales del sistema],
   ) <tab:nofuncsystemrequisites>
@@ -365,7 +357,7 @@ En esta sección, los principales casos de uso están ligados a los requisitos i
 - *Actores involucrados.* Usuario y sistema.
 - *Flujo principal.* El usuario accede al formulario, introduce el texto descriptivo del dominio y solicita la creación de la ontología. El sistema provee de la semántica, en una conexión asíncrona, validada y lista para ser renderizada sobre el lienzo interactivo.
 - *Flujo secundario.* En caso de error o de generación de una estructura inválida, el sistema activa el motor de degradación elegante y ejecuta un ciclo de corrección alertando al usuario.
-- *Requisitos de usuario asociados.* REQ-US-FC-01, REQ-US-FC-02, REQ-US-FC-03.
+- *Requisitos de usuario asociados.* REQ-US-FC-01, REQ-US-FC-02, REQ-US-FC-03, REQ-US-FC-10.
 
 #heading(level: 4, numbering: none)[
   Edición de una ontología

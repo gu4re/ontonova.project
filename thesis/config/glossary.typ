@@ -137,5 +137,23 @@
     short: "UML",
     long: "Lenguaje unificado de modelado",
     description: "Lenguaje gráfico de modelado para visualizar, especificar, construir y documentar un sistema."
+  ),
+  (
+    key: "glossbfo",
+    short: "BFO",
+    long: "Ontología Formal Básica",
+    description: "Ontología de nivel superior que sirve como un marco de referencia estandarizado para apoyar la integración, recuperación y análisis de datos científicos e información entre diferentes disciplinas."
+  ),
+  (
+    key: "glossincose",
+    short: "INCOSE",
+    long: "Organización Internacional de Ingeniería en Sistemas",
+    description: "Organización profesional dedicada a promover el desarrollo y aplicación de metodologías y prácticas en ingeniería de sistemas."
+  ),
+  (
+    key: "glosssus",
+    short: "SUS",
+    long: "Escala de Usabilidad del Sistema",
+    description: "Instrumento para medir la usabilidad de un sistema desde la perspectiva del usuario."
   )
 )

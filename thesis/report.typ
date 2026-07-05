@@ -68,7 +68,7 @@
 
     Hago extensivo mi agradecimiento a Verisure ---Securitas Direct---, empresa que apuesta cada día por mi desarrollo y aprendizaje, facilitando económicamente mi presencia en el plan de formación impartido por la UC3M. Me enorgullece anunciar que mi travesía retorna con nuevo conocimiento listo para ser trasladado al mundo laboral.
 
-    Finalmente, quiero dar las gracias a la comunidad de código abierto. Es magnífico observar que personas de distintas culturas, religiones y ámbitos sociales unen fuerzas para una misma causa. Espero que en el futuro mantengan la reputación que merecen.
+    Finalmente, quiero dar las gracias a la comunidad de código abierto. Es magnífico observar que personas de distintas culturas, religiones y ámbitos sociales unen fuerzas para una misma causa. Espero que en el futuro tengan la reputación que merecen.
   ],
   outlines: (
     // contents is compulsory

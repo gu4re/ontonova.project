@@ -99,3 +99,31 @@ En la @tab:eda se exponen los diversos paradigmas de comunicación aplicables a 
 Por un lado, exigir a la aplicación web que consulte repetidamente al servidor, _polling_, satura la red, mientras que esperar a la conclusión total del modelo, _ @glossrest _, degrada drásticamente la interactividad. Por otro lado, aunque protocolos como _Web Sockets_ habilitan la comunicación fluida en tiempo real, su naturaleza persistente y bidireccional introduce una sobrecarga innecesaria y un consumo de recursos excesivo para un flujo donde el cliente actúa como receptor una vez emitida la petición inicial. 
 
 En consecuencia, la tecnología _@glosssse _emerge como el estándar técnico idóneo para la transmisión asíncrona en plataformas semánticas @eda[Cap. 11]. Operando de forma nativa sobre el @glosshttp, @glosssse permite al servidor unidireccionalmente empujar, _push_, los eventos y estados de _LangGraph_ hacia el cliente a medida que se generan.
+
+== OntoNova <sec:sbcaialternatives>
+Resulta imperativo evaluar el panorama de herramientas destinadas a la construcción y gestión de ontologías, con el fin de justificar OntoNova, el sistema de gestión del conocimiento multilingüe. El ecosistema de extracción y modelado de conocimiento describe distintas alternativas que, si bien resuelven problemas específicos, manifiestan carencias significativas en entornos productivos modernos.
+
+Los editores semánticos tradicionales, tales como Protégé o TopBraid Composer, anuncian el cumplimiento estricto de los estándares semánticos, anticipados en la @sec:semanticweb. No obstante, su diseño asume que el operador es un ingeniero del conocimiento altamente cualificado, ralentizando la digitalización de los procesos empresariales @knowledgebottleneck. En adición, el ámbito del aprendizaje ontológico solventa el modelado de conocimiento con herramientas clásicas como `Text2Onto` @text2onto. Sin embargo, la generación de estructuras taxonómicas superficiales utilizando análisis estadístico y @glossnlp, no alcanza el nivel de expresividad y consistencia requerido por el estándar @glossowl soberanamente, requiriendo una participación humana. 
+
+Seguido de la democratización de la @glossai, el uso de interfaces conversacionales genéricas impulsadas por un @glossllm, como ChatGPT, emerge como una alternativa accesible para la lluvia de ideas y la conceptualización de dominios. No obstante, estas herramientas ofrecen una caja negra de propósito general, anticipada en la @sec:inference. En consecuencia, al carecer de integraciones arquitectónicas que aseguren el determinismo sintáctico, @sec:determinism, la construcción de una ontología sufre invariablemente de alucinaciones, omisiones estructurales o sintaxis inválida, requiriendo de una participación humana. En el ámbito de la ingeniería bioinformática nace OntoGPT @ontogpt, que analiza texto y extrae conceptos para poblar una ontología preexistente con la ayuda de la @glossai generativa. Entre sus características destacan su enfoque iterativo, orientación a linea de comandos y su arraigo al sector de la biociencia. 
+
+Como alternativa abierta a estos sistemas existentes se crea OntoNova, reuniendo métricas objetivo clave, recogidas en la comparativa de la @tab:ontotools, para impulsar al sector del conocimiento de vuelta al protagonismo.
+
+#figure(
+  table(
+    columns: 5,
+    table.header(
+      text(size: 10pt)[*Herramienta*],
+      text(size: 10pt)[*Determinismo*],
+      text(size: 10pt)[*Gestión errores*],
+      text(size: 10pt)[*Multilingüe*],
+      text(size: 10pt)[*Usuario final*]
+    ),
+    table.hline(),
+    [Protégé], [Estricto], [Manual], [No], [Ingeniero],
+    [ChatGPT], [Estocástico], [Manual], [Sí], [Universal],
+    [OntoGPT], [Estricto], [Manual], [No], [Ingeniero],
+    [OntoNova], [Estricto], [Autónoma], [Sí], [Experto],
+  ),
+  caption: [Comparativa de herramientas para la gestión y modelado ontológico.],
+) <tab:ontotools>

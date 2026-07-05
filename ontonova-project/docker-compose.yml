@@ -1,0 +1,80 @@
+# `docker compose up --build` brings up the full OntoNova stack — vLLM
+# (GPU-backed local inference engine), the FastAPI backend, and the React
+# frontend — satisfying REQ-SW-NF-08 (containerized, hardware-agnostic
+# deployment). Requires a host with an NVIDIA GPU + the NVIDIA Container
+# Toolkit installed (see README.md).
+#
+# To point at a vLLM instance you already run elsewhere instead of the
+# bundled one, set TAXONOMIST_BASE_URL/RELATIONAL_BASE_URL/POPULATOR_BASE_URL
+# in a .env file and run `docker compose up backend frontend`.
+services:
+  vllm:
+    # Pinned to v0.9.2: v0.24.0 (and the V1 "GPUModelRunnerV2" engine it
+    # ships) crashes on WSL2 with `RuntimeError: UVA is not available` —
+    # WSL2's virtualized GPU driver doesn't support the unified-addressing
+    # buffers that engine now requires unconditionally. v0.9.2 predates that
+    # refactor and was verified end-to-end on this GPU/WSL2 host.
+    image: vllm/vllm-openai:v0.9.2
+    command:
+      - --model
+      - ${LLM_MODEL_NAME:-Qwen/Qwen3-14B-AWQ}
+      - --dtype
+      - float16
+      - --gpu-memory-utilization
+      - "0.7322"
+      - --max-model-len
+      - "16384"
+      - --port
+      - "8000"
+    ports:
+      - "8000:8000"
+    ipc: host
+    environment:
+      HUGGING_FACE_HUB_TOKEN: ${HUGGING_FACE_HUB_TOKEN:-}
+    volumes:
+      - huggingface_cache:/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    healthcheck:
+      # Model download + load on first run can take several minutes; the
+      # generous start_period keeps that from being reported as unhealthy.
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 60
+      start_period: 600s
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: api/Dockerfile
+    ports:
+      - "8001:8000"
+    environment:
+      TAXONOMIST_BASE_URL: ${TAXONOMIST_BASE_URL:-http://vllm:8000/v1}
+      RELATIONAL_BASE_URL: ${RELATIONAL_BASE_URL:-http://vllm:8000/v1}
+      POPULATOR_BASE_URL: ${POPULATOR_BASE_URL:-http://vllm:8000/v1}
+      LLM_MODEL_NAME: ${LLM_MODEL_NAME:-Qwen/Qwen3-14B-AWQ}
+      LLM_REQUEST_TIMEOUT_SECONDS: ${LLM_REQUEST_TIMEOUT_SECONDS:-300}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173}
+    depends_on:
+      vllm:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://localhost:8001}
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  huggingface_cache:
