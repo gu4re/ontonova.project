@@ -1,0 +1,76 @@
+# =========================
+# Python
+# =========================
+
+# Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+**/lib/
+**/include/
+**/bin/
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Type checkers
+.mypy_cache/
+.pyre/
+.pytype/
+
+# Linters
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# =========================
+# Typst
+# =========================
+
+# Typst cache
+.typst/
+
+# Output files
+*.pdf
+*.png
+*.svg
+
+# Temporary files
+*.tmp
+
+# =========================
+# Environment variables
+# =========================
+
+.env
+.env.*
