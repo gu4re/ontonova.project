@@ -1,0 +1,78 @@
+{
+ "respuestas": {
+  "U1 Ing. Software": [
+   4,
+   3,
+   4,
+   2,
+   3,
+   2,
+   4,
+   3,
+   4,
+   2
+  ],
+  "U2 Jefe de Almacén": [
+   4,
+   2,
+   5,
+   2,
+   4,
+   2,
+   5,
+   2,
+   4,
+   2
+  ],
+  "U3 Gerente Grandes Cuentas": [
+   4,
+   2,
+   4,
+   2,
+   4,
+   2,
+   4,
+   2,
+   4,
+   2
+  ],
+  "U4 Estudiante Artes": [
+   5,
+   2,
+   5,
+   1,
+   4,
+   1,
+   5,
+   1,
+   5,
+   1
+  ],
+  "U5 Entrenador personal": [
+   4,
+   3,
+   4,
+   3,
+   4,
+   2,
+   4,
+   3,
+   4,
+   3
+  ]
+ },
+ "puntuaciones": {
+  "U1 Ing. Software": 67.5,
+  "U2 Jefe de Almacén": 80.0,
+  "U3 Gerente Grandes Cuentas": 75.0,
+  "U4 Estudiante Artes": 95.0,
+  "U5 Entrenador personal": 65.0
+ },
+ "media": 76.5,
+ "mediana": 75.0,
+ "desviacion_tipica_muestral": 11.9,
+ "min": 65.0,
+ "max": 95.0,
+ "umbral": 70,
+ "cumple": true
+}

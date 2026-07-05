@@ -1,0 +1,282 @@
+@prefix onto: <http://ontonova.local/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+onto:EnergyDepartment_2 a onto:EnergyDepartment,
+        owl:NamedIndividual ;
+    rdfs:label "Departamento De Energía" ;
+    onto:hasSubteam onto:StorageTeam_2 .
+
+onto:GenerationTeam_2 a onto:GenerationTeam,
+        owl:NamedIndividual ;
+    rdfs:label "Equipo De Generación" .
+
+onto:IndustrialContract_2 a onto:IndustrialContract,
+        owl:NamedIndividual ;
+    rdfs:label "Contrato con Cliente Industrial" .
+
+onto:Nexolabs a onto:ResearchCenter,
+        owl:NamedIndividual ;
+    rdfs:label "Nexolabs" ;
+    onto:establishedYear 2015 ;
+    onto:location "Zaragoza, España"^^xsd:string .
+
+onto:PrivateInvestmentRound_2 a onto:PrivateInvestmentRound,
+        owl:NamedIndividual ;
+    rdfs:label "Ronda de Inversión Privada de 4 Millones de Euros" ;
+    onto:investmentAmount 4000000 ;
+    onto:ledBy onto:AtlasVenturesFund_2 .
+
+onto:PublicSubsidy_2 a onto:PublicSubsidy,
+        owl:NamedIndividual ;
+    rdfs:label "Subvención Pública del Ministerio de Ciencia" .
+
+onto:UniversityCollaborationAgreement_2 a onto:UniversityCollaborationAgreement,
+        owl:NamedIndividual ;
+    rdfs:label "Acuerdo de Colaboración Universitaria con la Universidad de Zaragoza" .
+
+onto:collaboratesWith a owl:ObjectProperty ;
+    rdfs:label "ColaboraCon" ;
+    rdfs:domain onto:ResearchCenter ;
+    rdfs:range onto:UniversityCollaborationAgreement .
+
+onto:currentlyIn a owl:ObjectProperty ;
+    rdfs:label "ActualmenteEn" ;
+    rdfs:domain onto:ARIAProject ;
+    rdfs:range onto:ValidationPhase .
+
+onto:currentlyIn_2 a owl:ObjectProperty ;
+    rdfs:label "ActualmenteEn" ;
+    rdfs:domain onto:TERRAProject ;
+    rdfs:range onto:ProductionPhase .
+
+onto:develops a owl:ObjectProperty ;
+    rdfs:label "Desarrolla" ;
+    rdfs:domain onto:RoboticsDepartment ;
+    rdfs:range onto:ARIAProject .
+
+onto:develops_2 a owl:ObjectProperty ;
+    rdfs:label "Desarrolla" ;
+    rdfs:domain onto:RoboticsDepartment ;
+    rdfs:range onto:TERRAProject .
+
+onto:employeeCount a owl:DatatypeProperty ;
+    rdfs:label "NumeroDeEmpleados" ;
+    rdfs:domain onto:ResearchCenter ;
+    rdfs:range xsd:integer .
+
+onto:employs a owl:ObjectProperty ;
+    rdfs:label "Emplea" ;
+    rdfs:domain onto:ResearchCenter ;
+    rdfs:range onto:Engineer .
+
+onto:employs_2 a owl:ObjectProperty ;
+    rdfs:label "Emplea" ;
+    rdfs:domain onto:ResearchCenter ;
+    rdfs:range onto:ResearchEmployee .
+
+onto:engineersCount a owl:DatatypeProperty ;
+    rdfs:label "NumeroDeIngenieros" ;
+    rdfs:domain onto:ResearchCenter ;
+    rdfs:range xsd:integer .
+
+onto:equipmentPurchaseYear a owl:DatatypeProperty ;
+    rdfs:label "AñoDeAdquisicionDelEquipamiento" ;
+    rdfs:domain onto:SharedLab ;
+    rdfs:range xsd:integer .
+
+onto:establishedYear a owl:DatatypeProperty ;
+    rdfs:label "AñoDeFundacion" ;
+    rdfs:domain onto:ResearchCenter ;
+    rdfs:range xsd:integer .
+
+onto:fundedThrough a owl:ObjectProperty ;
+    rdfs:label "FinanciadoMediante" ;
+    rdfs:domain onto:ResearchCenter ;
+    rdfs:range onto:IndustrialContract .
+
+onto:fundedThrough_2 a owl:ObjectProperty ;
+    rdfs:label "FinanciadoMediante" ;
+    rdfs:domain onto:ResearchCenter ;
+    rdfs:range onto:PublicSubsidy .
+
+onto:fundedThrough_3 a owl:ObjectProperty ;
+    rdfs:label "FinanciadoMediante" ;
+    rdfs:domain onto:ResearchCenter ;
+    rdfs:range onto:PrivateInvestmentRound .
+
+onto:hasSubteam a owl:ObjectProperty ;
+    rdfs:label "TieneSubequipo" ;
+    rdfs:domain onto:EnergyDepartment ;
+    rdfs:range onto:StorageTeam .
+
+onto:hasSubteam_2 a owl:ObjectProperty ;
+    rdfs:label "TieneSubequipo" ;
+    rdfs:domain onto:EnergyDepartment ;
+    rdfs:range onto:GenerationTeam .
+
+onto:investmentAmount a owl:DatatypeProperty ;
+    rdfs:label "CantidadDeInversion" ;
+    rdfs:domain onto:PrivateInvestmentRound ;
+    rdfs:range xsd:integer .
+
+onto:involves a owl:ObjectProperty ;
+    rdfs:label "Implica" ;
+    rdfs:domain onto:DevelopmentPhase ;
+    rdfs:range onto:Engineer .
+
+onto:isPartOf a owl:ObjectProperty ;
+    rdfs:label "EsParteDe" ;
+    rdfs:domain onto:EnergyDepartment ;
+    rdfs:range onto:ResearchCenter .
+
+onto:ledBy a owl:ObjectProperty ;
+    rdfs:label "LideradoPor" ;
+    rdfs:domain onto:PrivateInvestmentRound ;
+    rdfs:range onto:AtlasVenturesFund .
+
+onto:location a owl:DatatypeProperty ;
+    rdfs:label "Ubicacion" ;
+    rdfs:domain onto:ResearchCenter ;
+    rdfs:range xsd:string .
+
+onto:managementStaffCount a owl:DatatypeProperty ;
+    rdfs:label "NumeroDePersonalDirectivo" ;
+    rdfs:domain onto:ResearchCenter ;
+    rdfs:range xsd:integer .
+
+onto:passesThrough a owl:ObjectProperty ;
+    rdfs:label "PasaPor" ;
+    rdfs:domain onto:ARIAProject ;
+    rdfs:range onto:DevelopmentPhase .
+
+onto:passesThrough_2 a owl:ObjectProperty ;
+    rdfs:label "PasaPor" ;
+    rdfs:domain onto:ARIAProject ;
+    rdfs:range onto:ValidationPhase .
+
+onto:passesThrough_3 a owl:ObjectProperty ;
+    rdfs:label "PasaPor" ;
+    rdfs:domain onto:TERRAProject ;
+    rdfs:range onto:ValidationPhase .
+
+onto:passesThrough_4 a owl:ObjectProperty ;
+    rdfs:label "PasaPor" ;
+    rdfs:domain onto:TERRAProject ;
+    rdfs:range onto:ProductionPhase .
+
+onto:provides a owl:ObjectProperty ;
+    rdfs:label "Proporciona" ;
+    rdfs:domain onto:SoftwareDepartment ;
+    rdfs:range onto:LightweightOperatingSystem .
+
+onto:requires a owl:ObjectProperty ;
+    rdfs:label "Requiere" ;
+    rdfs:domain onto:DevelopmentPhase ;
+    rdfs:range onto:ResearchEmployee .
+
+onto:researchEmployeesCount a owl:DatatypeProperty ;
+    rdfs:label "NumeroDeEmpleadosDeInvestigacion" ;
+    rdfs:domain onto:ResearchCenter ;
+    rdfs:range xsd:integer .
+
+onto:supervises_4 a owl:ObjectProperty ;
+    rdfs:label "Supervisa" ;
+    rdfs:domain onto:EnergyDepartment ;
+    rdfs:range onto:StorageTeam .
+
+onto:supervises_5 a owl:ObjectProperty ;
+    rdfs:label "Supervisa" ;
+    rdfs:domain onto:EnergyDepartment ;
+    rdfs:range onto:GenerationTeam .
+
+onto:supports a owl:ObjectProperty ;
+    rdfs:label "Apoya" ;
+    rdfs:domain onto:PublicSubsidy ;
+    rdfs:range onto:SharedLab .
+
+onto:usesEquipment a owl:ObjectProperty ;
+    rdfs:label "UsaEquipamiento" ;
+    rdfs:domain onto:StorageTeam ;
+    rdfs:range onto:SharedLab .
+
+onto:usesEquipment_2 a owl:ObjectProperty ;
+    rdfs:label "UsaEquipamiento" ;
+    rdfs:domain onto:GenerationTeam ;
+    rdfs:range onto:SharedLab .
+
+onto:AtlasVenturesFund_2 a onto:AtlasVenturesFund,
+        owl:NamedIndividual ;
+    rdfs:label "Fondo Atlas Ventures" .
+
+onto:LightweightOperatingSystem a owl:Class ;
+    rdfs:label "SistemaOperativoLiviano" .
+
+onto:SharedLab_2 a onto:SharedLab,
+        owl:NamedIndividual ;
+    rdfs:label "Laboratorio Compartido" ;
+    onto:equipmentPurchaseYear 2019 .
+
+onto:SoftwareDepartment a owl:Class ;
+    rdfs:label "DepartamentoDeSoftware" .
+
+onto:StorageTeam_2 a onto:StorageTeam,
+        owl:NamedIndividual ;
+    rdfs:label "Equipo De Almacenamiento" ;
+    onto:usesEquipment onto:SharedLab_2 .
+
+onto:AtlasVenturesFund a owl:Class ;
+    rdfs:label "FondoAtlasVentures" .
+
+onto:Engineer a owl:Class ;
+    rdfs:label "Ingeniero" .
+
+onto:IndustrialContract a owl:Class ;
+    rdfs:label "ContratoConClienteIndustrial" .
+
+onto:ProductionPhase a owl:Class ;
+    rdfs:label "FaseDeProduccion" .
+
+onto:ResearchEmployee a owl:Class ;
+    rdfs:label "EmpleadoDeInvestigacion" .
+
+onto:RoboticsDepartment a owl:Class ;
+    rdfs:label "DepartamentoDeRoboticas" .
+
+onto:UniversityCollaborationAgreement a owl:Class ;
+    rdfs:label "AcuerdoDeColaboracionUniversitaria" .
+
+onto:DevelopmentPhase a owl:Class ;
+    rdfs:label "FaseDeDesarrollo" .
+
+onto:PublicSubsidy a owl:Class ;
+    rdfs:label "SubvencionPublica" .
+
+onto:ValidationPhase a owl:Class ;
+    rdfs:label "FaseDeValidacion" .
+
+onto:ARIAProject a owl:Class ;
+    rdfs:label "ProyectoARIA" .
+
+onto:GenerationTeam a owl:Class ;
+    rdfs:label "EquipoDeGeneracion" .
+
+onto:PrivateInvestmentRound a owl:Class ;
+    rdfs:label "RondaDeInversionPrivada" .
+
+onto:StorageTeam a owl:Class ;
+    rdfs:label "EquipoDeAlmacenamiento" .
+
+onto:TERRAProject a owl:Class ;
+    rdfs:label "ProyectoTERRA" .
+
+onto:SharedLab a owl:Class ;
+    rdfs:label "LaboratorioCompartido" .
+
+onto:EnergyDepartment a owl:Class ;
+    rdfs:label "DepartamentoDeEnergia" .
+
+onto:ResearchCenter a owl:Class ;
+    rdfs:label "CentroDeInvestigacion" .
+

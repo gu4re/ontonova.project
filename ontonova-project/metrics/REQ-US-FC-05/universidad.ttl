@@ -1,0 +1,134 @@
+@prefix onto: <http://ontonova.local/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+onto:affiliatedWith a owl:ObjectProperty ;
+    rdfs:label "Affiliated With" ;
+    rdfs:domain onto:Person ;
+    rdfs:range onto:University .
+
+onto:age a owl:DatatypeProperty ;
+    rdfs:label "Age" ;
+    rdfs:domain onto:Person ;
+    rdfs:range xsd:integer .
+
+onto:alanTuring a onto:Professor,
+        owl:NamedIndividual ;
+    rdfs:label "Alan Turing" ;
+    onto:affiliatedWith onto:cambridgeUniversity ;
+    onto:age 41 ;
+    onto:fullName "Alan Turing"^^xsd:string ;
+    onto:supervises onto:adaLovelace ;
+    onto:teaches onto:computabilityTheory ;
+    onto:worksFor onto:computerScienceDept .
+
+onto:courseName a owl:DatatypeProperty ;
+    rdfs:label "Course Name" ;
+    rdfs:domain onto:Course ;
+    rdfs:range xsd:string .
+
+onto:creditsWorth a owl:DatatypeProperty ;
+    rdfs:label "Credits Worth" ;
+    rdfs:domain onto:Course ;
+    rdfs:range xsd:integer .
+
+onto:enrolledIn a owl:ObjectProperty ;
+    rdfs:label "Enrolled In" ;
+    rdfs:domain onto:Student ;
+    rdfs:range onto:Course .
+
+onto:foundedYear a owl:DatatypeProperty ;
+    rdfs:label "Founded Year" ;
+    rdfs:domain onto:University ;
+    rdfs:range xsd:integer .
+
+onto:fullName a owl:DatatypeProperty ;
+    rdfs:label "Full Name" ;
+    rdfs:domain onto:Person ;
+    rdfs:range xsd:string .
+
+onto:offers a owl:ObjectProperty ;
+    rdfs:label "Offers" ;
+    rdfs:domain onto:Department ;
+    rdfs:range onto:Course .
+
+onto:partOf a owl:ObjectProperty ;
+    rdfs:label "Part Of" ;
+    rdfs:domain onto:Department ;
+    rdfs:range onto:University .
+
+onto:supervises a owl:ObjectProperty ;
+    rdfs:label "Supervises" ;
+    rdfs:domain onto:Professor ;
+    rdfs:range onto:Student .
+
+onto:takesPlaceIn a owl:ObjectProperty ;
+    rdfs:label "Takes Place In" ;
+    rdfs:domain onto:Course ;
+    rdfs:range onto:Facility .
+
+onto:teaches a owl:ObjectProperty ;
+    rdfs:label "Teaches" ;
+    rdfs:domain onto:Professor ;
+    rdfs:range onto:Course .
+
+onto:worksFor a owl:ObjectProperty ;
+    rdfs:label "Works For" ;
+    rdfs:domain onto:Professor ;
+    rdfs:range onto:Department .
+
+onto:adaLovelace a onto:Student,
+        owl:NamedIndividual ;
+    rdfs:label "Ada Lovelace" ;
+    onto:affiliatedWith onto:cambridgeUniversity ;
+    onto:age 25 ;
+    onto:enrolledIn onto:computabilityTheory ;
+    onto:fullName "Ada Lovelace"^^xsd:string .
+
+onto:computerScienceDept a onto:Department,
+        owl:NamedIndividual ;
+    rdfs:label "Department of Computer Science" ;
+    onto:offers onto:computabilityTheory ;
+    onto:partOf onto:cambridgeUniversity .
+
+onto:turingLaboratory a onto:Facility,
+        owl:NamedIndividual ;
+    rdfs:label "Turing Laboratory" .
+
+onto:Facility a owl:Class ;
+    rdfs:label "Facility" .
+
+onto:Student a owl:Class ;
+    rdfs:label "Student" ;
+    rdfs:subClassOf onto:Person .
+
+onto:cambridgeUniversity a onto:University,
+        owl:NamedIndividual ;
+    rdfs:label "Cambridge University" ;
+    onto:foundedYear 1209 .
+
+onto:computabilityTheory a onto:Course,
+        owl:NamedIndividual ;
+    rdfs:label "Computability Theory" ;
+    onto:courseName "Computability Theory"^^xsd:string ;
+    onto:creditsWorth 6 ;
+    onto:takesPlaceIn onto:turingLaboratory .
+
+onto:Department a owl:Class ;
+    rdfs:label "Department" ;
+    rdfs:subClassOf onto:University .
+
+onto:Professor a owl:Class ;
+    rdfs:label "Professor" ;
+    rdfs:subClassOf onto:Person .
+
+onto:Person a owl:Class ;
+    rdfs:label "Person" .
+
+onto:University a owl:Class ;
+    rdfs:label "University" .
+
+onto:Course a owl:Class ;
+    rdfs:label "Course" .
+

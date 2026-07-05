@@ -1,0 +1,22 @@
+ ✓ src/utils/fileText.test.ts > isSupportedDomainFile > accepts plain text, markdown and PDF 2ms
+ ✓ src/utils/fileText.test.ts > readDomainFile > returns trimmed plain-text content 1ms
+ ✓ src/utils/fileText.test.ts > readDomainFile > throws EmptyFileTextError for a whitespace-only text file 0ms
+ ✓ src/utils/fileText.test.ts > readDomainFile > joins the extracted text of every PDF page 1ms
+ ✓ src/utils/fileText.test.ts > readDomainFile > throws EmptyFileTextError for a PDF with no extractable text 0ms
+ ✓ src/components/CreateOntologyPanel.test.tsx > CreateOntologyPanel > disables submit until domain text is entered 187ms
+ ✓ src/components/CreateOntologyPanel.test.tsx > CreateOntologyPanel > accepts free-text language input and forwards it trimmed 163ms
+ ✓ src/components/CreateOntologyPanel.test.tsx > CreateOntologyPanel > fills the language field from the suggestions menu without losing free-text entry 129ms
+ ✓ src/components/CreateOntologyPanel.test.tsx > CreateOntologyPanel > re-localizes the suggestions menu when the interface language changes 54ms
+ ✓ src/components/CreateOntologyPanel.test.tsx > CreateOntologyPanel > walks the stage stepper and loads the ontology into the store on success 87ms
+ ✓ src/components/CreateOntologyPanel.test.tsx > CreateOntologyPanel > clears the retrying note once self-healing succeeds, instead of leaving it stuck forever 87ms
+ ✓ src/components/CreateOntologyPanel.test.tsx > CreateOntologyPanel > localizes coded backend failures into the UI language 84ms
+ ✓ src/components/CreateOntologyPanel.test.tsx > CreateOntologyPanel > surfaces a failure message and re-enables the form 70ms
+ ✓ src/components/CreateOntologyPanel.test.tsx > CreateOntologyPanel file attachment > uses the attached file's content as the generation input 31ms
+ ✓ src/components/CreateOntologyPanel.test.tsx > CreateOntologyPanel file attachment > rejects a file over the 5 MB limit 20ms
+ ✓ src/components/CreateOntologyPanel.test.tsx > CreateOntologyPanel file attachment > rejects an unsupported file type 16ms
+ ✓ src/components/CreateOntologyPanel.test.tsx > CreateOntologyPanel file attachment > extracts and uses the text of an attached PDF 26ms
+ ✓ src/components/CreateOntologyPanel.test.tsx > CreateOntologyPanel file attachment > reports a PDF with no extractable text instead of attaching it 15ms
+ ✓ src/components/CreateOntologyPanel.test.tsx > CreateOntologyPanel file attachment > rejects a file whose extracted text exceeds the 15,000-character bound 17ms
+ ✓ src/components/CreateOntologyPanel.test.tsx > CreateOntologyPanel file attachment > restores the typed-text flow when the attachment is removed 29ms
+ Test Files  2 passed (2)
+      Tests  20 passed (20)

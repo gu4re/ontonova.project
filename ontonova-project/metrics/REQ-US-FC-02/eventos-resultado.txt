@@ -1,0 +1,8 @@
+   t (s)  etapa        estado
+    3.25  taxonomist   completed   (+3.25s desde el anterior)
+    4.76  relational   completed   (+1.51s desde el anterior)
+    6.02  populator    completed   (+1.26s desde el anterior)
+    6.02  validator    completed   (+0.00s desde el anterior)
+    6.02  done         success   (+0.00s desde el anterior)
+
+Total: 6.02s, 5 eventos. Primer evento a los 3.25s (54% del total) — llegada incremental, no agrupada al final.

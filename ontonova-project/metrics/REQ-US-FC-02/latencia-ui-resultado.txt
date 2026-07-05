@@ -1,0 +1,6 @@
+etapa           llegada-frame   pintado-UI   latencia
+taxonomist            922 ms       924 ms      2.1 ms  (Classes)
+relational           3539 ms      3541 ms      1.7 ms  (Relations)
+populator            6806 ms      6827 ms     20.5 ms  (Individuals)
+validator            6808 ms      6827 ms     19.1 ms  (Validation)
+

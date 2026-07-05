@@ -1,0 +1,73 @@
+{
+  "app": {
+    "tagline": "Verwandle jeden Text in einen Wissensgraphen"
+  },
+  "language": {
+    "interfaceLabel": "Oberflächensprache"
+  },
+  "create": {
+    "domainLabel": "Beschreibe die Domäne",
+    "domainPlaceholder": "Beschreibe die Domäne mit eigenen Worten, in jeder Sprache… (z. B. Universitätsrollen, medizinische Verfahren, juristische Einheiten)",
+    "attachFile": "Textdatei anhängen",
+    "attachHint": "(.txt, .md oder .pdf, bis zu 5 MB)",
+    "domainFromFile": "Die angehängte Datei wird als Domänentext verwendet.",
+    "removeFile": "Angehängte Datei entfernen",
+    "fileTooLarge": "Die Datei überschreitet das Limit von 5 MB.",
+    "fileTextTooLong": "Das Dokument enthält {{count}} Zeichen Text; das Maximum ist {{max}}. Bitte einen kürzeren Text bereitstellen oder den relevanten Abschnitt extrahieren.",
+    "fileWrongType": "Es werden nur Text- oder PDF-Dateien (.txt, .md, .pdf) unterstützt.",
+    "fileNoText": "Aus der Datei konnte kein Text extrahiert werden.",
+    "fileUnreadable": "Die Datei konnte nicht gelesen werden.",
+    "languageLabel": "Sprache",
+    "languageHint": "(optional, sonst automatisch erkannt)",
+    "languagePlaceholder": "Automatisch erkennen",
+    "submitIdle": "Ontologie erzeugen",
+    "submitBusy": "Wird erzeugt…",
+    "submitRegenerate": "Neu erzeugen",
+    "stageClasses": "Klassen",
+    "stageRelations": "Beziehungen",
+    "stageIndividuals": "Individuen",
+    "stageValidation": "Validierung",
+    "retryingNote": "Validierung fehlgeschlagen — wird automatisch korrigiert und erneut versucht…",
+    "progressLabel": "Fortschritt der Generierung",
+    "genericFailure": "Erzeugung der Ontologie fehlgeschlagen.",
+    "llmError": "Die Inferenz-Engine konnte die Anfrage nicht verarbeiten"
+  },
+  "toolbar": {
+    "newClassPlaceholder": "Name der neuen Klasse…",
+    "addClass": "Klasse hinzufügen",
+    "exportAs": "Exportieren",
+    "exportTurtle": "Turtle",
+    "exportRdfXml": "RDF/XML",
+    "reset": "Zurücksetzen",
+    "resetConfirmTitle": "Aktuelle Ontologie verwerfen?",
+    "resetConfirmBody": "Dies kann nicht rückgängig gemacht werden.",
+    "cancel": "Abbrechen",
+    "discard": "Verwerfen"
+  },
+  "inspector": {
+    "emptySelection": "Wähle eine Klasse auf der Zeichenfläche aus, um ihre Attribute und Individuen zu sehen.",
+    "dataProperties": "Datenattribute",
+    "individuals": "Individuen",
+    "noneYet": "Noch keine vorhanden",
+    "attributeNamePlaceholder": "Attributname",
+    "individualNamePlaceholder": "Name des Individuums",
+    "add": "Hinzufügen",
+    "removeNamed": "{{name}} entfernen"
+  },
+  "canvas": {
+    "validationError": "Validierungsfehler: {{error}}",
+    "deleteClassNamed": "Klasse {{name}} löschen",
+    "deleteRelationNamed": "Beziehung {{name}} löschen",
+    "dragRelationLabel": "Ziehen, um dieses Etikett zu verschieben",
+    "controlsLabel": "Bedienfeld",
+    "zoomIn": "Vergrößern",
+    "zoomOut": "Verkleinern",
+    "fitView": "Ansicht einpassen",
+    "toggleInteractivity": "Interaktivität umschalten",
+    "miniMapLabel": "Übersichtskarte"
+  },
+  "theme": {
+    "switchToLight": "Zum hellen Modus wechseln",
+    "switchToDark": "Zum dunklen Modus wechseln"
+  }
+}

@@ -60,11 +60,6 @@ Thumbs.db
 # Typst cache
 .typst/
 
-# Output files
-*.pdf
-*.png
-*.svg
-
 # Temporary files
 *.tmp
 

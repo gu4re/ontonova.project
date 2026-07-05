@@ -1,0 +1,49 @@
+{
+  "n_runs": 25,
+  "n_failed": 0,
+  "macro_precision": {
+    "mean": 1.0,
+    "median": 1.0,
+    "std": 0.0,
+    "min": 1.0,
+    "max": 1.0
+  },
+  "macro_recall": {
+    "mean": 1.0,
+    "median": 1.0,
+    "std": 0.0,
+    "min": 1.0,
+    "max": 1.0
+  },
+  "macro_f1": {
+    "mean": 1.0,
+    "median": 1.0,
+    "std": 0.0,
+    "min": 1.0,
+    "max": 1.0
+  },
+  "duration_s": {
+    "mean": 20.444,
+    "median": 20.1,
+    "std": 0.802,
+    "min": 19.9,
+    "max": 22.9
+  },
+  "retries": {
+    "mean": 1,
+    "median": 1,
+    "std": 0.0,
+    "min": 1,
+    "max": 1
+  },
+  "pruned_pct": 0.0,
+  "per_category_f1_mean": {
+    "classes": 1.0,
+    "hierarchy": 1.0,
+    "object_properties": 1.0,
+    "data_properties": 1.0,
+    "individuals": 1.0,
+    "op_assertions": 1.0,
+    "dp_assertions": 1.0
+  }
+}

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:onto="http://ontonova.local/ontology#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#location">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>Ubicacion</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#ResearchCenter"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#investmentAmount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>CantidadDeInversion</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#PrivateInvestmentRound"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#requires">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Requiere</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#DevelopmentPhase"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#ResearchEmployee"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#develops_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Desarrolla</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#RoboticsDepartment"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#TERRAProject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#UniversityCollaborationAgreement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>AcuerdoDeColaboracionUniversitaria</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#passesThrough_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>PasaPor</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#ARIAProject"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#ValidationPhase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#fundedThrough_3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>FinanciadoMediante</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#ResearchCenter"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#PrivateInvestmentRound"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#currentlyIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>ActualmenteEn</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#ARIAProject"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#ValidationPhase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#equipmentPurchaseYear">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>AñoDeAdquisicionDelEquipamiento</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#SharedLab"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#StorageTeam">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>EquipoDeAlmacenamiento</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#managementStaffCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>NumeroDePersonalDirectivo</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#ResearchCenter"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#SoftwareDepartment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>DepartamentoDeSoftware</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#Nexolabs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#ResearchCenter"/>
+    <rdfs:label>Nexolabs</rdfs:label>
+    <onto:establishedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2015</onto:establishedYear>
+    <onto:location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zaragoza, España</onto:location>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#PublicSubsidy_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#PublicSubsidy"/>
+    <rdfs:label>Subvención Pública del Ministerio de Ciencia</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#develops">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Desarrolla</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#RoboticsDepartment"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#ARIAProject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#employs_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Emplea</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#ResearchCenter"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#ResearchEmployee"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#GenerationTeam_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#GenerationTeam"/>
+    <rdfs:label>Equipo De Generación</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#AtlasVenturesFund_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#AtlasVenturesFund"/>
+    <rdfs:label>Fondo Atlas Ventures</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#AtlasVenturesFund">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>FondoAtlasVentures</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#TERRAProject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>ProyectoTERRA</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#hasSubteam">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>TieneSubequipo</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#EnergyDepartment"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#StorageTeam"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#SharedLab_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#SharedLab"/>
+    <rdfs:label>Laboratorio Compartido</rdfs:label>
+    <onto:equipmentPurchaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2019</onto:equipmentPurchaseYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#EnergyDepartment_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#EnergyDepartment"/>
+    <rdfs:label>Departamento De Energía</rdfs:label>
+    <onto:hasSubteam rdf:resource="http://ontonova.local/ontology#StorageTeam_2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#employeeCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>NumeroDeEmpleados</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#ResearchCenter"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#collaboratesWith">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>ColaboraCon</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#ResearchCenter"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#UniversityCollaborationAgreement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#employs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Emplea</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#ResearchCenter"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#Engineer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#fundedThrough_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>FinanciadoMediante</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#ResearchCenter"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#PublicSubsidy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#Engineer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Ingeniero</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#engineersCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>NumeroDeIngenieros</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#ResearchCenter"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#passesThrough">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>PasaPor</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#ARIAProject"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#DevelopmentPhase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#UniversityCollaborationAgreement_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#UniversityCollaborationAgreement"/>
+    <rdfs:label>Acuerdo de Colaboración Universitaria con la Universidad de Zaragoza</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#EnergyDepartment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>DepartamentoDeEnergia</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#PrivateInvestmentRound">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>RondaDeInversionPrivada</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#RoboticsDepartment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>DepartamentoDeRoboticas</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#ResearchCenter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>CentroDeInvestigacion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#passesThrough_3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>PasaPor</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#TERRAProject"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#ValidationPhase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#researchEmployeesCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>NumeroDeEmpleadosDeInvestigacion</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#ResearchCenter"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#usesEquipment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>UsaEquipamiento</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#StorageTeam"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#SharedLab"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#usesEquipment_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>UsaEquipamiento</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#GenerationTeam"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#SharedLab"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#currentlyIn_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>ActualmenteEn</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#TERRAProject"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#ProductionPhase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#StorageTeam_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#StorageTeam"/>
+    <rdfs:label>Equipo De Almacenamiento</rdfs:label>
+    <onto:usesEquipment rdf:resource="http://ontonova.local/ontology#SharedLab_2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#ValidationPhase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>FaseDeValidacion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#passesThrough_4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>PasaPor</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#TERRAProject"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#ProductionPhase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#provides">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Proporciona</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#SoftwareDepartment"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#LightweightOperatingSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#DevelopmentPhase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>FaseDeDesarrollo</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#supervises_5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Supervisa</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#EnergyDepartment"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#GenerationTeam"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#PublicSubsidy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>SubvencionPublica</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#fundedThrough">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>FinanciadoMediante</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#ResearchCenter"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#IndustrialContract"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#ledBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>LideradoPor</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#PrivateInvestmentRound"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#AtlasVenturesFund"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#supervises_4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Supervisa</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#EnergyDepartment"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#StorageTeam"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#GenerationTeam">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>EquipoDeGeneracion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#PrivateInvestmentRound_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#PrivateInvestmentRound"/>
+    <rdfs:label>Ronda de Inversión Privada de 4 Millones de Euros</rdfs:label>
+    <onto:ledBy rdf:resource="http://ontonova.local/ontology#AtlasVenturesFund_2"/>
+    <onto:investmentAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4000000</onto:investmentAmount>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#ProductionPhase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>FaseDeProduccion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#establishedYear">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>AñoDeFundacion</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#ResearchCenter"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#IndustrialContract_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#IndustrialContract"/>
+    <rdfs:label>Contrato con Cliente Industrial</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#isPartOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>EsParteDe</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#EnergyDepartment"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#ResearchCenter"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#ARIAProject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>ProyectoARIA</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#IndustrialContract">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>ContratoConClienteIndustrial</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#hasSubteam_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>TieneSubequipo</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#EnergyDepartment"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#GenerationTeam"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#LightweightOperatingSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>SistemaOperativoLiviano</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#supports">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Apoya</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#PublicSubsidy"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#SharedLab"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#involves">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Implica</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#DevelopmentPhase"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#Engineer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#SharedLab">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>LaboratorioCompartido</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#ResearchEmployee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>EmpleadoDeInvestigacion</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

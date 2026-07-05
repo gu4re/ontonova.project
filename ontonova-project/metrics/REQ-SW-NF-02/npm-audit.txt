@@ -1,0 +1,8 @@
+# npm audit — 2026-08-23T15:53Z (tras npm audit fix: nanoid y undici actualizados)
+$ npm audit
+found 0 vulnerabilities
+npm notice
+npm notice New major version of npm available! 10.9.8 -> 12.0.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+npm notice To update run: npm install -g npm@12.0.2
+npm notice

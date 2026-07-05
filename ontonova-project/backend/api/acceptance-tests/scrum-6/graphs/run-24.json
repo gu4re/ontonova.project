@@ -1,0 +1,365 @@
+{
+ "report": {
+  "categories": {
+   "classes": {
+    "matched": 5,
+    "generated": 18,
+    "gold": 12,
+    "precision": 0.278,
+    "recall": 0.417,
+    "f1": 0.333
+   },
+   "hierarchy": {
+    "matched": 0,
+    "generated": 0,
+    "gold": 3,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0
+   },
+   "object_properties": {
+    "matched": 5,
+    "generated": 8,
+    "gold": 10,
+    "precision": 0.625,
+    "recall": 0.5,
+    "f1": 0.556
+   },
+   "data_properties": {
+    "matched": 2,
+    "generated": 3,
+    "gold": 3,
+    "precision": 0.667,
+    "recall": 0.667,
+    "f1": 0.667
+   },
+   "individuals": {
+    "matched": 0,
+    "generated": 0,
+    "gold": 12,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0
+   },
+   "op_assertions": {
+    "matched": 0,
+    "generated": 0,
+    "gold": 14,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0
+   },
+   "dp_assertions": {
+    "matched": 0,
+    "generated": 0,
+    "gold": 3,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0
+   }
+  },
+  "misses": {
+   "classes": [
+    "department",
+    "director",
+    "laboratory",
+    "project",
+    "researcher",
+    "team",
+    "university"
+   ],
+   "hierarchy": [
+    "director subClassOf person",
+    "engineer subClassOf person",
+    "researcher subClassOf person"
+   ],
+   "object_properties": [
+    "collaborates",
+    "directs",
+    "supervises",
+    "uses",
+    "usesLab"
+   ],
+   "data_properties": [
+    "employees"
+   ],
+   "individuals": [
+    "aria",
+    "deptEnergia",
+    "deptRobotica",
+    "deptSoftware",
+    "equipoAlmacenamiento",
+    "equipoGeneracion",
+    "labCompartido",
+    "martaDuarte",
+    "nexolabs",
+    "nexos",
+    "terra",
+    "universidadZaragoza"
+   ],
+   "op_assertions": [
+    "deptEnergia --partOfOrg--> nexolabs",
+    "deptRobotica --partOfOrg--> nexolabs",
+    "deptSoftware --partOfOrg--> nexolabs",
+    "equipoAlmacenamiento --partOfDept--> deptEnergia",
+    "equipoGeneracion --partOfDept--> deptEnergia",
+    "deptRobotica --develops--> aria",
+    "deptRobotica --develops--> terra",
+    "deptSoftware --maintains--> nexos",
+    "aria --uses--> nexos",
+    "terra --uses--> nexos",
+    "martaDuarte --directs--> deptRobotica",
+    "nexolabs --collaborates--> universidadZaragoza",
+    "equipoAlmacenamiento --usesLab--> labCompartido",
+    "equipoGeneracion --usesLab--> labCompartido"
+   ],
+   "dp_assertions": [
+    "nexolabs.foundedYear ~ 2015",
+    "nexolabs.location ~ aragoza",
+    "nexolabs.employees ~ 62"
+   ]
+  },
+  "spurious": {
+   "classes": [
+    "DepartamentoDeEnergia",
+    "DepartamentoDeRoboticas",
+    "DepartamentoDeSoftware",
+    "EquipoDeAlmacenamiento",
+    "EquipoDeGeneracion",
+    "LaboratorioCompartido",
+    "ProyectoARIA",
+    "ProyectoTERRA",
+    "SubvencionPublica",
+    "RondaDeInversionPrivada",
+    "FaseDeValidacion",
+    "FaseDeProduccion"
+   ],
+   "object_properties": [
+    "esParteDe (RoboticsDepartment -> ResearchCenter)",
+    "pasaPorFase (TERRAProject -> ProductionPhase)",
+    "esParteDe (SoftwareDepartment -> ResearchCenter)"
+   ],
+   "data_properties": [
+    "creadoPor (LightweightOperatingSystem: xsd:string)"
+   ],
+   "individuals": []
+  },
+  "macro_f1": 0.222,
+  "macro_precision": 0.224,
+  "macro_recall": 0.226
+ },
+ "payload": {
+  "classes": [
+   {
+    "metadata": {},
+    "id": "ResearchCenter",
+    "name": "CentroDeInvestigacion",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "EnergyDepartment",
+    "name": "DepartamentoDeEnergia",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "RoboticsDepartment",
+    "name": "DepartamentoDeRoboticas",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "SoftwareDepartment",
+    "name": "DepartamentoDeSoftware",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "StorageTeam",
+    "name": "EquipoDeAlmacenamiento",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "GenerationTeam",
+    "name": "EquipoDeGeneracion",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "SharedLab",
+    "name": "LaboratorioCompartido",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "ARIAProject",
+    "name": "ProyectoARIA",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "TERRAProject",
+    "name": "ProyectoTERRA",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "LightweightOperatingSystem",
+    "name": "SistemaOperativoLiviano",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "UniversityCollaborationAgreement",
+    "name": "AcuerdoDeColaboracionUniversitaria",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "IndustrialContract",
+    "name": "ContratoConClienteIndustrial",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "PublicSubsidy",
+    "name": "SubvencionPublica",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "PrivateInvestmentRound",
+    "name": "RondaDeInversionPrivada",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "AtlasVenturesFund",
+    "name": "FondoAtlasVentures",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "DevelopmentPhase",
+    "name": "FaseDeDesarrollo",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "ValidationPhase",
+    "name": "FaseDeValidacion",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "ProductionPhase",
+    "name": "FaseDeProduccion",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "ResearchEmployee",
+    "name": "EmpleadoDeInvestigacion",
+    "subClassOf": null
+   },
+   {
+    "metadata": {},
+    "id": "Engineer",
+    "name": "Ingeniero",
+    "subClassOf": null
+   }
+  ],
+  "object_properties": [
+   {
+    "metadata": {},
+    "id": "hasSubteam",
+    "name": "tieneSubequipo",
+    "domain": "EnergyDepartment",
+    "range": "StorageTeam",
+    "characteristics": []
+   },
+   {
+    "metadata": {},
+    "id": "isPartOf",
+    "name": "esParteDe",
+    "domain": "EnergyDepartment",
+    "range": "ResearchCenter",
+    "characteristics": []
+   },
+   {
+    "metadata": {},
+    "id": "isPartOf_2",
+    "name": "esParteDe",
+    "domain": "RoboticsDepartment",
+    "range": "ResearchCenter",
+    "characteristics": []
+   },
+   {
+    "metadata": {},
+    "id": "develops",
+    "name": "desarrolla",
+    "domain": "RoboticsDepartment",
+    "range": "ARIAProject",
+    "characteristics": []
+   },
+   {
+    "metadata": {},
+    "id": "passesThroughPhase",
+    "name": "pasaPorFase",
+    "domain": "ARIAProject",
+    "range": "ValidationPhase",
+    "characteristics": []
+   },
+   {
+    "metadata": {},
+    "id": "passesThroughPhase_2",
+    "name": "pasaPorFase",
+    "domain": "TERRAProject",
+    "range": "ProductionPhase",
+    "characteristics": []
+   },
+   {
+    "metadata": {},
+    "id": "isPartOf_3",
+    "name": "esParteDe",
+    "domain": "SoftwareDepartment",
+    "range": "ResearchCenter",
+    "characteristics": []
+   },
+   {
+    "metadata": {},
+    "id": "provides",
+    "name": "ofrece",
+    "domain": "SoftwareDepartment",
+    "range": "LightweightOperatingSystem",
+    "characteristics": []
+   }
+  ],
+  "data_properties": [
+   {
+    "metadata": {},
+    "id": "foundedYear",
+    "name": "anoDeFundacion",
+    "domain": "ResearchCenter",
+    "range": "xsd:integer"
+   },
+   {
+    "metadata": {},
+    "id": "location",
+    "name": "ubicacion",
+    "domain": "ResearchCenter",
+    "range": "xsd:string"
+   },
+   {
+    "metadata": {},
+    "id": "createdBy",
+    "name": "creadoPor",
+    "domain": "LightweightOperatingSystem",
+    "range": "xsd:string"
+   }
+  ],
+  "individuals": []
+ }
+}

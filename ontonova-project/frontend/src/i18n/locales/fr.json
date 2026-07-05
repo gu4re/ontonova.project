@@ -1,0 +1,73 @@
+{
+  "app": {
+    "tagline": "Transformez n'importe quel texte en graphe de connaissances"
+  },
+  "language": {
+    "interfaceLabel": "Langue de l'interface"
+  },
+  "create": {
+    "domainLabel": "Décrivez le domaine",
+    "domainPlaceholder": "Décrivez le domaine avec vos propres mots, dans n'importe quelle langue… (ex. rôles universitaires, procédures médicales, entités juridiques)",
+    "attachFile": "Joindre un fichier texte",
+    "attachHint": "(.txt, .md ou .pdf, jusqu'à 5 Mo)",
+    "domainFromFile": "Le fichier joint sera utilisé comme texte du domaine.",
+    "removeFile": "Retirer le fichier joint",
+    "fileTooLarge": "Le fichier dépasse la limite de 5 Mo.",
+    "fileTextTooLong": "Le document contient {{count}} caractères de texte ; le maximum est {{max}}. Fournissez un texte plus court ou extrayez la section pertinente.",
+    "fileWrongType": "Seuls les fichiers texte ou PDF (.txt, .md, .pdf) sont pris en charge.",
+    "fileNoText": "Aucun texte n'a pu être extrait du fichier.",
+    "fileUnreadable": "Le fichier n'a pas pu être lu.",
+    "languageLabel": "Langue",
+    "languageHint": "(facultatif, détecté automatiquement sinon)",
+    "languagePlaceholder": "Détection automatique",
+    "submitIdle": "Générer l'ontologie",
+    "submitBusy": "Génération…",
+    "submitRegenerate": "Régénérer",
+    "stageClasses": "Classes",
+    "stageRelations": "Relations",
+    "stageIndividuals": "Individus",
+    "stageValidation": "Validation",
+    "retryingNote": "Échec de la validation — correction et nouvelle tentative automatiques…",
+    "progressLabel": "Progression de la génération",
+    "genericFailure": "Échec de la génération de l'ontologie.",
+    "llmError": "Le moteur d'inférence n'a pas pu traiter la requête"
+  },
+  "toolbar": {
+    "newClassPlaceholder": "Nom de la nouvelle classe…",
+    "addClass": "Ajouter une classe",
+    "exportAs": "Exporter",
+    "exportTurtle": "Turtle",
+    "exportRdfXml": "RDF/XML",
+    "reset": "Réinitialiser",
+    "resetConfirmTitle": "Abandonner l'ontologie actuelle ?",
+    "resetConfirmBody": "Cette action est irréversible.",
+    "cancel": "Annuler",
+    "discard": "Abandonner"
+  },
+  "inspector": {
+    "emptySelection": "Sélectionnez une classe sur le canevas pour voir ses attributs et individus.",
+    "dataProperties": "Propriétés de données",
+    "individuals": "Individus",
+    "noneYet": "Aucun pour l'instant",
+    "attributeNamePlaceholder": "Nom de l'attribut",
+    "individualNamePlaceholder": "Nom de l'individu",
+    "add": "Ajouter",
+    "removeNamed": "Supprimer {{name}}"
+  },
+  "canvas": {
+    "validationError": "Erreur de validation : {{error}}",
+    "deleteClassNamed": "Supprimer la classe {{name}}",
+    "deleteRelationNamed": "Supprimer la relation {{name}}",
+    "dragRelationLabel": "Faites glisser pour repositionner cette étiquette",
+    "controlsLabel": "Panneau de contrôle",
+    "zoomIn": "Zoomer",
+    "zoomOut": "Dézoomer",
+    "fitView": "Ajuster la vue",
+    "toggleInteractivity": "Basculer l'interactivité",
+    "miniMapLabel": "Mini-carte"
+  },
+  "theme": {
+    "switchToLight": "Passer au mode clair",
+    "switchToDark": "Passer au mode sombre"
+  }
+}

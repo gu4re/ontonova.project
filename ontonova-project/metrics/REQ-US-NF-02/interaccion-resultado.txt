@@ -1,0 +1,5 @@
+# Latencia de interacción (100 rondas, ms; incluye sobrecoste del protocolo de automatización)
+operación            media  mín  mediana  p95  p99  máx
+crear clase             51   49       51   53   64   65
+seleccionar clase       25   10       26   29   30   30
+eliminar clase          34   31       34   36   36   48

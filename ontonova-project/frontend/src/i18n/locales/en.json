@@ -1,0 +1,73 @@
+{
+  "app": {
+    "tagline": "Turn any text into a knowledge graph"
+  },
+  "language": {
+    "interfaceLabel": "Interface language"
+  },
+  "create": {
+    "domainLabel": "Describe the domain",
+    "domainPlaceholder": "Describe the domain in your own words, in any language… (e.g. university roles, medical procedures, legal entities)",
+    "attachFile": "Attach a text file",
+    "attachHint": "(.txt, .md or .pdf, up to 5 MB)",
+    "domainFromFile": "The attached file will be used as the domain text.",
+    "removeFile": "Remove attached file",
+    "fileTooLarge": "The file exceeds the 5 MB limit.",
+    "fileTextTooLong": "The document contains {{count}} characters of text; the maximum is {{max}}. Please provide a shorter text or extract the relevant section.",
+    "fileWrongType": "Only text or PDF files (.txt, .md, .pdf) are supported.",
+    "fileNoText": "No text could be extracted from the file.",
+    "fileUnreadable": "The file could not be read.",
+    "languageLabel": "Language",
+    "languageHint": "(optional, auto-detected otherwise)",
+    "languagePlaceholder": "Auto-detect",
+    "submitIdle": "Generate ontology",
+    "submitBusy": "Generating…",
+    "submitRegenerate": "Regenerate",
+    "stageClasses": "Classes",
+    "stageRelations": "Relations",
+    "stageIndividuals": "Individuals",
+    "stageValidation": "Validation",
+    "retryingNote": "Validation failed — automatically correcting and retrying…",
+    "progressLabel": "Generation progress",
+    "genericFailure": "Ontology generation failed.",
+    "llmError": "The inference engine could not process the request"
+  },
+  "toolbar": {
+    "newClassPlaceholder": "New class name…",
+    "addClass": "Add class",
+    "exportAs": "Export",
+    "exportTurtle": "Turtle",
+    "exportRdfXml": "RDF/XML",
+    "reset": "Reset",
+    "resetConfirmTitle": "Discard the current ontology?",
+    "resetConfirmBody": "This cannot be undone.",
+    "cancel": "Cancel",
+    "discard": "Discard"
+  },
+  "inspector": {
+    "emptySelection": "Select a class on the canvas to inspect its attributes and individuals.",
+    "dataProperties": "Data properties",
+    "individuals": "Individuals",
+    "noneYet": "None yet",
+    "attributeNamePlaceholder": "Attribute name",
+    "individualNamePlaceholder": "Individual name",
+    "add": "Add",
+    "removeNamed": "Remove {{name}}"
+  },
+  "canvas": {
+    "validationError": "Validation error: {{error}}",
+    "deleteClassNamed": "Delete class {{name}}",
+    "deleteRelationNamed": "Delete relation {{name}}",
+    "dragRelationLabel": "Drag to reposition this label",
+    "controlsLabel": "Control panel",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "fitView": "Fit view",
+    "toggleInteractivity": "Toggle interactivity",
+    "miniMapLabel": "Mini map"
+  },
+  "theme": {
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
+  }
+}

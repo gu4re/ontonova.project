@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:onto="http://ontonova.local/ontology#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#creditsWorth">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>Credits Worth</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#Course"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#Professor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Professor</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ontonova.local/ontology#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#adaLovelace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#Student"/>
+    <rdfs:label>Ada Lovelace</rdfs:label>
+    <onto:affiliatedWith rdf:resource="http://ontonova.local/ontology#cambridgeUniversity"/>
+    <onto:enrolledIn rdf:resource="http://ontonova.local/ontology#computabilityTheory"/>
+    <onto:fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ada Lovelace</onto:fullName>
+    <onto:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</onto:age>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#enrolledIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Enrolled In</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#Student"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#Course"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#courseName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>Course Name</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#Course"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#Course">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Course</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#takesPlaceIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Takes Place In</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#Course"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#Facility"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#age">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>Age</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#computabilityTheory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#Course"/>
+    <rdfs:label>Computability Theory</rdfs:label>
+    <onto:takesPlaceIn rdf:resource="http://ontonova.local/ontology#turingLaboratory"/>
+    <onto:creditsWorth rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</onto:creditsWorth>
+    <onto:courseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Computability Theory</onto:courseName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#foundedYear">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>Founded Year</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#University"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#offers">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Offers</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#Department"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#Course"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#fullName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>Full Name</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#Facility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Facility</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#alanTuring">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#Professor"/>
+    <rdfs:label>Alan Turing</rdfs:label>
+    <onto:affiliatedWith rdf:resource="http://ontonova.local/ontology#cambridgeUniversity"/>
+    <onto:worksFor rdf:resource="http://ontonova.local/ontology#computerScienceDept"/>
+    <onto:teaches rdf:resource="http://ontonova.local/ontology#computabilityTheory"/>
+    <onto:supervises rdf:resource="http://ontonova.local/ontology#adaLovelace"/>
+    <onto:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">41</onto:age>
+    <onto:fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alan Turing</onto:fullName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#worksFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Works For</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#Professor"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#Department"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#affiliatedWith">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Affiliated With</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#Person"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#University"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#Person">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Person</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#supervises">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Supervises</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#Professor"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#Student"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#computerScienceDept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#Department"/>
+    <rdfs:label>Department of Computer Science</rdfs:label>
+    <onto:partOf rdf:resource="http://ontonova.local/ontology#cambridgeUniversity"/>
+    <onto:offers rdf:resource="http://ontonova.local/ontology#computabilityTheory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#Department">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Department</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ontonova.local/ontology#University"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#teaches">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Teaches</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#Professor"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#Course"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#partOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Part Of</rdfs:label>
+    <rdfs:domain rdf:resource="http://ontonova.local/ontology#Department"/>
+    <rdfs:range rdf:resource="http://ontonova.local/ontology#University"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#turingLaboratory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#Facility"/>
+    <rdfs:label>Turing Laboratory</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#University">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>University</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#Student">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Student</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ontonova.local/ontology#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontonova.local/ontology#cambridgeUniversity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://ontonova.local/ontology#University"/>
+    <rdfs:label>Cambridge University</rdfs:label>
+    <onto:foundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1209</onto:foundedYear>
+  </rdf:Description>
+</rdf:RDF>

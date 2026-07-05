@@ -2,7 +2,13 @@
 #import "config/glossary.typ": glossary-entries
 #import "config/gen-ai.typ": genai-declaration
 #import "config/bibliography.typ": bibliography
-
+#show regex("REQ-(US|SW)-(FC|NF)-\d{2}"): it => link(label(it.text), it)
+#show regex("O\d{1}"): it => link(label(it.text), it)
+#show outline: it => {
+  state("in-outline", false).update(true)
+  it
+  state("in-outline", false).update(false)
+}
 #show: conf.with(
   degree: "Máster Universitario en Ingeniería Informática",
   title: "Diseño e Implementación de un Sistema de Gestión del Conocimiento Multilingüe Basado en LLMs como Alternativa Abierta a otros sistemas existentes",
@@ -30,9 +36,9 @@
 
       Cabe destacar que la gestión del ciclo de vida del software, el plan de proyecto y la monitorización de métricas se han regido por la aplicación de una *metodología en cascada* @waterfall. Este enfoque se ha sustentado en el aprendizaje continuo, asegurando así una preparación completa y el cumplimiento de los hitos del proyecto.
 
-      A nivel arquitectónico, la solución se estructura mediante un motor de procesamiento lógico, _backend_, encargado de *interpretar* la *entrada* en lenguaje *natural*. Posteriormente, una interfaz gráfica, _frontend_, facilita la representación *visual* e interactiva del *grafo de conocimiento generado*. Este flujo de trabajo permite al usuario validar la ontología antes de proceder a su exportación en formatos estándar @glossw3c, tales como @glossrdf o Turtle, preservando así la compatibilidad retrospectiva con otros competidores semánticos del sector.
+      A nivel arquitectónico, la solución se estructura mediante un motor de procesamiento lógico, _backend_, encargado de *interpretar* la *entrada* en lenguaje *natural*. Posteriormente, una interfaz gráfica, _frontend_, facilita la representación *visual* e interactiva del *grafo de conocimiento generado*. Este flujo de trabajo permite al usuario validar la ontología antes de proceder a su exportación en formatos estándar @glossw3c, tales como @glossrdf o _Turtle_, preservando así la compatibilidad retrospectiva con otros competidores semánticos del sector.
 
-      Finalmente, desde una perspectiva de infraestructura tecnológica, el entorno de inferencia ha sido rigurosamente optimizado para exprimir el rendimiento de *hardware acelerado local*, mediante unidades de procesamiento gráfico de alto nivel. No obstante, la arquitectura del sistema *soporta* una migración a un paradigma escalable en la *nube* pública o privada (véase @sec:future-work) donde la capacidad de procesamiento queda acotada principalmente por el costo de aprovisionamiento de recursos.
+      Finalmente, desde una perspectiva de infraestructura tecnológica, el entorno de inferencia ha sido rigurosamente optimizado para exprimir el rendimiento de *hardware acelerado local*, mediante unidades de procesamiento gráfico de alto nivel. No obstante, la arquitectura del sistema *soporta* una migración a un paradigma escalable en la *nube* pública o privada (véase @sec:cloud) donde la capacidad de procesamiento queda acotada principalmente por el costo de aprovisionamiento de recursos.
     ],
     keywords: (
       "Inteligencia Artificial", 
@@ -51,7 +57,7 @@
 
       At the architectural level, the solution is structured through a logical processing engine, the backend, responsible for *interpreting* the *natural* language *input*. Subsequently, a graphical user interface, the frontend, facilitates the *visual* and interactive representation of the *generated knowledge graph*. This workflow allows the user to validate the ontology prior to its export into standard formats @glossw3c, such as @glossrdf or Turtle, thus preserving backward compatibility with other semantic competitors in the sector.
 
-      Finally, from a technological infrastructure perspective, the inference environment has been rigorously optimised to maximise the performance of *local accelerated hardware*, by means of high-end graphical processing units. Nevertheless, the system architecture *supports* a migration to a scalable, private or public, *cloud paradigm* (see @sec:future-work[Section]), where the processing capacity is bounded primarily by the cost of resource provisioning.
+      Finally, from a technological infrastructure perspective, the inference environment has been rigorously optimised to maximise the performance of *local accelerated hardware*, by means of high-end graphical processing units. Nevertheless, the system architecture *supports* a migration to a scalable, private or public, *cloud paradigm* (see @sec:cloud[Chapter]), where the processing capacity is bounded primarily by the cost of resource provisioning.
     ],
     keywords: (
       "Artificial Intelligence", 
@@ -68,7 +74,7 @@
 
     Hago extensivo mi agradecimiento a Verisure ---Securitas Direct---, empresa que apuesta cada día por mi desarrollo y aprendizaje, facilitando económicamente mi presencia en el plan de formación impartido por la UC3M. Me enorgullece anunciar que mi travesía retorna con nuevo conocimiento listo para ser trasladado al mundo laboral.
 
-    Finalmente, quiero dar las gracias a la comunidad de código abierto. Es magnífico observar que personas de distintas culturas, religiones y ámbitos sociales unen fuerzas para una misma causa. Espero que en el futuro mantengan la reputación que merecen.
+    Finalmente, quiero dar las gracias a la comunidad de código abierto. Es magnífico observar que personas de distintas culturas, religiones y ámbitos sociales unen fuerzas para una misma causa. Espero que en el futuro tengan la reputación que merecen.
   ],
   outlines: (
     // contents is compulsory
@@ -82,7 +88,10 @@
     //   ),
     // ),
   ),
-  // appendixes: [],
+  appendixes: [
+    #include "parts/appendix_sus.typ"; 
+    #include "parts/appendix_aiact.typ"
+  ],
   glossary: glossary-entries, // comment this line if you don't want a glossary
   //abbreviations: (),
   genai-declaration: genai-declaration,
@@ -113,6 +122,7 @@
 #include "parts/design.typ"
 #include "parts/implementation.typ"
 #include "parts/verification.typ"
+#include "parts/cloud.typ"
 #include "parts/conclusions.typ"
 
 

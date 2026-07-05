@@ -1,0 +1,5 @@
+# Validación de exportaciones RDF — rdflib 7 (parser conforme a RDF 1.1 del W3C)
+universidad [turtle]: 3716 bytes, 103 triples, 0 errores de análisis
+universidad [rdf-xml]: 9748 bytes, 103 triples, 0 errores de análisis
+nexolabs [turtle]: 8449 bytes, 213 triples, 0 errores de análisis
+nexolabs [rdf-xml]: 21272 bytes, 213 triples, 0 errores de análisis

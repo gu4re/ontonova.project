@@ -1,0 +1,73 @@
+{
+  "app": {
+    "tagline": "Convierte cualquier texto en un grafo de conocimiento"
+  },
+  "language": {
+    "interfaceLabel": "Idioma de la interfaz"
+  },
+  "create": {
+    "domainLabel": "Describe el dominio",
+    "domainPlaceholder": "Describe el dominio con tus propias palabras, en cualquier idioma… (p. ej. roles universitarios, procedimientos médicos, entidades legales)",
+    "attachFile": "Adjuntar un archivo de texto",
+    "attachHint": "(.txt, .md o .pdf, hasta 5 MB)",
+    "domainFromFile": "El archivo adjunto se usará como texto del dominio.",
+    "removeFile": "Quitar el archivo adjunto",
+    "fileTooLarge": "El archivo supera el límite de 5 MB.",
+    "fileTextTooLong": "El documento contiene {{count}} caracteres de texto; el máximo es {{max}}. Proporciona un texto más corto o extrae la sección relevante.",
+    "fileWrongType": "Solo se admiten archivos de texto o PDF (.txt, .md, .pdf).",
+    "fileNoText": "No se pudo extraer texto del archivo.",
+    "fileUnreadable": "No se pudo leer el archivo.",
+    "languageLabel": "Idioma",
+    "languageHint": "(opcional, se detecta automáticamente)",
+    "languagePlaceholder": "Detección automática",
+    "submitIdle": "Generar ontología",
+    "submitBusy": "Generando…",
+    "submitRegenerate": "Regenerar",
+    "stageClasses": "Clases",
+    "stageRelations": "Relaciones",
+    "stageIndividuals": "Individuos",
+    "stageValidation": "Validación",
+    "retryingNote": "La validación falló — corrigiendo y reintentando automáticamente…",
+    "progressLabel": "Progreso de la generación",
+    "genericFailure": "Error al generar la ontología.",
+    "llmError": "El motor de inferencia no pudo procesar la petición"
+  },
+  "toolbar": {
+    "newClassPlaceholder": "Nombre de la nueva clase…",
+    "addClass": "Añadir clase",
+    "exportAs": "Exportar",
+    "exportTurtle": "Turtle",
+    "exportRdfXml": "RDF/XML",
+    "reset": "Reiniciar",
+    "resetConfirmTitle": "¿Descartar la ontología actual?",
+    "resetConfirmBody": "Esta acción no se puede deshacer.",
+    "cancel": "Cancelar",
+    "discard": "Descartar"
+  },
+  "inspector": {
+    "emptySelection": "Selecciona una clase en el lienzo para ver sus atributos e individuos.",
+    "dataProperties": "Atributos de datos",
+    "individuals": "Individuos",
+    "noneYet": "Aún no hay ninguno",
+    "attributeNamePlaceholder": "Nombre del atributo",
+    "individualNamePlaceholder": "Nombre del individuo",
+    "add": "Añadir",
+    "removeNamed": "Eliminar {{name}}"
+  },
+  "canvas": {
+    "validationError": "Error de validación: {{error}}",
+    "deleteClassNamed": "Eliminar clase {{name}}",
+    "deleteRelationNamed": "Eliminar relación {{name}}",
+    "dragRelationLabel": "Arrastra para recolocar esta etiqueta",
+    "controlsLabel": "Panel de control",
+    "zoomIn": "Acercar",
+    "zoomOut": "Alejar",
+    "fitView": "Ajustar vista",
+    "toggleInteractivity": "Alternar interactividad",
+    "miniMapLabel": "Minimapa"
+  },
+  "theme": {
+    "switchToLight": "Cambiar a modo claro",
+    "switchToDark": "Cambiar a modo oscuro"
+  }
+}

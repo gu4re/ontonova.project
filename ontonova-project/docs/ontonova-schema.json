@@ -1,99 +1,239 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "OntoNovaIntermediateSchema",
-  "type": "object",
-  "properties": {
-    "metadata": {
-      "type": "object",
-      "properties": {
-        "ontology_name": { "type": "string" },
-        "description": { "type": "string" }
-      },
-      "required": ["ontology_name"]
-    },
-    "classes": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": { "type": "string", "pattern": "^[A-Za-z0-9_]+$" },
-          "label": { "type": "string" },
-          "subClassOf": { "type": ["string", "null"], "description": "ID de la clase padre si existe" },
-          "description": { "type": "string" }
+    "$defs": {
+        "DataProperty": {
+            "additionalProperties": false,
+            "properties": {
+                "metadata": {
+                    "additionalProperties": true,
+                    "description": "Espacio de almacenamiento dinámico para futuras extensiones del sistema.",
+                    "title": "Metadata",
+                    "type": "object"
+                },
+                "id": {
+                    "description": "Identificador único del atributo de datos (attr_camelCase).",
+                    "pattern": "^[A-Za-z0-9_]+$",
+                    "title": "Id",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Nombre del atributo.",
+                    "title": "Name",
+                    "type": "string"
+                },
+                "domain": {
+                    "description": "ID de la Clase a la que pertenece el atributo.",
+                    "pattern": "^[A-Za-z0-9_]+$",
+                    "title": "Domain",
+                    "type": "string"
+                },
+                "range": {
+                    "description": "Tipo de dato primitivo XML Schema (xsd:string, xsd:integer, xsd:float, xsd:boolean o xsd:dateTime).",
+                    "enum": [
+                        "xsd:string",
+                        "xsd:integer",
+                        "xsd:float",
+                        "xsd:boolean",
+                        "xsd:dateTime"
+                    ],
+                    "title": "Range",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "domain",
+                "range"
+            ],
+            "title": "DataProperty",
+            "type": "object"
         },
-        "required": ["id", "label"]
-      }
-    },
-    "object_properties": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": { "type": "string", "pattern": "^[A-Za-z0-9_]+$" },
-          "label": { "type": "string" },
-          "domain": { "type": "string", "description": "ID de la clase origen" },
-          "range": { "type": "string", "description": "ID de la clase destino" },
-          "characteristics": {
-            "type": "array",
-            "items": { 
-              "type": "string", 
-              "enum": ["Functional", "InverseFunctional", "Transitive", "Symmetric", "Asymmetric", "Reflexive", "Irreflexive"] 
-            }
-          }
+        "Individual": {
+            "additionalProperties": false,
+            "properties": {
+                "metadata": {
+                    "additionalProperties": true,
+                    "description": "Espacio de almacenamiento dinámico para futuras extensiones del sistema.",
+                    "title": "Metadata",
+                    "type": "object"
+                },
+                "id": {
+                    "description": "Identificador único de la instancia (inst_camelCase o slug).",
+                    "pattern": "^[A-Za-z0-9_]+$",
+                    "title": "Id",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Nombre real de la entidad concreta.",
+                    "title": "Name",
+                    "type": "string"
+                },
+                "typeClass": {
+                    "description": "ID de la Clase a la que pertenece este individuo.",
+                    "pattern": "^[A-Za-z0-9_]+$",
+                    "title": "Typeclass",
+                    "type": "string"
+                },
+                "objectPropertyAssertions": {
+                    "additionalProperties": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "description": "Relaciones de este individuo con otros individuos.",
+                    "title": "Objectpropertyassertions",
+                    "type": "object"
+                },
+                "dataPropertyAssertions": {
+                    "additionalProperties": true,
+                    "description": "Valores reales asignados a sus atributos de datos.",
+                    "title": "Datapropertyassertions",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "typeClass"
+            ],
+            "title": "Individual",
+            "type": "object"
         },
-        "required": ["id", "label", "domain", "range"]
-      }
-    },
-    "data_properties": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": { "type": "string", "pattern": "^[A-Za-z0-9_]+$" },
-          "label": { "type": "string" },
-          "domain": { "type": "string" },
-          "range": { 
-            "type": "string", 
-            "enum": ["xsd:string", "xsd:integer", "xsd:float", "xsd:boolean", "xsd:dateTime"] 
-          }
+        "ObjectProperty": {
+            "additionalProperties": false,
+            "properties": {
+                "metadata": {
+                    "additionalProperties": true,
+                    "description": "Espacio de almacenamiento dinámico para futuras extensiones del sistema.",
+                    "title": "Metadata",
+                    "type": "object"
+                },
+                "id": {
+                    "description": "Identificador único de la propiedad de objeto (prop_camelCase).",
+                    "pattern": "^[A-Za-z0-9_]+$",
+                    "title": "Id",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Nombre de la relación.",
+                    "title": "Name",
+                    "type": "string"
+                },
+                "domain": {
+                    "description": "ID de la Clase origen (Domain).",
+                    "pattern": "^[A-Za-z0-9_]+$",
+                    "title": "Domain",
+                    "type": "string"
+                },
+                "range": {
+                    "description": "ID de la Clase destino (Range).",
+                    "pattern": "^[A-Za-z0-9_]+$",
+                    "title": "Range",
+                    "type": "string"
+                },
+                "characteristics": {
+                    "description": "Características OWL opcionales (ej. Transitive, Symmetric, Functional).",
+                    "items": {
+                        "enum": [
+                            "Functional",
+                            "InverseFunctional",
+                            "Transitive",
+                            "Symmetric",
+                            "Asymmetric",
+                            "Reflexive",
+                            "Irreflexive"
+                        ],
+                        "type": "string"
+                    },
+                    "title": "Characteristics",
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "domain",
+                "range"
+            ],
+            "title": "ObjectProperty",
+            "type": "object"
         },
-        "required": ["id", "label", "domain", "range"]
-      }
+        "OntoClass": {
+            "additionalProperties": false,
+            "properties": {
+                "metadata": {
+                    "additionalProperties": true,
+                    "description": "Espacio de almacenamiento dinámico para futuras extensiones del sistema.",
+                    "title": "Metadata",
+                    "type": "object"
+                },
+                "id": {
+                    "description": "Identificador único de la clase (ID_CamelCase).",
+                    "pattern": "^[A-Za-z0-9_]+$",
+                    "title": "Id",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Nombre legible por humanos en inglés o español.",
+                    "title": "Name",
+                    "type": "string"
+                },
+                "subClassOf": {
+                    "anyOf": [
+                        {
+                            "pattern": "^[A-Za-z0-9_]+$",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "ID de la clase padre si existe una jerarquía taxonómica.",
+                    "title": "Subclassof"
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "title": "OntoClass",
+            "type": "object"
+        }
     },
-    "individuals": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": { "type": "string", "pattern": "^[A-Za-z0-9_]+$" },
-          "label": { "type": "string" },
-          "type": { "type": "string", "description": "ID de la Clase a la que pertenece" },
-          "object_property_assertions": {
-            "type": "array",
+    "additionalProperties": false,
+    "description": "Contrato de datos definitivo para OntoNova. \nGobierna la IA, el Frontend interactivo y el exportador final a Protégé.",
+    "properties": {
+        "classes": {
             "items": {
-              "type": "object",
-              "properties": {
-                "property_id": { "type": "string" },
-                "target_individual_id": { "type": "string" }
-              },
-              "required": ["property_id", "target_individual_id"]
-            }
-          },
-          "data_property_assertions": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "property_id": { "type": "string" },
-                "value": { "type": ["string", "number", "boolean"] }
-              },
-              "required": ["property_id", "value"]
-            }
-          }
+                "$ref": "#/$defs/OntoClass"
+            },
+            "title": "Classes",
+            "type": "array"
         },
-        "required": ["id", "label", "type"]
-      }
-    }
-  },
-  "required": ["metadata", "classes", "object_properties", "data_properties", "individuals"]
+        "object_properties": {
+            "items": {
+                "$ref": "#/$defs/ObjectProperty"
+            },
+            "title": "Object Properties",
+            "type": "array"
+        },
+        "data_properties": {
+            "items": {
+                "$ref": "#/$defs/DataProperty"
+            },
+            "title": "Data Properties",
+            "type": "array"
+        },
+        "individuals": {
+            "items": {
+                "$ref": "#/$defs/Individual"
+            },
+            "title": "Individuals",
+            "type": "array"
+        }
+    },
+    "title": "OntoNovaSchema",
+    "type": "object"
 }

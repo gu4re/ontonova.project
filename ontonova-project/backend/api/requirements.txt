@@ -1,0 +1,14 @@
+fastapi==0.141.1
+uvicorn[standard]==0.52.1
+langgraph==1.0.10
+# langgraph pulls a vulnerable langgraph-checkpoint by default (PYSEC-2026-1527
+# et al.) — pin the patched major explicitly (REQ-SW-NF-02).
+langgraph-checkpoint==4.1.1
+httpx==0.28.1
+rdflib==7.1.1
+pydantic==2.13.4
+python-dotenv==1.2.2
+
+# Testing
+pytest==9.1.1
+pytest-asyncio==1.4.0

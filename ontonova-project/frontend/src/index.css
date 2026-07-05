@@ -1,0 +1,104 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: #05060a;
+  --color-surface: #0d0f17;
+  --color-surface-raised: #12141e;
+  --color-border: rgba(255, 255, 255, 0.09);
+  --color-border-strong: rgba(255, 255, 255, 0.18);
+  --color-text: #e9ebf3;
+  --color-text-muted: #8b93a7;
+  --color-text-dim: #5b6274;
+
+  --color-accent-from: #8b5cf6;
+  --color-accent-to: #22d3ee;
+  --color-accent: #a78bfa;
+  --color-accent-soft: rgba(167, 139, 250, 0.14);
+
+  --color-danger: #f87171;
+  --color-danger-soft: rgba(248, 113, 113, 0.12);
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.4s ease-out;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(167, 139, 250, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(167, 139, 250, 0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+
+  --color-bg: #f7f7fb;
+  --color-surface: #ffffff;
+  --color-surface-raised: #f1f2f7;
+  --color-border: rgba(15, 23, 42, 0.08);
+  --color-border-strong: rgba(15, 23, 42, 0.16);
+  --color-text: #16181d;
+  --color-text-muted: #5b6274;
+  --color-text-dim: #9aa1b4;
+
+  --color-accent-from: #7c3aed;
+  --color-accent-to: #0891b2;
+  --color-accent: #7c3aed;
+  --color-accent-soft: rgba(124, 58, 237, 0.1);
+
+  --color-danger: #dc2626;
+  --color-danger-soft: rgba(220, 38, 38, 0.08);
+  --color-success: #059669;
+  --color-warning: #d97706;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+::selection {
+  background: var(--color-accent-soft);
+  color: var(--color-text);
+}
+
+/* Slim, dark-themed scrollbars for the panels and canvas. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-strong) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 999px;
+}

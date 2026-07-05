@@ -1,0 +1,2 @@
+api/tests/test_graph.py::test_pipeline_rejects_over_length_input_fast_with_terminal_event PASSED [100%]
+================= 1 passed, 45 deselected, 1 warning in 0.29s ==================

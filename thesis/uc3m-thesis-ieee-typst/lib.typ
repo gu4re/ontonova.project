@@ -473,7 +473,7 @@
       } else if style == "fancy" {
         box(
           width: 100%,
-          inset: (top: 5.5em, bottom: 5em),
+          inset: (top: 5.5em, bottom: if in-appendix.get() { 2.5em } else { 5em }),
           {
             // chapter number
             box(
@@ -1092,7 +1092,7 @@
     if type(glossary) == array {
       show: make-glossary
 
-      print-glossary(glossary)
+      print-glossary(glossary, disable-back-references: true)
     } else if type(glossary) == content {
       glossary
     }
