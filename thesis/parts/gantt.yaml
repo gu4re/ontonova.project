@@ -94,7 +94,7 @@ taskgroups:
           - start: 2026-06-06
             end: 2026-06-07
 
-  - name: Reporte
+  - name: Informe
     tasks:
       - name: Redacción y Maquetación
         intervals:
@@ -133,4 +133,4 @@ milestones:
   - name: "M3: MVP"
     date: 2026-06-07
   - name: "M4: Entrega"
-    date: 2026-09-04
+    date: 2026-09-03

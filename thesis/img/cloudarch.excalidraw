@@ -39,7 +39,8 @@
       "baseline": 22,
       "index": "a4",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "rectangle",
@@ -139,8 +140,8 @@
     },
     {
       "type": "rectangle",
-      "version": 2,
-      "versionNonce": 857934371,
+      "version": 3,
+      "versionNonce": 1964838396,
       "id": "el009",
       "x": 217.94,
       "y": 296,
@@ -159,11 +160,11 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1788029064029,
+      "updated": 1788465619504,
       "link": null,
       "locked": false,
       "index": "a9",
-      "isDeleted": false
+      "isDeleted": true
     },
     {
       "type": "text",
@@ -206,7 +207,8 @@
       "baseline": 14,
       "index": "aA",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "rectangle",
@@ -277,7 +279,8 @@
       "baseline": 18,
       "index": "aC",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "text",
@@ -315,7 +318,8 @@
       "baseline": 18,
       "index": "aD",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "rectangle",
@@ -381,7 +385,8 @@
       "baseline": 18,
       "index": "aF",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "text",
@@ -424,7 +429,8 @@
       "baseline": 18,
       "index": "aG",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "rectangle",
@@ -492,7 +498,8 @@
       "baseline": 22,
       "index": "aI",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "rectangle",
@@ -623,7 +630,8 @@
       "baseline": 20,
       "index": "aM",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "text",
@@ -661,7 +669,8 @@
       "baseline": 15,
       "index": "aN",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "rectangle",
@@ -793,7 +802,8 @@
       "baseline": 15,
       "index": "aS",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "rectangle",
@@ -859,7 +869,8 @@
       "baseline": 18,
       "index": "aU",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "rectangle",
@@ -986,7 +997,8 @@
       "baseline": 20,
       "index": "aY",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "text",
@@ -1024,7 +1036,8 @@
       "baseline": 15,
       "index": "aZ",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "arrow",
@@ -1105,7 +1118,8 @@
       "baseline": 14,
       "index": "ad",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "text",
@@ -1143,7 +1157,8 @@
       "baseline": 14,
       "index": "ag",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "rectangle",
@@ -1209,7 +1224,8 @@
       "baseline": 14,
       "index": "am",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "angle": 0,
@@ -2252,7 +2268,8 @@
       "lineHeight": 1.25,
       "index": "b0Q",
       "frameId": null,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "line",
@@ -2526,7 +2543,8 @@
       "lineHeight": 1.25,
       "index": "b0z",
       "frameId": null,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "line",
@@ -2828,7 +2846,8 @@
       "baseline": 14,
       "index": "b15",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "line",
@@ -3470,7 +3489,8 @@
       "lineHeight": 1.25,
       "index": "b1Q",
       "frameId": null,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "line",
@@ -3744,7 +3764,8 @@
       "lineHeight": 1.25,
       "index": "b1W",
       "frameId": null,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "id": "n4p8pG9FIOra3CPPy8G4m",
@@ -3945,7 +3966,8 @@
       "baseline": 18,
       "index": "b1b",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "line",
@@ -4157,7 +4179,8 @@
       "lineHeight": 1.25,
       "index": "b1f",
       "frameId": null,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "rectangle",
@@ -4471,7 +4494,8 @@
       "lineHeight": 1.25,
       "index": "b1q",
       "frameId": null,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "text",
@@ -4509,7 +4533,8 @@
       "baseline": 18,
       "index": "b1r",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "text",
@@ -4547,7 +4572,8 @@
       "baseline": 20,
       "index": "b1s",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "line",
@@ -5188,7 +5214,8 @@
       "baseline": 14,
       "index": "b29",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "id": "eRf9k-aWNY770f6lUE_AT",
@@ -5642,11 +5669,11 @@
       "id": "znmAhIhajbH7Hzg3Jr15j",
       "type": "rectangle",
       "x": 454.28002233934114,
-      "y": 297.18851947298197,
+      "y": 298.0094743984771,
       "width": 46.914145360191014,
-      "height": 116.54125509946509,
+      "height": 114.2815357158259,
       "angle": 0,
-      "strokeColor": "transparent",
+      "strokeColor": "#ffffff",
       "backgroundColor": "#ffffff",
       "fillStyle": "solid",
       "strokeWidth": 2,
@@ -5658,11 +5685,11 @@
       "index": "b2P",
       "roundness": null,
       "seed": 294129731,
-      "version": 1847,
-      "versionNonce": 1555933763,
+      "version": 1876,
+      "versionNonce": 1224929660,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1788033063145,
+      "updated": 1788465666439,
       "link": null,
       "locked": false
     },
@@ -5702,7 +5729,8 @@
       "baseline": 20,
       "index": "b2Q",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "type": "text",
@@ -5740,7 +5768,8 @@
       "baseline": 18,
       "index": "b2R",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     },
     {
       "id": "rUGaqo9IfDmzWXo57B5CT",
@@ -5808,7 +5837,8 @@
       "baseline": 14,
       "index": "b2U",
       "isDeleted": false,
-      "autoResize": true
+      "autoResize": true,
+      "labelPosition": null
     }
   ],
   "appState": {

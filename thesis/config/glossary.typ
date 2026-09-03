@@ -8,21 +8,21 @@
   ),
   (
     key: "glossgdpr",
-    short: "GDPR",
+    short: "RGPD",
     long: "Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016",
-    description: "Una regulación en la ley de la UE sobre protección de datos y privacidad en la Unión Europea y la Área Económica Europea.",
+    description: "Reglamento del derecho de la Unión Europea sobre protección de datos y privacidad, aplicable en la UE y el Espacio Económico Europeo.",
   ),
   (
     key: "glossrdf",
     short: "RDF",
     long: "Marco de Descripción de Recursos",
-    description: "Un estándar del W3C para describir recursos web y sus relaciones mediante tripletas (sujeto, predicado, objeto), utilizado en la web semántica.",
+    description: "Estándar del W3C para describir recursos web y sus relaciones mediante tripletas (sujeto, predicado, objeto), utilizado en la web semántica.",
   ),
   (
     key: "glossw3c",
     short: "W3C",
     long: "World Wide Web Consortium",
-    description: "Un consorcio internacional que desarrolla estándares web para garantizar la interoperabilidad y el crecimiento de la web.",
+    description: "Consorcio internacional que desarrolla estándares web para garantizar la interoperabilidad y el crecimiento de la web.",
   ),
   (
     key: "glossai",
@@ -40,25 +40,25 @@
     key: "glossxml",
     short: "XML",
     long: "Lenguaje de Marcado Extensible",
-    description: "Metalenguaje que permite definir lenguajes de marcas desarrollado por el World Wide Web Consortium utilizado para almacenar datos en forma legible."
+    description: "Metalenguaje que permite definir lenguajes de marcas, desarrollado por el World Wide Web Consortium y utilizado para almacenar datos en forma legible."
   ),
   (
     key: "glossuri",
     short: "URI",
-    long: "Identificador de recursos uniforme",
+    long: "Identificador de Recursos Uniforme",
     description: "Cadena de caracteres que identifica los recursos —físicos o abstractos— de una red de forma unívoca."
   ),
   (
     key: "glossowl",
     short: "OWL",
     long: "Lenguaje Web de Ontologías",
-    description: "Lenguaje de marcado para publicar y compartir datos usando ontologías en la WWW. Tiene como objetivo facilitar un modelo de marcado construido sobre RDF y codificado en XML"
+    description: "Lenguaje de marcado para publicar y compartir datos usando ontologías en la WWW. Tiene como objetivo facilitar un modelo de marcado construido sobre RDF y codificado en XML."
   ),
   (
     key: "glossnlp",
     short: "NLP",
     long: "Procesamiento de Lenguaje Natural",
-    description: "Es un campo de las ciencias de la computación, de la inteligencia artificial y de la lingüística que estudia las interacciones entre las computadoras y el lenguaje humano, así como los detalles computacionales de las lenguas naturales."
+    description: "Campo de las ciencias de la computación, de la inteligencia artificial y de la lingüística que estudia las interacciones entre los ordenadores y el lenguaje humano, así como los detalles computacionales de las lenguas naturales."
   ),
   (
     key: "glossjson",
@@ -70,7 +70,7 @@
     key: "glossrest",
     short: "REST",
     long: "Transferencia de Estado Representacional",
-    description: "Estilo de arquitectura de software para crear servicios web Transferencia de Estado Representacional."
+    description: [Estilo de arquitectura de _software_ para crear servicios web.]
   ),
   (
     key: "glosssse",
@@ -82,13 +82,13 @@
     key: "glosshttp",
     short: "HTTP",
     long: "Protocolo de Transferencia de Hipertexto",
-    description: "Protocolo de comunicación que permite las transferencias de información a través de archivos en la World Wide Web."
+    description: "Protocolo de comunicación que permite la transferencia de información y archivos en la World Wide Web."
   ),
   (
     key: "glossqa",
     short: "QA",
     long: "Aseguramiento de Calidad",
-    description: "Profesional responsable de probar las soluciones tecnológicas y asegurarse de su adecuado funcionamiento."
+    description: "Disciplina orientada a garantizar el correcto funcionamiento de las soluciones tecnológicas mediante su prueba sistemática."
   ),
   (
     key: "glossfoss",
@@ -100,13 +100,13 @@
     key: "glosslopdgdd",
     short: "LOPDGDD",
     long: "Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales",
-    description: "Adapta el ordenamiento jurídico español al Reglamento General de Protección de Datos (GDPR) de la Unión Europea y regula los derechos digitales de los ciudadanos conforme a la Constitución."
+    description: "Adapta el ordenamiento jurídico español al Reglamento General de Protección de Datos (RGPD) de la Unión Europea y regula los derechos digitales de los ciudadanos conforme a la Constitución."
   ),
   (
     key: "glossaiact",
     short: "AI Act",
     long: "Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024",
-    description: "Mejora el funcionamiento del mercado interior mediante el establecimiento de un marco jurídico uniforme, en particular para el desarrollo, la introducción en el mercado, la puesta en servicio y la utilización de sistemas de inteligencia artificial."
+    description: "Reglamento que mejora el funcionamiento del mercado interior mediante el establecimiento de un marco jurídico uniforme, en particular para el desarrollo, la introducción en el mercado, la puesta en servicio y la utilización de sistemas de inteligencia artificial."
   ),
   (
     key: "glosswow",
@@ -118,7 +118,7 @@
     key: "glosspymes",
     short: "PYMES",
     long: "Pequeñas y Medianas Empresas",
-    description: "Empresas que cuentan con ciertos límites ocupacionales y financieros prefijados por los Estados o regiones."
+    description: "Empresas que cuentan con ciertos límites ocupacionales y financieros prefijados por los estados o regiones."
   ),
   (
     key: "glossieee",
@@ -135,7 +135,7 @@
   (
     key: "glossuml",
     short: "UML",
-    long: "Lenguaje unificado de modelado",
+    long: "Lenguaje Unificado de Modelado",
     description: "Lenguaje gráfico de modelado para visualizar, especificar, construir y documentar un sistema."
   ),
   (
@@ -172,30 +172,30 @@
     key: "glossgpu",
     short: "GPU",
     long: "Unidad de Procesamiento Gráfico",
-    description: "Componente hardware especializado en la renderización de imágenes y gráficos."
+    description: [Componente _hardware_ especializado en la renderización de imágenes, gráficos y en el cómputo paralelo masivo.]
   ),
   (
     key: "glossgbnf",
     short: "GBNF",
     long: "Gramática Backus-Naur para GGML",
-    description: "Formato de gramática utilizada para definir la estructura que debe seguir la respuesta de un modelo de lenguaje en la generación de texto."
+    description: "Formato de gramática utilizado para definir la estructura que debe seguir la respuesta de un modelo de lenguaje en la generación de texto."
   ),
   (
     key: "glosscuda",
     short: "CUDA",
     long: "Arquitectura Unificada de Dispositivos de Cómputo",
-    description: "Modelo de programación y conjunto de instrucciones desarrollado por NVIDIA para el procesamiento paralelo en GPUs."
+    description: "Modelo de programación y conjunto de instrucciones desarrollado por NVIDIA para el procesamiento paralelo en las GPU."
   ),
   (
     key: "glosseupl",
     short: "EUPL-1.2",
     long: "Licencia Pública de la Unión Europea",
-    description: "Licencia de software libre y copyleft creada por la Unión Europea para una previsible liberación de programas pertenecientes a las administraciones públicas, las empresas y los ciudadanos."
+    description: [Licencia de _software_ libre y _copyleft_ creada por la Unión Europea concebida para la liberación de programas de las administraciones públicas, las empresas y los ciudadanos.]
   ),
   (
     key: "glossagpl",
     short: "AGPL-3",
     long: "Licencia Pública General de Affero",
-    description: "Licencia copyleft derivada de la Licencia Pública General de GNU diseñada específicamente para asegurar la cooperación con la comunidad en el caso de software que corra en servidores de red."
+    description: [Licencia _copyleft_ derivada de la Licencia Pública General de GNU diseñada específicamente para asegurar la cooperación con la comunidad en el caso de _software_ ejecutado en servidores de red.]
   )
 )

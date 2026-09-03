@@ -981,12 +981,13 @@
   }
 
   // contents
-  outline(title: locale.OUTLINE.at("contents").at(language), depth: 3)
+  outline(title: locale.OUTLINE.at("contents").at(language), depth: 2)
   newpage(double-sided)
 
   if outlines != none {
     // figures
     if outlines.at("figures", default: false) {
+      set par(spacing: 0.8em)
       outline(
         title: locale.OUTLINE.at("figures").at(language),
         target: figure.where(kind: image),
@@ -996,6 +997,7 @@
 
     // tables
     if outlines.at("tables", default: false) {
+      set par(spacing: 0.8em)
       outline(
         title: locale.OUTLINE.at("tables").at(language),
         target: figure.where(kind: table),
@@ -1140,7 +1142,7 @@
       genai-declaration.at("usage-reflection", default: none),
     )
   }
-
+  pagebreak()
   // we _would_ need to set this on a new page,
   // but as there are none, it's not needed
   // in-appendix.update(false)

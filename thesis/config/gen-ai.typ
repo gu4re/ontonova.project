@@ -8,7 +8,7 @@
   ),
   technical-usage: (
     tool: "Claude Sonnet 5",
-    // Name of the AI system/tool and version (e.g. "ChatGPT 4o", "Gemini 2.0")
+    // Name of the AI system/tool and version (p. ej. "ChatGPT 4o", "Gemini 2.0")
     // tool: "ChatGPT 4o",
     // If you think it is necessary to include it, add it in each case:
     // *using the prompt* ...
@@ -41,7 +41,7 @@
       Ejemplo 2. *Utilizando la instrucción*: "¿Quién introduce el concepto de Shift Left? Porque la pirámide de testing parece contribuira ello", *teniendo como interacción* la mención de la fuente y el año de publicación del artículo de revista _Shift Left Testing_ de Larry Smith, 2001, en conjunto con una explicación de la relación entre ambos conceptos.
     ],
     summary: [
-      Ejemplo 1. *Utilizando la instrucción*: "Revisa Arquitectura Limpia de C.Martin y extrae el índice de contenidos pues me gustaría citarlo en un requisito de diseño que menciona el escalado horizontal", *teniendo como interacción* la propuesta del capítulo 10 del libro con un resumen del mismo.
+      Ejemplo 1. *Utilizando la instrucción*: "Revisa Arquitectura Limpia de C.Martin y extrae el índice de contenidos pues me gustaría citarlo en un requisito de diseño que menciona el escalado horizontal", *teniendo como interacción* la propuesta del capítulo 16 del libro con un resumen del mismo.
     ],
     //translation: [_Translation of texts consulted._],
     // ── Develop specific content ───────────────────────────────────────────
@@ -64,6 +64,6 @@
     //  specific development of the work._],
   ),
   usage-reflection: [
-    El uso de la inteligencia artificial generativa en este trabajo es coherente con el sentimiento expuesto en las conclusiones personales de la memoria, donde me declaro afortunado de haberme formado en el sistema educativo en su ausencia. Mantengo un rechazo absoluto a que la inteligencia artificial generativa participe en las fases de innovación e imaginación de un proyecto, pues considero que la concepción de ideas, la motivación y las decisiones creativas son íntegramente humanas. En esta iniciativa, toda propuesta arquitectónica nace de mi criterio en base a las necesidades expuestas por mi gerente de proyecto ---la tutora---, y la herramienta se limita a asistir en su implementación. Su fortaleza diferencial la encuentro, en cambio, en el ámbito de la calidad del software. Como asistente de pruebas ha demostrado una capacidad de sobreanalizar casos de uso, casos límite y condiciones de carrera que adelanta la detección de defectos a fases tan tempranas del ciclo de vida que hasta el enfoque de desplazamiento a la izquierda da las gracias por ello. Como debilidad, señalo la necesidad permanente de supervisión, pues la herramienta puede errar con facilidad ---bibliografía incluida---, lo que me empuja a verificar las salidas propuestas con una disciplina que, lejos de ser un coste, ha reforzado mi propio aprendizaje, obligándome a comprender cada corrección antes de aceptarla.
+    El uso de la inteligencia artificial generativa en este trabajo es coherente con el sentimiento expuesto en las conclusiones personales de la memoria, donde me declaro afortunado de haberme formado en el sistema educativo en su ausencia. Mantengo un rechazo absoluto a que la inteligencia artificial generativa participe en las fases de innovación e imaginación de un proyecto, pues considero que la concepción de ideas, la motivación y las decisiones creativas son íntegramente humanas. En esta iniciativa, toda propuesta arquitectónica nace de mi criterio a partir de las necesidades expuestas por mi gerente de proyecto ---la tutora---, y la herramienta se limita a asistir en su implementación. Su fortaleza diferencial la encuentro, en cambio, en el ámbito de la calidad del _software_. Como asistente de pruebas ha demostrado una capacidad de sobreanalizar casos de uso, casos límite y condiciones de carrera que adelanta la detección de defectos a fases tan tempranas del ciclo de vida que hasta el enfoque de desplazamiento a la izquierda da las gracias por ello. Como debilidad, señalo la necesidad permanente de supervisión, pues la herramienta puede errar con facilidad ---bibliografía incluida---, lo que me empuja a verificar las salidas propuestas con una disciplina que, lejos de ser un coste, ha reforzado mi propio aprendizaje, obligándome a comprender cada corrección antes de aceptarla.
   ],
 )

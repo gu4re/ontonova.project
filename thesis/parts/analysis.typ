@@ -20,10 +20,10 @@ La gestión y calidad de requisitos toma como referencia las características de
 - *Modificable.* La estructura y estilo del documento de especificación deben permitir que los cambios se realicen de manera fácil, completa y consistente @isoieee[Cap. 4.3.7].
 - *Trazable.* Cada requisito funcional debe tener un origen bien definido @isoieee[Cap. 4.3.8].
 
-Posteriormente, la norma ISO/IEC/IEEE 29148:2018 @isoieee29148[Cap. 5.2] sustituye a @glossieee n.º 830-1998 @isoieee, que en combinación con ISO/IEC/IEEE 15288:2023 @isoieee15288, mantiene los principios fundamentales destacados, incorporando criterios de aceptación cuantificables conforme a las características y reglas de la guía de la @glossincose @incoseguide.
+Posteriormente, la norma ISO/IEC/IEEE 29148:2018 @isoieee29148[Cap. 5.2] sustituye a @glossieee n.º 830-1998 @isoieee, que, en combinación con ISO/IEC/IEEE 15288:2023 @isoieee15288, mantiene los principios fundamentales destacados, incorporando criterios de aceptación cuantificables conforme a las características y reglas de la guía de la @glossincose @incoseguide.
 
 == Exposición de Requisitos <sec:requirementexposition>
-La @tab:requisitetemplate enmarca el contenido de un requisito de usuario o de _software_ del desarrollo de la aplicación. La nomenclatura utilizada es `REQ-XX-YY-ZZ`, siendo `XX` el identificador del requisito, `YY` el ámbito al que pertenece, `US` para usuario y `SW` para _software_, y `ZZ` el tipo de requisito, con los valores `FC` o `NF` indicando, funcional o no funcional, respectivamente.
+La @tab:requisitetemplate enmarca el contenido de un requisito de usuario o de _software_ del desarrollo de la aplicación. La nomenclatura utilizada es `REQ-XX-YY-ZZ`, siendo `XX` el ámbito del requisito, `YY` el origen al que pertenece, `US` para usuario y `SW` para _software_, y `ZZ` el tipo de requisito, con los valores `FC` o `NF` indicando, funcional o no funcional, respectivamente.
 
 #figure(
   table(
@@ -139,7 +139,7 @@ La @tab:funcuserrequisites representa los requisitos de usuario funcionales. Los
         Verificabilidad: Alta. \
         Origen: REQ-US-FC-05.
       ],
-      [El sistema permite la importación de ontologías existentes en formatos estándar @glossw3c de hasta 5 MB a través de un recorrido web, sin pérdida de tripletas.],
+      [El sistema permite la importación de ontologías existentes en formatos estándar @glossw3c de hasta 5MB a través de un recorrido web, sin pérdida de tripletas.],
 
       [REQ-US-FC-09 <REQ-US-FC-09>],
       [
@@ -159,7 +159,7 @@ La @tab:funcuserrequisites representa los requisitos de usuario funcionales. Los
         Verificabilidad: Alta. \
         Origen: Gerente de Proyecto.
       ],
-      [El sistema permite utilizar como entrada, desde la interfaz web, archivos planos o PDF de hasta 5 MB, en español e inglés, rechazando los que incumplan el requisito REQ-US-FC-01.]
+      [El sistema permite utilizar como entrada, desde la interfaz web, archivos planos o PDF de hasta 5MB, en español e inglés, rechazando los que incumplan el requisito REQ-US-FC-01.]
     ),
     caption: [Requisitos funcionales de usuario],
   ) <tab:funcuserrequisites>
@@ -303,7 +303,7 @@ Contemplando el contenido de requisitos de la @tab:requisitetemplate, a continua
         Verificabilidad: Alta. \
         Origen: Gerente de Proyecto.
       ],
-      [Incluir un marco de pruebas automatizadas con una cobertura mínima del 80% sobre la lógica de negocio del sistema.],
+      [Incluir un marco de pruebas automatizadas con una cobertura mínima del 90% sobre la lógica de negocio del sistema.],
 
       [REQ-SW-NF-05 <REQ-SW-NF-05>],
       [
@@ -390,7 +390,7 @@ En esta sección, los principales casos de uso están ligados a los requisitos i
 #heading(level: 4, numbering: none)[
   Diagrama de Casos de Uso
 ]
-Queda disponible la @fig:umlcases en la siguiente página, la cuál contiene el diagrama @glossuml de los casos de uso mencionados en la @sec:usecases.
+Se ilustra la @fig:umlcases, la cual contiene el diagrama @glossuml de los casos de uso mencionados en la @sec:usecases.
 
 #figure(
   image("../img/uml.png", width: 100%),

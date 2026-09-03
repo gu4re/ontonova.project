@@ -1,4 +1,5 @@
 #import "@preview/gantty:0.4.0": gantt
+#import "@preview/glossarium:0.5.9": gls
 
 = Plan de Proyecto
 Este capítulo presenta tanto la planificación, @sec:planning, como el presupuesto, @sec:money, del trabajo realizado, conociendo el marco regulatorio y su impacto en el desarrollo sostenible, @sec:law, en el entorno socioeconómico, @sec:socialcontext, en el que surge.
@@ -9,7 +10,7 @@ Esta sección incluye detalles acerca de la planificación del proyecto. Se desc
 === Metodología <sec:methodology>
 El proceso de desarrollo de la propuesta se lleva a cabo siguiendo, principalmente, una metodología en cascada, representada en la @fig:waterfall. Este modelo permite una estructuración clara y lógica del trabajo, siguiendo los siguientes pasos:
 + *Análisis de requisitos.* Se realizan reuniones y consultas con el experto para identificar y definir los requisitos necesarios para el correcto desarrollo del sistema. Clave para establecer unos objetivos de negocio y de aprendizaje.
-+ *Diseño de la arquitectura.* Reunidos los requisitos y los objetivos, se desencadena una lluvia de ideas y múltiples bocetos con el objetivo de cumplir los principios de desarrollo de software @gangoffour @eda, detallados en el @sec:design.
++ *Diseño de la arquitectura.* Reunidos los requisitos y los objetivos, se desencadena una lluvia de ideas y múltiples bocetos con el objetivo de cumplir los principios de desarrollo de _software_ @gangoffour @eda, detallados en el @sec:design.
 + *Proceso de aprendizaje.* Se investiga y selecciona la herramienta adecuada de orquestación de agentes, @sec:agents, en conjunto con la arquitectura idónea para el proyecto en la @sec:eventdrivenarch. Este proceso implica un tiempo considerable dedicado a familiarizarse con el _software_ elegido y comprender su funcionamiento @waterfall[Cap. 6], enlazando con el objetivo O1 descrito en la @sec:objetivos.
 
 + *Implementación y pruebas.* Se adopta un enfoque de prototipado, desarrollando los componentes de manera aislada y realizando iteraciones sobre ellos. Este planteamiento permite validar cada componente de forma independiente, así como realizar pruebas en un entorno controlado, tanto a nivel de componente como en el flujo completo de negocio. Este movimiento garantiza que se aborden los problemas de manera continua y se optimice el desarrollo según los resultados de las pruebas empíricas realizadas. 
@@ -20,9 +21,9 @@ El proceso de desarrollo de la propuesta se lleva a cabo siguiendo, principalmen
 ) <fig:waterfall>
 
 === Estimación de Tiempo <sec:timeline>
-La estimación de tiempo queda diseñada en la @fig:gantt, representando un diagrama de estimación de tiempo o Gantt @waterfall[Cap. 9]. El esquema muestra las tareas realizadas en cada fase de la metodología en cascada (véase @fig:waterfall), incluyendo una última etapa de reporte, donde están incluidas las horas invertidas en la confección de este reporte.
+La estimación de tiempo queda diseñada en la @fig:gantt, representando un diagrama de estimación de tiempo o Gantt @waterfall[Cap. 9]. El esquema muestra las tareas realizadas en cada fase de la metodología en cascada (véase @fig:waterfall), incluyendo una última etapa de informe, donde están incluidas las horas invertidas en la confección de este informe.
 
-El proyecto fija una duración total de 11 meses, aproximadamente 32 horas por mes, cerca de 8 horas a la semana, sin contar fin de semana, vacaciones, días libres, baja por enfermedad y otras casuísticas. Por consiguiente, el tiempo total esperado del trabajo, excluyendo el trabajo del tutor, son 352 horas. En la @tab:timestamp se recoge la distribución del esfuerzo de cada una de las etapas a lo largo del proyecto, en función de la metodología aplicada (véase @sec:methodology), y que sirve como base cuantitativa para complementar la @fig:gantt presentada posteriormente.
+El proyecto fija una duración total de 11 meses, aproximadamente 32 horas por mes, cerca de 8 horas a la semana, sin contar fines de semana, vacaciones, días libres, baja por enfermedad y otras casuísticas. Por consiguiente, el tiempo total esperado del trabajo, excluyendo el trabajo del tutor, son 352 horas. En la @tab:timestamp se recoge la distribución del esfuerzo de cada una de las etapas a lo largo del proyecto, en función de la metodología aplicada (véase @sec:methodology), y que sirve como base cuantitativa para complementar la @fig:gantt presentada posteriormente.
 
 #figure(
   table(
@@ -38,7 +39,8 @@ El proyecto fija una duración total de 11 meses, aproximadamente 32 horas por m
     [Diseño de la Arquitectura], [35], [9,94],
     [Proceso de Aprendizaje], [67], [19,04],
     [Implementación y Pruebas], [96], [27,27],
-    [Reporte], [88], [25,00],
+    [Informe], [88], [25,00],
+    table.hline(),
     [*Total*], [*352*], [*100,00*]
   ),
   caption: [Desglose estimado de horas por fase del proyecto],
@@ -54,7 +56,7 @@ El proyecto fija una duración total de 11 meses, aproximadamente 32 horas por m
 ]
 
 == Presupuesto <sec:money>
-Se introduce el presupuesto, basado en la estimación de tiempo y metodología descritos en la @sec:planning. La siguiente @tab:project, resume la información del proyecto, incluyendo su presupuesto total.
+Se introduce el presupuesto basado en la estimación de tiempo y metodología descritos en la @sec:planning. La siguiente @tab:project resume la información del proyecto, incluyendo su presupuesto total.
 
 #figure(
   table(
@@ -78,10 +80,10 @@ Se introduce el presupuesto, basado en la estimación de tiempo y metodología d
   caption: [Información del proyecto],
 ) <tab:project>
 
-El balance disponible para el proyecto, se ha repartido en las distintas áreas siguiendo *la regla del 70/25*, destinando un 70% de los gastos a recursos humanos y un 25% a elementos materiales. Se ha reservado un 5% del total destinado a gastos improvistos, concretamente 650,00#sym.euro @waterfall[Cap. 12].
+El balance disponible para el proyecto se ha repartido en las distintas áreas siguiendo *la regla del 70/25*, destinando un 70% de los gastos a recursos humanos y un 25% a elementos materiales. Se ha reservado un 5% del total destinado a gastos imprevistos, concretamente 650,00#sym.euro @waterfall[Cap. 12].
 
 === Costes Directos
-Aquellos directamente relacionados con el desarrollo del proyecto @waterfall[Cap. 12]. Pueden distinguirse en dos grupos:
+Aquellos directamente relacionados con el desarrollo del proyecto @waterfall[Cap. 12]. Se distinguen en dos grupos:
 - *Costes personales.* Gastos relacionados con la experiencia, desarrollo personal y transporte de los trabajadores, entre otros. El coste es variable en función del rol del trabajador y su impacto en el proyecto, visible en la @tab:personalcost:
   - *Gerente de Proyecto.* Ofrece apoyo y gestión al proyecto, intermediando entre el nivel de dirección y el nivel de entrega dentro de la organización del proyecto.
   - *@glossqa.* Diseña y realiza pruebas de las características implementadas.
@@ -103,18 +105,19 @@ Es importante señalar que el rol de gerente de proyecto fue asumido por la figu
     table.hline(),
     [Gerente de Proyecto], [80], [41,20#sym.euro/h], [3.296,00#sym.euro],
     [QA], [72], [25,21#sym.euro/h], [1.815,12#sym.euro],
-    [Desarrollador], [150], [23,57#sym.euro/h], [3535,50#sym.euro],
+    [Desarrollador], [150], [23,57#sym.euro/h], [3.535,50#sym.euro],
     [Analista], [50], [35,20#sym.euro/h], [1.760,00#sym.euro],
+    table.hline(),
     [*Total*], [*352*], [], [*10.406,62#sym.euro*]
   ),
   caption: [Costes personales],
 ) <tab:personalcost>
 
-- *Costes materiales.* Principalmente hardware, como servidores, portátiles, teclados, ratones#sym.dots.h De cara al software, todo lo utilizado es @glossfoss. El balance queda recogido en la @tab:materialcost, teniendo en cuenta el coste unitario y aplicando un porcentaje de depreciación debido al uso intensivo durante la duración de once meses del proyecto.
+- *Costes materiales.* Principalmente _hardware_, como servidores, portátiles, teclados, ratones#sym.dots.h De cara al _software_, todo lo utilizado es @glossfoss. El balance queda recogido en la @tab:materialcost, teniendo en cuenta el coste unitario y aplicando un porcentaje de depreciación debido al uso intensivo durante la duración de once meses del proyecto.
 
 #figure(
   table(
-    columns: (1.3fr, 1.2fr, 0.8fr, 0.9fr, 0.8fr),
+    columns: 5,
     align: (left + top, left + top, right + top, right + top, right + top),
     table.header(
       text(size: 10pt)[*Elemento*],
@@ -134,6 +137,7 @@ Es importante señalar que el rol de gerente de proyecto fue asumido por la figu
     [Silla ergonómica], [Mejora el confort durante el trabajo], [180,00#sym.euro], [15%], [153,00#sym.euro],
     [Cables y accesorios], [Soporte técnico], [40,00#sym.euro], [10%], [36,00#sym.euro],
     [Auriculares], [Comunicación y reuniones virtuales], [45,00#sym.euro], [10%], [40,50#sym.euro],
+    table.hline(),
     [*Total*], [], [*2.094,97#sym.euro*], [], [*1.486,97#sym.euro*]
   ),
   caption: [Costes materiales],
@@ -142,7 +146,7 @@ Es importante señalar que el rol de gerente de proyecto fue asumido por la figu
 === Costes Indirectos
 Aquellos que no se pueden categorizar o incluir bajo ningún grupo elegible por la dirección del proyecto @waterfall[Cap. 12].
 
-Para el coste energético, se ha asumido que todos los equipos informáticos son idénticos y no presentaron fallas durante su utilización durante 11 meses. De media cada hora, se ha hecho uso de 500W, por lo tanto, 500W #sym.times 352h #sym.eq 176kWh, lo que supone un gasto total de 44#sym.euro#footnote[Se ha asumido un coste de luz constante de 0,25#sym.euro/kWh.]<footnote:watts>. El plan de internet se reduce a 26#sym.euro al mes, gracias a una oferta por tiempo limitado de una gran empresa de telefonía. En cuanto al transporte, el estudiante hace uso del bono transporte ofrecido por la Comunidad de Madrid, por lo que 10#sym.euro al mes eran más que suficientes para sufragar los gastos de movilidad. 
+Para el coste energético, se ha asumido que todos los equipos informáticos son idénticos y no presentaron fallos durante su utilización durante 11 meses. De media cada hora, se ha hecho uso de 500W, por lo tanto, 500W #sym.times 352h #sym.eq 176kWh, lo que supone un gasto total de 44,00#sym.euro#footnote[Se ha asumido un coste de luz constante de 0,25#sym.euro/kWh.]<footnote:watts>. El plan de internet se reduce a 26,00#sym.euro al mes, gracias a una oferta por tiempo limitado de una gran empresa de telefonía. En cuanto al transporte, el estudiante hace uso del bono transporte ofrecido por la Comunidad de Madrid, por lo que 10,00#sym.euro al mes eran más que suficientes para sufragar los gastos de movilidad. 
 
 A continuación, se muestra el balance, en la @tab:indirectcost, de internet, luz y transporte, cubierto por el 5% de reserva mencionado en la @sec:money.
 
@@ -158,8 +162,9 @@ A continuación, se muestra el balance, en la @tab:indirectcost, de internet, lu
     ),
     table.hline(),
     [Electricidad], [0,25#sym.euro/kWh@footnote:watts], [176kWh], [44,00#sym.euro],
-    [Internet], [26#sym.euro/mes], [11 meses], [286,00#sym.euro],
-    [Transporte], [10#sym.euro/mes], [11 meses], [110,00#sym.euro],
+    [Internet], [26,00#sym.euro/mes], [11 meses], [286,00#sym.euro],
+    [Transporte], [10,00#sym.euro/mes], [11 meses], [110,00#sym.euro],
+    table.hline(),
     [*Total*], [], [], [*440,00#sym.euro*]
   ),
   caption: [Costes indirectos],
@@ -188,7 +193,7 @@ La @tab:totalcost incluye un sumario exhaustivo de todos los costes asociados a 
 ) <tab:totalcost>
 
 === Propuesta de Venta <sec:vending>
-La @tab:vending ofrece una propuesta de venta del proyecto a una empresa de terceros, por un total de 25.624,33#sym.euro. Se han contemplado impuestos, beneficios y riesgos esperados, el costo total del trabajo (véase @tab:totalcost) y regalías. De manera adicional, se otorga la posibilidad de contratar personal mantenedor de la aplicación.
+La @tab:vending ofrece una propuesta de venta del proyecto a una empresa de terceros, por un total de 25.624,33#sym.euro. Se han contemplado impuestos, beneficios y riesgos esperados, el coste total del trabajo (véase @tab:totalcost) y regalías. De manera adicional, se otorga la posibilidad de contratar personal mantenedor de la aplicación.
 
 #figure(
   table(
@@ -206,18 +211,19 @@ La @tab:vending ofrece una propuesta de venta del proyecto a una empresa de terc
     [Beneficio esperado], [8%], [1.035,32#sym.euro], [16.435,81#sym.euro],
     [Impuestos], [21%], [2.717,73#sym.euro], [19.153,54#sym.euro],
     [Regalías], [5%/año #footnote[Las regalías se dividen en 3% tutor y 2% estudiante.]], [647,07#sym.euro], [19.153,54#sym.euro #sym.plus 647,07#sym.euro #sym.times #sym.lambda#footnote[#sym.lambda #sym.eq número de años.]],
+    table.hline(),
     [*Total a 10 años*], [], [], [*25.624,33#sym.euro*]
   ),
   caption: [Propuesta de venta],
 ) <tab:vending>
 
 == Marco Regulatorio <sec:law>
-A continuación, se discute la legislación que afecta al desarrollo, implementación y día a día del sistema, en la @sec:applylaw, incluyendo los estándares, la @sec:standards, adjuntado las licencias @glossfoss implicadas, @sec:license, y objetivos de desarrollo sostenible a los que contribuye, disponibles en la @sec:odslaw.
+A continuación, se discute la legislación que afecta al desarrollo, implementación y día a día del sistema, en la @sec:applylaw, incluyendo los estándares, la @sec:standards, adjuntando las licencias @glossfoss implicadas, @sec:license, y objetivos de desarrollo sostenible a los que contribuye, disponibles en la @sec:odslaw.
 
 === Legislación Aplicable <sec:applylaw>
-Durante el @sec:implementation de implementación, el _software_ y su desarrollo ha sido lanzado en múltiples ocasiones en un entorno @glossfoss controlado @opensourcellms. Posteriormente, en el transcurso del estudio de alternativas de orquestadores de agentes, @sec:agents, y la elección de arquitectura en la @sec:eventdrivenarch, tampoco ha recibido ni el sistema ni el modelo una comunicación con el exterior. 
+Durante el @sec:implementation de implementación, el _software_ y su desarrollo se lanzan en múltiples ocasiones en un entorno @glossfoss controlado @opensourcellms. Posteriormente, en el transcurso del estudio de alternativas de orquestadores de agentes, @sec:agents, y la elección de arquitectura en la @sec:eventdrivenarch, tampoco ha recibido ni el sistema ni el modelo una comunicación con el exterior. 
 
-Cabe destacar que, si la propuesta de venta sale adelante, @sec:vending, y la aplicación acaba siendo expuesta al público, será necesario incluir una declaración de política de privacidad, así como solicitar permiso al usuario del tratamiento de sus datos en el proceso de registro y del tratamiendo de sus _cookies_ durante su navegación, en concordancia con el objetivo O4. Regulación presente en el @glossgdpr:long @gdpr y @glosslopdgdd:long @lopdgddlaw. Asimismo, el programa se alinea con el @glossaiact:long @aiactlaw garantizando la transparencia, la mitigación de sesgos, la supervisión humana y el despliegue de modelos de lenguaje bajo un enfoque basado en el riesgo.
+Cabe destacar que, si la propuesta de venta sale adelante, @sec:vending, y la aplicación acaba siendo expuesta al público, será necesario incluir una declaración de política de privacidad, así como solicitar permiso al usuario para el tratamiento de sus datos en el proceso de registro y del tratamiento de sus _cookies_ durante su navegación, en concordancia con el objetivo O4. Regulación presente en el #gls("glossgdpr", long: true) @gdpr y #gls("glosslopdgdd", long: true) @lopdgddlaw. Asimismo, el programa se alinea con el #gls("glossaiact", long: true) @aiactlaw garantizando la transparencia, la mitigación de sesgos, la supervisión humana y el despliegue de modelos de lenguaje bajo un enfoque basado en el riesgo.
 
 === Estándares y Marcos Técnicos <sec:standards>
 El _software_ desarrollado persigue los siguientes estándares y marcos regulatorios:
@@ -252,19 +258,19 @@ En consonancia, se emplea la licencia CC BY 4.0#footnote[Creative Commons Attrib
 ) <tab:libraries>
 
 === Objetivos de Desarrollo Sostenible <sec:odslaw>
-Se concibe un firme compromiso con la Agenda 2030 de las Naciones Unidas @ods. Para dar cumplimiento al objetivo O6, descrito en la @sec:objetivos, se ha establecido un @glosswow que trasciende la mera implementación técnica, orientando la arquitectura y el propósito de la herramienta hacia la generación de un impacto social y tecnológico medible. La *educación de calidad* @ods[ODS 4], abarca un aprendizaje continuo y la adquisición de competencias técnicas avanzadas por parte de la estudiantes y profesionales del sector. Tradicionalmente, la ingeniería del conocimiento queda restringida a perfiles con una alta especialización técnica, debido a la complejidad sintáctica de herramientas tradicionales como _Protégé_. OntoNova democratiza este acceso al abstraer dicha complejidad con el uso de interfaces visuales y @glossnlp. De este modo, se permite que expertos de diversos sectores ---médicos, juristas, humanistas--- estructuren y asimilen dominios de conocimiento complejos, impulsando la alfabetización digital y facilitando la transferencia de conocimiento interdisciplinar sin requerir una curva de aprendizaje elevada.
+Se concibe un firme compromiso con la Agenda 2030 de las Naciones Unidas @ods. Para dar cumplimiento al objetivo O6, descrito en la @sec:objetivos, se ha establecido un @glosswow que trasciende la mera implementación técnica, orientando la arquitectura y el propósito de la herramienta hacia la generación de un impacto social y tecnológico medible. La *educación de calidad* @ods[ODS 4] abarca un aprendizaje continuo y la adquisición de competencias técnicas avanzadas por parte de los estudiantes y profesionales del sector. Tradicionalmente, la ingeniería del conocimiento queda restringida a perfiles con una alta especialización técnica, debido a la complejidad sintáctica de herramientas tradicionales como _Protégé_. OntoNova democratiza este acceso al abstraer dicha complejidad con el uso de interfaces visuales y @glossnlp. De este modo, se permite que expertos de diversos sectores ---médicos, juristas, humanistas--- estructuren y asimilen dominios de conocimiento complejos, impulsando la alfabetización digital y facilitando la transferencia de conocimiento interdisciplinar sin requerir una curva de aprendizaje elevada.
 
-Persiguiendo la necesidad actual de construir *infraestructuras* tecnológicas resilientes, promover la *industrialización* inclusiva y fomentar la *innovación* @ods[ODS 9], se apuesta por un ecosistema fundamentado íntegramente en software de código abierto, @glossfoss. Queda optimizada la ejecución de @glossllm en _hardware_ local, exponiendo una innovación disruptiva en el procesamiento de datos no estructurados. Esta aproximación reduce drásticamente la dependencia de infraestructuras propietarias en la nube y de servicios prestados por terceros, dotando a las organizaciones e instituciones de una infraestructura de datos soberana, independiente y altamente interoperable bajo los estándares de la Web Semántica del @glossw3c, disponibles en la @sec:semanticweb.
+Persiguiendo la necesidad actual de construir *infraestructuras* tecnológicas resilientes, promover la *industrialización* inclusiva y fomentar la *innovación* @ods[ODS 9], se apuesta por un ecosistema fundamentado íntegramente en _software_ de código abierto, @glossfoss. Queda optimizada la ejecución de @glossllm en _hardware_ local, exponiendo una innovación disruptiva en el procesamiento de datos no estructurados. Esta aproximación reduce drásticamente la dependencia de infraestructuras propietarias en la nube y de servicios prestados por terceros, dotando a las organizaciones e instituciones de una infraestructura de datos soberana, independiente y altamente interoperable bajo los estándares de la Web Semántica del @glossw3c, disponibles en la @sec:semanticweb.
 
 La brecha digital contemporánea no solo se manifiesta en la falta de acceso a la red, sino en la incapacidad de participar activamente en la creación de las tecnologías subyacentes. El propósito central es romper las barreras técnicas e idiomáticas que segregan a los beneficiarios de la Web 3.0, alineado con el objetivo O2, generando una *reducción de las desigualdades* @ods[ODS 10]. Al ofrecer un entorno accesible y multilingüe, marcado en el objetivo O3, se garantiza que las limitaciones de idioma o la falta de destrezas en programación no impidan a los expertos del dominio diseñar y controlar los modelos de conocimiento, contribuyendo activamente a una distribución más equitativa del control sobre la información en el ecosistema digital.
 
 == Entorno Socioeconómico <sec:socialcontext>
-El *proyecto OntoNova* surge en un contexto socioeconómico caracterizado por la adopción de la @glossai generativa como herramienta productiva, tanto en España como en el resto de países miembros de la Unión Europea. Tras una fase inicial de revelación masiva, impulsada por la sobreabundancia de información no estructurada y la experimentación a través de @glossllm de uso comercial, en el estudiantado y el ámbito empresarial se genera una nueva necesidad. Estructurar, verificar y dotar de sentido lógico a grandes volúmenes de texto, combatiendo la desinformación y el ruido digital bajo el estricto marco regulatorio europeo @edpb2025ai (e.g., @glossgdpr @gdpr y @glossaiact @aiactlaw).
+El *proyecto OntoNova* surge en un contexto socioeconómico caracterizado por la adopción de la @glossai generativa como herramienta productiva, tanto en España como en el resto de países miembros de la Unión Europea. Tras una fase inicial de revelación masiva, impulsada por la sobreabundancia de información no estructurada y la experimentación a través de @glossllm de uso comercial, en el estudiantado y el ámbito empresarial se genera una nueva necesidad. Estructurar, verificar y dotar de sentido lógico a grandes volúmenes de texto, combatiendo la desinformación y el ruido digital bajo el estricto marco regulatorio europeo @edpb2025ai (p. ej., @glossgdpr @gdpr y @glossaiact @aiactlaw).
 
 Este nuevo paradigma trae consigo una gran sobrecarga cognitiva y una crisis de confianza en la información. Profesionales de todos los sectores se enfrentan diariamente a la tarea de extraer conocimiento útil de repositorios documentales masivos. La proliferación de modelos de lenguaje estocásticos, propensos a las alucinaciones @llmhallucination y a la generación de contenido no verificable, ha evidenciado que la simple generación de texto no es suficiente. La sociedad actual requiere sistemas que garanticen la veracidad, la trazabilidad y la estructuración del conocimiento, elementos indispensables para la toma de decisiones críticas en ámbitos como la salud, la justicia o la investigación científica.
 
 Desde una perspectiva económica, la estructura del mercado español, compuesto mayoritariamente por @glosspymes, instituciones académicas y entidades públicas, se enfrenta a una fuerte dependencia frente a grandes proveedores tecnológicos multinacionales. El uso continuado de servicios de @glossai basados en la nube a través de recursos de pago por uso supone costes recurrentes y escalables que resultan inasumibles para entidades de menor envergadura. Cabe destacar que externalizar la extracción y estructuración del conocimiento corporativo interno hacia servidores de terceros suscita riesgos significativos de fuga de capital intelectual corporativo.
 
-La creciente preocupación por la privacidad y la entrada en vigor del @glossaiact:long, impactan en cómo las organizaciones gestionan sus datos. Con el fin de los periodos de adaptación regulatoria, existe una presión institucional por adoptar tecnologías que aseguren la soberanía del dato y eviten la fuga de capital intelectual hacia servidores externos. A esto se suma el intenso debate en torno a la sostenibilidad de los grandes centros de datos, que impulsa la búsqueda de alternativas de menor impacto ambiental. En este escenario, la comunidad @glossfoss @osiosd proporciona soluciones, permitiendo que la ejecución local de modelos avanzados y enérgicamente eficientes no sea una utopía técnica.
+La creciente preocupación por la privacidad y la entrada en vigor del @glossaiact:long impactan en cómo las organizaciones gestionan sus datos. Con el fin de los periodos de adaptación regulatoria, existe una presión institucional por adoptar tecnologías que aseguren la soberanía del dato y eviten la fuga de capital intelectual hacia servidores externos. A esto se suma el intenso debate en torno a la sostenibilidad de los grandes centros de datos, que impulsa la búsqueda de alternativas de menor impacto ambiental. En este escenario, la comunidad @glossfoss @osiosd proporciona soluciones, permitiendo que la ejecución local de modelos avanzados y eficientes no sea una utopía técnica.
 
 La consolidación de un conocimiento interno de calidad, en combinación con la optimización de recursos y la evolución de entornos ágiles, se convierte en un deber con la evolución drástica de componentes inteligentes. En este sentido, una aplicación web de código abierto que permita procesar, extraer y estructurar el conocimiento de forma asíncrona mediante @glossai local, exportable a formatos estándar y consumible por ingenieros de conocimiento, representa una solución socioeconómica clave para que profesionales de cualquier sector puedan integrarse de forma segura en el nuevo paradigma de la @glossai.

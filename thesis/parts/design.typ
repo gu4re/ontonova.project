@@ -23,7 +23,7 @@ Toda decisión de diseño, recogida en esta parte, se evalúa contra un conjunto
 - *Separación entre lo estocástico y lo determinista.* El componente probabilístico, el @glossllm, queda confinado a la generación de contenido, mientras que toda decisión de aceptación, reparación o rechazo recae en componentes deterministas y verificables. Este principio, consecuencia directa de la alucinación del @glossllm analizada en la @sec:inference, fundamenta el ciclo de validación y autocorrección de la @sec:agentpipeline y las mitigaciones de seguridad de la @sec:securitydesign.
 #pagebreak()
 == Arquitectura del Sistema <sec:architecture>
-Esta sección recorre la estructura estática de OntoNova aplicando los niveles del Modelo C4 @c4model, notación establecida en la @sec:c4notation. El contexto delimita la frontera del sistema frente al usuario y los sistemas externos, @sec:c4context, los contenedores constituyen sus unidades ejecutables y desplegables, @sec:c4containers, y los componentes internos de cada uno de ellos, @sec:c4components.
+Esta sección recorre la estructura estática de OntoNova aplicando los niveles del Modelo C4 @c4model, notación establecida en la @sec:c4notation. El contexto delimita la frontera del sistema frente al usuario y los sistemas externos, @sec:c4context, los contenedores constituyen sus unidades ejecutables y desplegables, @sec:c4containers, y los componentes detallan el interior de cada uno de ellos, @sec:c4components.
 
 === Nivel de Contexto <sec:c4context>
 En el primer nivel del Modelo C4 @c4model[Cap. 3], OntoNova se presenta como una caja negra cuyo interior no impacta a esta escala. El verdadero significado recae en la frontera que separa el sistema de las personas y los sistemas que lo rodean. La @fig:c4context recoge esta perspectiva, en la que el sistema se relaciona con un actor humano y una única dependencia externa, quedando ambas interacciones contenidas por la frontera de confianza del despliegue local.
@@ -59,8 +59,8 @@ La aplicación web es una @glossspa desarrollada en _React_ y _TypeScript_, serv
     ),
     table.hline(),
     [VanillaJS], [Alta], [Mínimo], [Deficiente],
-    [React], [Media], [Amplio], [Nativo],
-    [Angular], [Alta], [Rígido], [Limitado]
+    [Angular], [Alta], [Rígido], [Limitado],
+    [React], [Media], [Amplio], [Nativo]
   ),
   caption: [Comparativa de alternativas del cliente],
 ) <tab:reactcomparison>
@@ -76,20 +76,21 @@ En tercer lugar, el motor de inferencia está compuesto por una instancia de _vL
     table.header(
       text(size: 10pt)[*Alternativa*],
       text(size: 10pt)[*Orientación*],
-      text(size: 10pt)[*Tasa de \ procesamiento*],
+      text(size: 10pt)[*Procesamiento*],
       text(size: 10pt)[*Decodificación guiada*],
       text(size: 10pt)[*Protocolo OpenAI*]
     ),
     table.hline(),
-    [vLLM], [Multiusuario], [Alta], [Optimizada \ (_XGrammar_)], [Compatible],
-    [Ollama], [Monousuario], [Baja], [Costosa (@glossgbnf)], [Compatible],
-    [llama.cpp], [Biblioteca \ embebida], [Baja], [Costosa (@glossgbnf)], [Compatible]
+    [Ollama], [Monousuario], [Bajo], [Costosa (@glossgbnf)], [Compatible],
+    [llama.cpp], [Biblioteca], [Bajo], [Costosa (@glossgbnf)], [Compatible],
+    [vLLM], [Multiusuario], [Alto], [Optimizada], [Compatible]
   ),
   caption: [Comparativa de alternativas del motor de inferencia],
 ) <tab:vllmcomparison>
 
 En cuanto a los conectores, la aplicación web se comunica con el servicio de orquestación mediante peticiones @glossjson sobre @glosshttp, y recibe el progreso de la generación como un flujo de eventos @glosssse, acatando el requisito REQ-US-FC-02 y consumando la arquitectura orientada a eventos justificada en la @sec:eventdrivenarch. Dicho diseño no contempla un contenedor de persistencia. OntoNova opera sin estado, pues el conocimiento generado vive exclusivamente en la sesión del navegador del usuario hasta que este decide exportarlo o eliminarlo, sin dejar rastro en el servidor. Esta decisión borra por construcción toda una categoría de riesgos sobre los datos del usuario, facilita el cumplimiento de la legislación aplicable, @sec:applylaw, cuyas garantías se presentan en la @sec:securitydesign, y simplifica el despliegue descrito en la @sec:deploymentdesign.
 
+#pagebreak()
 === Nivel de Componentes <sec:c4components>
 A una mayor granularidad, concretamente hacia el interior de los contenedores, se revelan sus componentes @c4model[Cap. 5], que quedan asignados a abstracciones reales en función de su código. Es decir, se agrupan funcionalidades relacionadas tras una interfaz bien definida.
 
@@ -113,7 +114,7 @@ En la capa de transporte, el _router_ de ontologías expone los tres recursos de
 Definida la estructura, esta sección desciende al comportamiento y a los acuerdos que la gobiernan. Se abre con la vista dinámica del sistema ---el diagrama suplementario que el Modelo C4 @c4model reserva para la colaboración en tiempo de ejecución--- aplicada al proceso multi-agente de generación, @sec:agentpipeline. En divisiones posteriores, el contrato universal de datos se erige como fuente de verdad del sistema, @sec:datacontract, seguido del diseño de la comunicación asíncrona, @sec:eventdesign, y las interfaces de programación junto a la exportación a formatos estándar del @glossw3c, @sec:apidesign.
 
 === Proceso Multi-agente de Generación <sec:agentpipeline>
-El Modelo C4 reserva un espacio para la vista dinámica del sistema @c4model[Cap. 7]. Esta sección aprovecha dicho espacio para para ilustrar, en el diagrama de actividad de la @fig:agentpipeline @umlfowler[Cap. 11], el recorrido de una petición de generación desde el texto del dominio hasta su evento terminal, acatando el requisito REQ-US-FC-03, que exige una ontología que supere la validación con degradación elegante ante el fallo.
+El Modelo C4 reserva un espacio para la vista dinámica del sistema @c4model[Cap. 7]. Esta sección aprovecha dicho espacio para ilustrar, en el diagrama de actividad de la @fig:agentpipeline @umlfowler[Cap. 11], el recorrido de una petición de generación desde el texto del dominio hasta su evento terminal, acatando el requisito REQ-US-FC-03, que exige una ontología que supere la validación con degradación elegante ante el fallo.
 
 Como guardarraíl previo, toda petición atraviesa una comprobación determinista de longitud derivada de los límites de los requisitos REQ-US-FC-01 y REQ-US-FC-10, rechazando con un mensaje accionable las entradas que excedan la ventana de contexto del modelo en funcionamiento. Superada esta fase, la cadena de generación encadena tres agentes construidos con _LangGraph_ @langgraph: el taxonomista extrae las clases y su jerarquía, el relacional declara las propiedades de objeto y de datos sobre las clases ya existentes, y el poblador identifica los individuos y sus aserciones. Cada agente opera bajo un esquema de salida acotado a la porción del contrato que le corresponde, tal y como anticipó la @sec:designtenets, de modo que la decodificación guiada de la @sec:determinism imposibilita estructuralmente que un agente invada el terreno de otro.
 
@@ -127,7 +128,7 @@ Agotado el presupuesto de cuatro reintentos, el último paso poda las aserciones
 ) <fig:agentpipeline>
 
 === Contrato Universal de Datos <sec:datacontract>
-Todo el sistema pivota sobre un esquema de datos, _OntoNovaSchema_, que implanta el principio de contrato primero establecido en la @sec:designtenets. El contrato actúa como gramática de la decodificación guiada, apoyando a que cada agente reciba la porción del esquema que le corresponde, @sec:agentpipeline. A su vez, fundamenta las fases de validación determinista y de compilación a los formatos del @glossw3c, @sec:apidesign. Cabe resaltar que cualquier evolución del sistema parte del contrato extensible @githubrepo, nunca al contrario, evitando incoherencias entre productores y consumidores. La @tab:datacontract descompone su estructura en las cuatro entidades que lo forman, alineadas con los pilares de la representación del conocimiento expuestos en la @sec:semanticweb.
+Todo el sistema pivota sobre un esquema de datos, _OntoNovaSchema_, que implanta el principio de contrato primero establecido en la @sec:designtenets. El contrato actúa como gramática de la decodificación guiada, propiciando que cada agente reciba la porción del esquema que le corresponde, @sec:agentpipeline. A su vez, fundamenta las fases de validación determinista y de compilación a los formatos del @glossw3c, @sec:apidesign. Cabe resaltar que cualquier evolución del sistema parte del contrato extensible @githubrepo, nunca al contrario, evitando incoherencias entre productores y consumidores. La @tab:datacontract descompone su estructura en las cuatro entidades que lo forman, alineadas con los pilares de la representación del conocimiento expuestos en la @sec:semanticweb.
 
 #figure(
   table(
@@ -175,10 +176,10 @@ Justificada la elección de @glosssse como mecanismo de transporte en la @sec:ev
 Toda petición, con independencia de su desenlace ---éxito o fallo---, concluye con un evento de cierre que transporta el grafo, con o sin poda, o el motivo del error. La aplicación web libera la interfaz al recibirlo y trata como error cualquier flujo que se cierre sin él, de esta manera ningún fallo del servicio, del @glossllm o de la red puede dejar al usuario esperando indefinidamente, logrando la resiliencia comprometida en el requisito REQ-SW-NF-03. Adicionalmente, los eventos de fallo transportan, junto a un texto descriptivo, un código de error acompañado de sus parámetros, permitiendo a la aplicación web presentar el error localizado en el idioma del usuario, en coherencia con el carácter multilingüe del sistema, REQ-US-FC-01, sin privar de contexto a los consumidores directos de la @glossapi, cuyos recursos se detallan en la @sec:apidesign.
 
 === Interfaces de Programación y Exportación <sec:apidesign>
-El servicio de orquestación publica tres recursos de @glossapi consumidos por la aplicación web. Primeramente, la *generación* se modela en _streaming_, alejado del clásico esquema petición-respuesta. El cliente formula una solicitud y recibe el canal de eventos de la @sec:eventdesign, asumiendo la asimetría entre lo inmediato de preguntar y lo costoso de inferir. Segundamente, la *validación*, a diferencia de la convención habitual de una @glossapi @eda[Cap. 4], un grafo inválido no constituye un error en la petición, sino una respuesta aceptada que transporta los defectos de forma estructurada. El motivo es cuestión de diseño, porque a lo largo de la edición sobre el lienzo, el estado intermedio inválido es lo esperado porque, por ejemplo, el usuario aún no ha conectado dos clases o está renombrando un atributo. Tratarlo como excepción convertiría el ciclo de revalidación del requisito REQ-US-FC-04 en un flujo permanente de errores. Por último, la *exportación* se alinea con REQ-US-FC-05 y solo compila a un formato del @glossw3c aquello que supera la validación determinista, evitando la fuga de archivos inválidos, bien por incumplimiento del estándar o bien por incompatibilidad con el contrato de la @sec:datacontract.
+El servicio de orquestación publica tres recursos de @glossapi consumidos por la aplicación web. Primeramente, la *generación* se modela en _streaming_, alejado del clásico esquema petición-respuesta. El cliente formula una solicitud y recibe el canal de eventos de la @sec:eventdesign, asumiendo la asimetría entre lo inmediato de preguntar y lo costoso de inferir. En segundo lugar, en la *validación*, a diferencia de la convención habitual de una @glossapi @eda[Cap. 4], un grafo inválido no constituye un error en la petición, sino una respuesta aceptada que transporta los defectos de forma estructurada. El motivo es cuestión de diseño, porque a lo largo de la edición sobre el lienzo, el estado intermedio inválido es lo esperado porque, por ejemplo, el usuario aún no ha conectado dos clases o está renombrando un atributo. Tratarlo como excepción convertiría el ciclo de revalidación del requisito REQ-US-FC-04 en un flujo permanente de errores. Por último, la *exportación* se alinea con REQ-US-FC-05 y solo compila a un formato del @glossw3c aquello que supera la validación determinista, evitando la fuga de archivos inválidos, bien por incumplimiento del estándar o bien por incompatibilidad con el contrato de la @sec:datacontract.
 
 == Diseño de Seguridad <sec:securitydesign>
-La seguridad de OntoNova no constituye un módulo adicional, sino una evaluación a las decisiones tomadas bajo la lente del riesgo, pues cada mitigación que se expone a continuación es una decisión de diseño presentada en el transcurso del capítulo, ahora justificada frente a los cuatro riesgos del OWASP Top 10 GenIA/LLM identificados en la @sec:standards. Se establece una defensa en profundidad, descendiendo por los niveles que estructuran la @sec:architecture, estrechando la protección a medida que el dato se acerca al modelo de lenguaje.
+La seguridad de OntoNova no constituye un módulo adicional, sino una evaluación de las decisiones tomadas bajo la lente del riesgo, pues cada mitigación que se expone a continuación es una decisión de diseño presentada en el transcurso del capítulo, ahora justificada frente a los cuatro riesgos del OWASP Top 10 GenIA/LLM identificados en la @sec:standards. Se establece una defensa en profundidad, descendiendo por los niveles que estructuran la @sec:architecture, estrechando la protección a medida que el dato se acerca al modelo de lenguaje.
 
 La protección comienza en el nivel de contexto, donde la frontera de confianza enunciada en la @sec:c4context se convierte en la garantía de privacidad allí prometida. Al operar el sistema en local y sin estado, @sec:c4containers, el conocimiento del dominio, potencialmente confidencial en manos de un médico o un jurista, ni atraviesa la frontera ni persiste tras la sesión, y el único contacto con el exterior, la descarga inicial de los pesos del modelo, no transporta dato alguno del usuario. Esta doble ausencia neutraliza por construcción la divulgación de información sensible @owasp[LLM02] y facilita el cumplimiento de la legislación aplicable, @sec:applylaw, pues no puede filtrarse lo que nunca sale ni almacenarse lo que nunca se guarda.
 
@@ -202,7 +203,7 @@ La composición de contenedores adopta un comando de lanzamiento, configurable c
 El nodo de trabajo necesita un anfitrión con _Docker_, una @glossgpu compatible con la @glosscuda y sus respectivas librerías, _NVIDIA Container Toolkit_. Aunque carece de dependencia de servicios externos, sí necesita un núcleo Linux ---nativo o virtualizado---, la única plataforma soportada por _vLLM_. Aun así, consuma el carácter agnóstico del _hardware_ que requiere el requisito REQ-SW-NF-08 y preserva la frontera de confianza en cualquier anfitrión. Esa neutralidad habilita el camino inverso, es decir, la composición que se despliega en el equipo del experto es la que un proveedor de exposición pública puede ejecutar con leves modificaciones, escenario propuesto en el @sec:cloud.
 
 == Trazabilidad de Requisitos <sec:designtraceability>
-La propiedad de trazabilidad solicitada por los estándares de la @sec:requirementstandard se refleja en la @tab:designtraceability, para los requisitos de usuario, y en la @tab:designtraceabilitysw, para los del sistema, que vinculan cada requisito de la @sec:requirementexposition con los elementos de diseño que lo satisfacen. Los requisitos diferidos no quedan huérfanos, sino trazados a la decisión de alcance que los pospone; los de naturaleza operativa ---soporte, pruebas y documentación--- se remiten al proceso que los gobierna porque no adoptan forma de diseño. La comprobación de que cada elemento cumple su métrica no corresponde al diseño, sino al @sec:verification, cuya matriz de verificación toma la @tab:designtraceability y la @tab:designtraceabilitysw[] como punto de partida.
+La propiedad de trazabilidad solicitada por los estándares de la @sec:requirementstandard se refleja en la @tab:designtraceability, para los requisitos de usuario, y en la @tab:designtraceabilitysw, para los del sistema, que vinculan cada requisito de la @sec:requirementexposition con los elementos de diseño que lo satisfacen. Los requisitos diferidos no quedan huérfanos, sino trazados a la decisión de alcance que los pospone; los de naturaleza operativa ---soporte, pruebas y documentación--- se remiten al proceso que los gobierna porque no adoptan forma de diseño. La comprobación de que cada elemento cumple su métrica no corresponde al diseño, sino al @sec:verification, cuya matriz de verificación toma la @tab:designtraceability de requisitos de usuario y la @tab:designtraceabilitysw de requisitos del sistema como punto de partida.
 
 #figure(
   table(
@@ -244,7 +245,7 @@ La propiedad de trazabilidad solicitada por los estándares de la @sec:requireme
     [REQ-SW-NF-01], [Diferido a la @sec:future-work.],
     [REQ-SW-NF-02], [Cadena de suministro auditada, @sec:securitydesign.],
     [REQ-SW-NF-03], [Invariante del evento terminal, @sec:eventdesign, y escalera de degradación, @sec:agentpipeline.],
-    [REQ-SW-NF-04], [Proceso de pruebas, delegado al @sec:verification.],
+    [REQ-SW-NF-04], [Proceso de pruebas, diferido a la @sec:future-work.],
     [REQ-SW-NF-05], [Proceso documental del proyecto, sin forma de diseño.],
     [REQ-SW-NF-06], [Principio de abierto/cerrado, @sec:designtenets, y metadatos extensibles, @sec:datacontract.],
     [REQ-SW-NF-07], [Diferido, @sec:securitydesign, al @sec:cloud.],
