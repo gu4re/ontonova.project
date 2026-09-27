@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <!-- Marca OntoNova (frontend/src/components/Logo.tsx) recoloreada al azul
+       UC3M monocromo para mantener la paleta de la presentación. -->
+  <g stroke="#000e78" stroke-width="1.6" stroke-linecap="round">
+    <line x1="20" y1="20" x2="20" y2="7" />
+    <line x1="20" y1="20" x2="33" y2="20" />
+    <line x1="20" y1="20" x2="20" y2="33" />
+    <line x1="20" y1="20" x2="7" y2="20" />
+    <line x1="20" y1="7" x2="33" y2="20" />
+    <line x1="33" y1="20" x2="20" y2="33" />
+    <line x1="20" y1="33" x2="7" y2="20" />
+    <line x1="7" y1="20" x2="20" y2="7" />
+  </g>
+  <circle cx="20" cy="7" r="3.4" fill="#000e78" />
+  <circle cx="33" cy="20" r="3.4" fill="#000e78" />
+  <circle cx="20" cy="33" r="3.4" fill="#000e78" />
+  <circle cx="7" cy="20" r="3.4" fill="#000e78" />
+  <circle cx="20" cy="20" r="4.2" fill="#ffffff" stroke="#000e78" stroke-width="1.8" />
+</svg>
